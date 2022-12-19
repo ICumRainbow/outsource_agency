@@ -5,6 +5,9 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 class Category(models.Model):
+    """
+    Model for Categories.
+    """
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
 
@@ -27,6 +30,9 @@ class Tag(models.Model):
 
 
 class Author(models.Model):
+    """
+    Model for Authors.
+    """
     name = models.CharField(max_length=255)
     avatar = models.ImageField(blank=True)
     occupation = models.CharField(max_length=255)
@@ -36,6 +42,9 @@ class Author(models.Model):
 
 
 class Post(models.Model):
+    """
+    Model for Posts.
+    """
     picture = models.ImageField()
     heading = models.CharField(max_length=255)
     content = RichTextField(blank=False, null=False)
