@@ -17,6 +17,9 @@ class Category(models.Model):
 
 
 class Tag(models.Model):
+    """
+    Model for Tags.
+    """
     name = models.CharField(max_length=255)
 
     def __str__(self):
