@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor_uploader',
     'ckeditor',
-    'post'
+    'post',
+    'social',
+    'our_works',
 ]
 
 MIDDLEWARE = [
@@ -113,8 +115,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = 'static/'
+STATIC_URL = '/static/'
+# STATIC_ROOT = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -123,6 +128,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # paths for CKeditor
 CKEDITOR_UPLOAD_PATH = "/media/"
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'allowedContent': True
+    }
+}
 
 MEDIA_ROOT = 'media/'
 MEDIA_URL = '/media/'
