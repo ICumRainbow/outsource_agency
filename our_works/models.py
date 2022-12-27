@@ -3,6 +3,8 @@ from ckeditor.fields import RichTextField
 from colorfield.fields import ColorField
 from django.core.validators import FileExtensionValidator
 # Create your models here.
+from django.db.models import TextField
+
 
 class Work(models.Model):
     """
@@ -20,12 +22,12 @@ class Work(models.Model):
     team = models.CharField(verbose_name='Team', blank=True, null=True, max_length=255)
     team_size = models.IntegerField(verbose_name='Team Size', blank=True, null=True)
     location = models.CharField(verbose_name='Location', max_length=255, blank=True, null=True)
-    brief = RichTextField(verbose_name='Brief', blank=False, null=True)
+    brief = TextField(verbose_name='Brief', blank=False, null=True)
     approach = RichTextField(verbose_name='Approach', blank=True, null=True)
     impact = RichTextField(verbose_name='Impact', blank=True, null=True)
     metric = RichTextField(verbose_name='Metric', blank=True, null=True)
     interesting_features = RichTextField(verbose_name='Interesting Features', blank=True, null=True)
-    picture2 = models.ImageField(verbose_name='Picture 2')
+    picture2 = models.ImageField(verbose_name='Picture 2', blank=True)
     what_we_built = RichTextField(verbose_name='What We Built', blank=False, null=False)
     deliverables = RichTextField(verbose_name='Deliverables', blank=False, null=False)
     picture3 = models.ImageField(verbose_name='Picture 3')

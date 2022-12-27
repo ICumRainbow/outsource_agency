@@ -1273,12 +1273,13 @@ if (ewww_webp_supported) {
             </div>
             <div>
 
-
+                {% if picture2 %}
                 <img style="object-position:50% 50%; object-fit: cover;"
                      class="e-img--100 u-mx-auto  c-wide-image__img ewww_webp_loaded"
                      src="{{ work.picture2.url }}" alt=""
                      data-src-img="https://q.agency/wp-content/uploads/2022/06/cs-bbc-image-02.jpg"
                      data-src-webp="https://q.agency/wp-content/uploads/2022/06/cs-bbc-image-02.jpg.webp" data-eio="j">
+                {% endif %}
                 <noscript><img style="object-position:50% 50%; object-fit: cover;"
                                class="e-img--100 u-mx-auto  c-wide-image__img"
                                src="https://q.agency/wp-content/uploads/2022/06/cs-bbc-image-02.jpg" alt=""></noscript>

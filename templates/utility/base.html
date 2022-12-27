@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAgency</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/c8e9354b59.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="logo-motto__aside">
+    <div class="logo_wrapper">
+        <a href="q.agency">
+            <img src="{% static 'img/img-logo.svg' %}" alt="qAgency logo" class="img-logo">
+        </a>
+    </div>
+    <div class="motto-wrapper">
+        <p class="motto_text-vertical">Whatever the Q, We got the A</p>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="header-wrapper">
+        <header class="header">
+            <div class="header_nav-menu">
+                <ul class="navigation_list">
+                    <li class="navigation_item">
+                        <a class="navigation_link" href="">For CTOs</a>
+                    </li>
+                    <li class="navigation_item">
+                        <a class="navigation_link" href="">Product Innovation</a>
+                    </li>
+                    <li class="navigation_item">
+                        <a class="navigation_link" href="">Services</a>
+                    </li>
+                    <li class="navigation_item">
+                        <a class="navigation_link" href="">Our Work</a>
+                    </li>
+                    <li class="navigation_item">
+                        <a class="navigation_link" href="">Blog</a>
+                    </li>
+                    <li class="navigation_item">
+                        <a class="navigation_link" href="">Careers</a>
+                    </li>
+                    <li class="navigation_item">
+                        <a class="navigation_link" href="">Culture</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact-button_wrapper">
+                <a href="#" class="landing-button_link contact-button">Contact Us</a>
+            </div>
+        </header>
+    </div>
+
+{% block content %}{% endblock %}
+</div>
+<footer>
+    <div class="footer_container">
+        <div class="footer-wrapper">
+            <img src="{% static 'img/img-logo.svg' %}" alt="">
+            <p class="motto">Whatever the Q, We got the A</p>
+            <div class="locations">
+                <p class="location">London</p>
+                <p class="location">Zürich</p>
+                <p class="location">Belgrade</p>
+                <p class="location last">Zagreb HQ</p>
+            </div>
+            <div class="newsletter-input">
+                <div class="input-wrapper">
+                    <input type="email" id="email-newsletter" placeholder="Subscribe to newsletter">
+                </div>
+                <div class="button">
+                    <button class="subscribe">Subscribe</button>
+                </div>
+            </div>
+            <div class="logos-wrapper">
+                <a href="#"><img src="{% static 'img/logo-1.svg' %}" alt="" class="element"></a>
+                <a href="#"><img src="{% static 'img/logo-2.svg' %}" alt="" class="element"></a>
+                <a href="#"><img src="{% static 'img/logo-4.svg' %}" alt="" class="element"></a>
+                <a href="#"><img src="{% static 'img/logo-6.svg' %}" alt="" class="element"></a>
+            </div>
+            <div class="links-wrapper">
+                <div class="links">
+                    <a href="#" class="link">Culture</a>
+                    <a href="#" class="link">Blog</a>
+                    <a href="#" class="link">Contact Us</a>
+                    <a href="#" class="link">Privacy Policy</a>
+                    <a href="#" class="link">Legal</a>
+                </div>
+            </div>
+            <div class="site-name">
+                <p>©2022 - Q Agency</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

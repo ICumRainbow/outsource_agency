@@ -1300,7 +1300,7 @@ if (ewww_webp_supported) {
                                                 <div id="country-list" class="e-select__Dropdown" style="z-index: 5;">
                                                     <div value="" class="option" data-type="0" data-count="0"></div>
                                                     {% for label, value in form.fields.country.choices %}
-                                                    <div value="{{ label }}" class="option">
+                                                    <div value="{{ label }}" class="option" data-type="{{ label }}">
                                                         {{ value }}
                                                     </div>
                                                     {% endfor %}
