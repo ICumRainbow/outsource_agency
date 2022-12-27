@@ -8,7 +8,11 @@ def works_view(request):
     """
     View for Works page.
     """
-    return render(request, 'works.html')
+    works = Work.objects.all()
+    context = {
+        'works': works,
+    }
+    return render(request, 'works.html', context)
 
 
 def work_details_view(request, id_):

@@ -1,19 +1,23 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-
-
+from colorfield.fields import ColorField
+from django.core.validators import FileExtensionValidator
 # Create your models here.
 
 class Work(models.Model):
     """
     Model for portfolio works.
     """
+    preview_picture = models.ImageField(blank=True, default='img_bbc_lg@2x-1.png')
+    success_story_picture = models.ImageField(default='img_bbc_lg@2x-1.png')
+    color = ColorField(default="#000")
     heading = models.CharField(verbose_name='Heading', max_length=255, blank=False, null=False)
-    logo = models.FileField(verbose_name='Logo')
+    logo = models.FileField(verbose_name='Logo', validators=[FileExtensionValidator(['pdf', 'doc', 'svg'])])
     description = RichTextField(verbose_name='Description', blank=True, null=True)
     picture1 = models.ImageField(verbose_name='Picture 1')
     what_we_did = RichTextField(verbose_name='What We Did', blank=True, null=True)
     industry = models.CharField(verbose_name='Industry', max_length=255)
+    team = models.CharField(verbose_name='Team', blank=True, null=True, max_length=255)
     team_size = models.IntegerField(verbose_name='Team Size', blank=True, null=True)
     location = models.CharField(verbose_name='Location', max_length=255, blank=True, null=True)
     brief = RichTextField(verbose_name='Brief', blank=False, null=True)
