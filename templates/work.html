@@ -1613,23 +1613,20 @@ if (ewww_webp_supported) {
             </div>
             <div class="s-section l-container--wide">
                 <div class="l-row c-images u-h-100">
-                    <a href="https://q.agency/our-work/streamways/"
+                    <a href="{% url 'works_details' next_in_line.id %}"
                        class=" l-container--wide s--black-bg s--images c-images__linkWrapper"
                        style="background-color: #674ad2;">
                         <div class="u-relative u-h-100 c-images__bigCard--disabled">
                             <div class="l-row c-images--single u-h-100">
                                 <div class="l-colLg--6 c-images--single__textWrap">
                                     <div>
-                                        <img src="./BBC Pandemic App - Q agency_files/streamways.svg"
+                                        <img src="{{ next_in_line.logo.url }}"
                                              class="attachment-full size-full" alt="" decoding="async" loading="lazy">
                                     </div>
                                     <div>
-                                        <h3 class="e-h5 c-images__heading"><span class="c-images__span ">Play and Learn How to Drive</span>
+                                        <h3 class="e-h5 c-images__heading"><span class="c-images__span ">{{ next_in_line.heading }}</span>
                                         </h3>
-                                        <p class="e-p--body-50 e-p--medium ">Streamways is a company that had a
-                                            brillinat idea to develop the best driving school app in Germany. They had
-                                            noticed that learning behavior patterns were changing rapidly and it was
-                                            time for innovation.</p>
+                                        <p class="e-p--body-50 e-p--medium ">{{ next_in_line.brief }}</p>
                                     </div>
                                     <div class="c-images__btn-wrapper">
                                         <div class="e-btn--secondary e-p--medium  ">
@@ -1641,9 +1638,9 @@ if (ewww_webp_supported) {
                                 </div>
                                 <div class="l-colLg--6 c-images--single__imgWrap u-h-100">
                                     <img width="1114" height="1354"
-                                         src="./BBC Pandemic App - Q agency_files/img_streamways_lg@2x.png"
+                                         src="{{ next_in_line.preview_picture.url }}"
                                          class="c-images--single__img u-h-100" alt="" decoding="async" loading="lazy"
-                                         srcset="https://q.agency/wp-content/uploads/2022/03/img_streamways_lg@2x.png 1114w, https://q.agency/wp-content/uploads/2022/03/img_streamways_lg@2x-300x365.png 300w, https://q.agency/wp-content/uploads/2022/03/img_streamways_lg@2x-768x933.png 768w, https://q.agency/wp-content/uploads/2022/03/img_streamways_lg@2x-600x729.png 600w, https://q.agency/wp-content/uploads/2022/03/img_streamways_lg@2x-900x1094.png 900w"
+                                         srcset="{{ next_in_line.preview_picture.url }} 1114w, {{ next_in_line.preview_picture.url }} 300w, {{ next_in_line.preview_picture.url }} 768w, {{ next_in_line.preview_picture.url }} 600w, {{ next_in_line.preview_picture.url }} 900w"
                                          sizes="(max-width: 1114px) 100vw, 1114px">
                                 </div>
                             </div>

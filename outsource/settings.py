@@ -24,7 +24,10 @@ SECRET_KEY = 'django-insecure-d=k1np+y()fj(6qd+6lb&sd=0%798^am$q925@*rckd+r9ir=v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '1af0-87-254-141-92.eu.ngrok.io',
+    '127.0.0.1',
+]
 
 # Application definition
 
@@ -69,6 +72,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.context_processors.get_socials',
+                'contact_bot.context_processors.get_telegram_link'
             ],
         },
     },
@@ -144,4 +149,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 TELEGRAM = {
     'TOKEN': '5959733238:AAFfrkaFYhDlCsEEKrFbemHG1zEVlxQEPOQ',
+    'LINK': 't.me/contact_outsource_bot',
 }

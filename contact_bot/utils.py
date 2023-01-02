@@ -1,5 +1,5 @@
 import telegram  # this is from python-telegram-bot package
-
+from telegram.constants import ParseMode
 from django.conf import settings
 from django.template.loader import render_to_string
 
@@ -15,4 +15,4 @@ def send_message(message: str) -> None:
     telegram_settings = settings.TELEGRAM
     bot = telegram.Bot(token=telegram_settings['TOKEN'])
     bot.send_message(chat_id="86494096",
-                     text=message, parse_mode=telegram.ParseMode.HTML)
+                           text=message, parse_mode=ParseMode.HTML)

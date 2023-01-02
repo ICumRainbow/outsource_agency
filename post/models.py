@@ -37,7 +37,7 @@ class Author(models.Model):
     Model for Authors.
     """
     name = models.CharField(max_length=255)
-    avatar = models.ImageField(blank=True)
+    avatar = models.ImageField(blank=False, default='blank_avatar.jpg')
     occupation = models.CharField(max_length=255)
 
     class Meta:

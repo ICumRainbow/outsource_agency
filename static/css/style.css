@@ -313,17 +313,17 @@
 .example_element {
   margin-bottom: 80px;
   display: flex;
+  justify-content: space-between;
 }
 .example_element .example_image {
-  padding-right: 15px;
   width: 50%;
 }
 .example_element .example_image .img {
+  width: 100%;
+  max-width: 100%;
   height: 414px;
 }
 .example_element .example_description {
-  padding-left: 15px;
-  margin-left: 8.33%;
   width: 41.66%;
 }
 .example_element .example_description .example_tags {
@@ -341,6 +341,10 @@
   font-size: 20px;
   line-height: 1.5;
   font-weight: 300;
+}
+
+.reversed {
+  flex-direction: row-reverse;
 }
 
 .example_element-second {
@@ -974,9 +978,9 @@
 }
 
 footer {
-  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 48px 25px 64px;
+  padding: 46px 25px 0 25px;
   background-color: #1A1A1A;
 }
 footer .footer_container {
@@ -1052,9 +1056,8 @@ footer .footer_container .footer-wrapper .newsletter-input .button .subscribe {
   line-height: 1.5;
   padding: 16px 20px;
   border-radius: 0;
-  border: 2px solid #1A1A1A;
+  border: 2px solid #fff;
   background-color: transparent;
-  border-color: #fff !important;
   box-shadow: 4px 4px 0 #fff;
 }
 footer .footer_container .footer-wrapper .newsletter-input .button .subscribe:hover {
@@ -1062,8 +1065,8 @@ footer .footer_container .footer-wrapper .newsletter-input .button .subscribe:ho
   transition: 0.3s;
 }
 footer .footer_container .footer-wrapper .logos-wrapper {
-  margin-top: 64px;
-  margin-bottom: 56px;
+  margin-top: 32px;
+  margin-bottom: 28px;
   box-sizing: border-box;
 }
 footer .footer_container .footer-wrapper .logos-wrapper .element {

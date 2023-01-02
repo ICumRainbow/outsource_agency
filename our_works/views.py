@@ -1,26 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from our_works.models import Work
+from our_works.services import get_work_and_next_in_line, get_works
 
 
 def works_view(request):
     """
     View for Works page.
     """
-    works = Work.objects.all()
+    works = get_works()
     context = {
         'works': works,
     }
     return render(request, 'works.html', context)
 
 
-def work_details_view(request, id_):
+def work_details_view(request, id_: int):
     """
     View for details pages of portfolio works.
     """
-    work = Work.objects.get(id=id_)
+    work, next_in_line = get_work_and_next_in_line(id_)
     context = {
-        'work': work
+        'work': work,
+        'next_in_line': next_in_line,
     }
     return render(request, 'work.html', context)

@@ -32,3 +32,9 @@ class MainContactForm(forms.Form):
     project_details = forms.CharField(widget=forms.Textarea, max_length=2000, required=False)
     budget = forms.ChoiceField(choices=BUDGET_CHOICES, required=False, widget=forms.Select)
     needs = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=NEEDS_CHOICES, required=False)
+
+
+class SecondaryContactForm(forms.Form):
+    business_email = forms.EmailField(
+        widget=forms.TextInput(attrs={'class': 'input', 'id': 'email', 'placeholder': 'Email Address'}))
+    project_details = forms.CharField(widget=forms.Textarea, max_length=2000, required=False)

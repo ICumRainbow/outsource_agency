@@ -1,3 +1,4 @@
+from django.core.validators import FileExtensionValidator
 from django.db import models
 
 
@@ -8,7 +9,7 @@ class Social(models.Model):
     Model for Social Networks.
     """
     name = models.CharField(max_length=255)
-    logo = models.ImageField()
+    logo = models.FileField(verbose_name='Logo', validators=[FileExtensionValidator(['pdf', 'doc', 'svg'])])
     link = models.CharField(max_length=255)
 
     class Meta:

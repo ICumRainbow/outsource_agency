@@ -8,6 +8,7 @@ accordionToggle.forEach(item => {
         const textAreaParent = item.parentElement;
         const textAreaSibling = textAreaParent.nextElementSibling;
         const textArea = textAreaSibling.firstElementChild;
+
         textAreaList.forEach(item => {
             if (item !== textArea) {
                 item.style.maxHeight = '0px';
@@ -45,41 +46,42 @@ for(let i = 0; i < slides.length; i++) {
     indicators.append(dot);
 }*/
 
+if (slides.length > 0) {
 
+    let slideIndex = 1;
 
-let slideIndex = 1;
+    showSlides(slideIndex);
 
-showSlides(slideIndex);
+    function showSlides(n) {
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
 
-function showSlides(n) {
-    if (n > slides.length) {
-        slideIndex = 1;
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+
+        slides.forEach(item => item.style.display = 'none');
+
+        slides[slideIndex - 1].style.display = 'block';
     }
 
-    if (n < 1) {
-        slideIndex = slides.length;
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
     }
 
-    slides.forEach(item => item.style.display = 'none');
-
-    slides[slideIndex - 1].style.display = 'block';
-}
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-slidePrev.forEach(item => {
-    item.addEventListener('click', () => {
-        plusSlides(-1);
+    slidePrev.forEach(item => {
+        item.addEventListener('click', () => {
+            plusSlides(-1);
+        })
     })
-})
 
-slideNext.forEach(item => {
-    item.addEventListener('click', () => {
-        plusSlides(1);
+    slideNext.forEach(item => {
+        item.addEventListener('click', () => {
+            plusSlides(1);
+        })
     })
-})
+}
 
 const accordionToggle2 = document.querySelectorAll('.accordion-toggle_2'),
       textAreaList2 = document.querySelectorAll('.accordion-text_2');
@@ -108,5 +110,36 @@ accordionToggle2.forEach(item => {
         }
     })
 });
+
+let prevScrollPos = window.pageYOffset;
+
+window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+
+    if (prevScrollPos > currentScrollPos) {
+        document.querySelector(".header-wrapper").style.top = "0";
+    } else {
+        document.querySelector(".header-wrapper").style.top = "-100px";
+    }
+
+    if (currentScrollPos <= 20) {
+        document.querySelector(".header-wrapper").style.zIndex = "9999";
+        document.querySelector(".header-wrapper").style.backgroundColor = "transparent";
+    } else {
+        document.querySelector(".header-wrapper").style.backgroundColor = "white";
+    }
+
+    prevScrollPos = currentScrollPos;
+}
+
+window.addEventListener('DOMContentLoaded',() => {
+    const exampleElements = document.querySelectorAll('.example_element');
+
+    console.log(exampleElements)
+
+    for (let i = 1; i < exampleElements.length; i += 2) {
+        exampleElements[i].classList.add("reversed");
+    }
+})
 
 
