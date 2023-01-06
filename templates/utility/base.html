@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-PI.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-our-work.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-blog.css' %}">
     <script src="https://kit.fontawesome.com/c8e9354b59.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -36,10 +37,10 @@
                         <a class="navigation_link" href="">Services</a>
                     </li>
                     <li class="navigation_item">
-                        <a class="navigation_link" href="">Our Work</a>
+                        <a class="navigation_link" href="{% url 'works' %}">Our Work</a>
                     </li>
                     <li class="navigation_item">
-                        <a class="navigation_link" href="">Blog</a>
+                        <a class="navigation_link" href="{% url 'blog' %}">Blog</a>
                     </li>
                     <li class="navigation_item">
                         <a class="navigation_link" href="">Careers</a>
@@ -87,7 +88,7 @@
             <div class="links-wrapper">
                 <div class="links">
                     <a href="#" class="link">Culture</a>
-                    <a href="#" class="link">Blog</a>
+                    <a href="{% url 'blog' %}" class="link">Blog</a>
                     <a href="{% url 'contact' %}" class="link">Contact Us</a>
                     <a href="#" class="link">Privacy Policy</a>
                     <a href="#" class="link">Legal</a>

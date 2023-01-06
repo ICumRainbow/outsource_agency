@@ -18,10 +18,9 @@ logger = logging.getLogger(__name__)
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    response = requests.post(
-        url='https://1af0-87-254-141-92.eu.ngrok.io/telegram/contact_outsource_bot/' + TOKEN,
-        params=update.to_json())
-    print(response)
+    # response = requests.post(
+    #     url='https://8d1d-109-105-160-58.eu.ngrok.io/telegram/contact_outsource_bot/' + TOKEN,
+    #     json=update.to_json())
     await context.bot.send_message(chat_id=update.effective_chat.id, text='TEST', parse_mode=ParseMode.HTML)
 
 
@@ -35,6 +34,6 @@ if __name__ == '__main__':
         listen="127.0.0.1",
         port=PORT,
         url_path=TOKEN,
-        webhook_url='https://1af0-87-254-141-92.eu.ngrok.io/telegram/contact_outsource_bot/' + TOKEN
+        webhook_url='https://8d1d-109-105-160-58.eu.ngrok.io/telegram/contact_outsource_bot/' + TOKEN,
     )
     # application.run_polling()  # we use polling in case we want to test it by running it on our PC

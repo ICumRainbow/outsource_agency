@@ -1,6 +1,8 @@
 import os
+import asyncio
 
 import django
+from asgiref.sync import sync_to_async, async_to_sync
 from django.core.mail import send_mail, BadHeaderError, EmailMessage
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -12,10 +14,10 @@ from contact_bot.utils import send_message
 from core.views import for_CTOs_view
 from social.forms import MainContactForm
 
-os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
+# os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 
 
-@csrf_exempt
+
 def contact_view(request):
     """
     View for Contact Us page that includes the main contact form.
@@ -39,7 +41,7 @@ def contact_view(request):
                 'needs': form.cleaned_data['needs'],
             }
             message = "\n".join(map(str, body.values()))
-            send_message(message)
+            async_to_sync(send_message)(message)
             try:
                 message = EmailMessage(subject, message, 'onetwo20003@gmail.com', ['onetwo20003@gmail.com'])
                 eml_content = message.message().as_bytes()

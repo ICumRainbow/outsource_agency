@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d=k1np+y()fj(6qd+6lb&sd=0%798^am$q925@*rckd+r9ir=v
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '1af0-87-254-141-92.eu.ngrok.io',
+    '8d1d-109-105-160-58.eu.ngrok.io',
     '127.0.0.1',
 ]
 
@@ -150,4 +150,23 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 TELEGRAM = {
     'TOKEN': '5959733238:AAFfrkaFYhDlCsEEKrFbemHG1zEVlxQEPOQ',
     'LINK': 't.me/contact_outsource_bot',
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'logs' / 'sql.log',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
 }

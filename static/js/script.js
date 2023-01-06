@@ -135,11 +135,43 @@ window.onscroll = function() {
 window.addEventListener('DOMContentLoaded',() => {
     const exampleElements = document.querySelectorAll('.example_element');
 
-    console.log(exampleElements)
-
     for (let i = 1; i < exampleElements.length; i += 2) {
         exampleElements[i].classList.add("reversed");
     }
 })
 
+const postsList = document.querySelectorAll(".blog-element"),
+      pageList = document.querySelector(".pagination"),
+      page = document.createElement('li');
+
+page.classList.add("page");
+
+let pages = document.querySelectorAll('.page');
+
+for (let i = 0; i < Math.floor(postsList.length / 10); i++) {
+    pageList.appendChild(page);
+    pages = document.querySelectorAll('.page');
+    pages[i].innerText = `${i + 1}`;
+}
+
+console.log(pages.length)
+
+if ((postsList.length / 10) % 10 !== 0) {
+    pageList.appendChild(page);
+    pages = document.querySelectorAll('.page');
+    pages[pages.length - 1].innerText = `${pages.length}`;
+}
+
+console.log(postsList.length / 10);
+
+const navButtonsList = document.querySelectorAll('.nav-button');
+
+navButtonsList.forEach(item => {
+    item.addEventListener('click',(e) => {
+        navButtonsList.forEach(item => {
+            item.classList.remove('active');
+        })
+        e.target.classList.add('active');
+    })
+})
 

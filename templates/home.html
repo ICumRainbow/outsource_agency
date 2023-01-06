@@ -526,19 +526,20 @@
             <img src="{% static 'img/decoration.svg' %}" alt="" class="decoration">
         </div>
         <div class="form">
-            <form action="#">
+            <form action="" method="POST">
+                {% csrf_token %}
                 <div class="email form-input">
                     <label for="email" class="label">Business email</label>
-                    <input type="email" placeholder="Email Address" class="input" id="email">
+                    {{ form.business_email }}
                 </div>
                 <div class="info form-input">
                     <label for="text" class="label">Tell us more about your project</label>
-                    <textarea name="description" id="text" cols="2" rows="3"></textarea>
+                    {{ form.project_details }}
                 </div>
+                <p class="p">Let's get started! Please fill in the form above so we can learn more about you and your
+                    project or just schedule a call.</p>
+                <button class="submit">Send</button>
             </form>
-            <p class="p">Let's get started! Please fill in the form above so we can learn more about you and your
-                project or just schedule a call.</p>
-            <button class="submit">Send</button>
         </div>
     </div>
     <section class="divider-desktop"></section>
