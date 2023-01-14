@@ -7,9 +7,12 @@ from .models import Post, Category, Tag, Author
 class PostAdmin(admin.ModelAdmin):
     list_display = ['heading', 'category', 'get_tags']
 
-    @staticmethod
-    def get_tags(obj):
+    @admin.display(description='Tags', ordering='tag__name')
+    def get_tags(self, obj):
         return ", ".join([p.name for p in obj.tag.all()])
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).prefetch_related('tag')
 
 
 @admin.register(Category)

@@ -50,6 +50,7 @@ signer = TelegramSigner()
 @csrf_exempt
 def telegram_view(request, token):
     update: telegram.Update = parse_update(bot, request_token=token, request=request)
+    print(update)
     message = update.message.text.split()
     if update.message.parse_entity(entity=MessageEntity(type='BOT_COMMAND', length=6, offset=0)) == '/start' and len(
             message) > 1:

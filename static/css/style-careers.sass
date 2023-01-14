@@ -1,0 +1,686 @@
+*
+  margin: 0
+  padding: 0
+  font-family: 'Rubik', sans-serif
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400;500;600;700&display=swap')
+
+.h1, .h2, .h3, .h4, .h5, .h6
+  line-height: 1.25
+
+.h2
+  font-size: 48px
+  font-weight: 700
+  color: #1a1a1a
+
+.h3
+  font-size: 40px
+  font-weight: 700
+  color: #1A1A1A
+
+.h4
+  font-size: 32px
+  font-weight: 600
+
+.p
+  font-size: 20px
+  line-height: 1.5
+  font-weight: 300
+  color: #1a1a1a
+
+.content_container
+  padding: 0 35px
+
+.logo-motto__aside
+  top: 0
+  position: fixed
+  display: flex
+  flex-direction: column
+  align-items: center
+  height: 412px
+  width: 6%
+  -webkit-mask-image: url(../img/logomask.svg)
+  mask-image: url(../img/logomask.svg)
+  background-color: white
+
+.img-logo
+  width: 54px
+  height: 54px
+  margin-top: 20px
+
+.motto_text-vertical
+  writing-mode: vertical-rl
+  text-orientation: mixed
+  transform: rotate(180deg)
+  font-weight: 200
+  margin-top: 30px
+
+.wrapper
+  max-width: 1270px
+  margin: 0 auto
+
+.landing_container
+  display: flex
+  padding: 0 35px
+
+.header-wrapper
+  width: 100%
+  padding: 20px 35px
+  top: 0
+  transition: .3s
+  position: fixed
+  box-sizing: border-box
+  z-index: 9999
+  background-color: transparent
+
+.header
+  display: flex
+  position: static
+  font-weight: 200
+  max-width: 1270px
+
+.navigation_list
+  display: flex
+  flex-direction: row
+  margin: 0
+  padding: 0
+  list-style: none
+  min-height: 60px
+  align-items: center
+
+.navigation_link
+  margin-right: 25px
+  padding: 16px 0
+  text-decoration: none
+  color: black
+  width: 100%
+  line-height: 1.5
+
+.landing_message
+  padding-top: 150px
+  display: flex
+  flex-wrap: wrap
+  width: 75%
+  .landing_message__wrapper
+    width: 66.6%
+    .landing-h1
+      font-family: Rubik, sans-serif
+      font-size: 62px
+      font-weight: 700
+      line-height: 1.25
+    .landing-p
+      font-family: Rubik, sans-serif
+      font-size: 26px
+      font-weight: 300
+      line-height: 1.5
+      padding-top: 48px
+      padding-bottom: 62px
+    .landing-button_link
+      border: 2px solid #1a1a1a
+      padding: 16px 20px
+      color: #1a1a1a
+      background-color: #fff
+      border-radius: 0
+      min-width: 140px
+      box-shadow: 6px 6px 0 #00ff15, inset 0 0 0 2px #00ff15
+      font-weight: 500
+      font-size: 16px
+      line-height: 1.5
+      transition: .3s
+      text-decoration: none
+      text-align: center
+      &:hover
+        box-shadow: 2px 2px 2px #00FFFF, inset 0 0 0 3px #00FFFF
+        transition: .3s
+
+.contact-button_wrapper
+  width: 140px
+  display: flex
+  justify-content: center
+  position: fixed
+  right: 0
+  padding-right: 25px
+  z-index: 9999
+
+.contact-button
+  text-align: center
+  width: 140px
+  border: 2px solid #1a1a1a
+  padding: 16px 20px
+  color: #1a1a1a
+  background-color: #fff
+  border-radius: 0
+  box-shadow: 4px 4px 0 #1a1a1a
+  font-weight: 400
+  font-size: 16px
+  line-height: 1.5
+  transition: .3s
+  text-decoration: none
+  &:hover
+    box-shadow: 2px 2px 0 #1a1a1a
+    transition: .3s
+
+.top-right_image
+  background-image: url('../img/image-2.jpg')
+  position: absolute
+  background-repeat: no-repeat
+  right: 0
+  background-size: 370px
+  object-fit: cover
+  width: 370px
+  height: 614px
+  -webkit-mask-repeat: no-repeat
+  -webkit-mask-image: url('../img/image-mask.svg')
+  z-index: 9000
+
+.divider-desktop
+  padding-bottom: 160px
+
+.description-rewards
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 80px
+  .images
+    display: flex
+    .img
+      height: 440px
+      object-fit: cover
+      object-position: 50% 50%
+      max-width: 100%
+      &:first-child
+        padding-right: 6px
+        margin-bottom: 85px
+      &:last-child
+        padding-left: 6px
+        margin-top: 85px
+  .text
+    width: 41.66%
+    .h3
+      padding-bottom: 30px
+    .p
+      padding-bottom: 70px
+
+.reversed
+  flex-direction: row-reverse
+
+.text-image-variations
+  .text-image
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &:first-child
+      margin-bottom: 80px
+    .text
+      width: 41.66%
+      .h3
+        padding-bottom: 30px
+    .image
+      width: 50%
+      .img
+        width: 100%
+        height: 414px
+        object-position: 50% 50%
+        object-fit: cover
+        max-width: 100%
+
+.values-header
+  padding: 0 60px 80px 60px
+
+.values-bg
+  background-color: #1A1A1A
+
+.values-primary
+  padding: 64px 60px
+  max-width: 1270px
+  display: flex
+  .values-text
+    display: flex
+    flex-direction: column
+    width: 50%
+    justify-content: space-between
+    .element
+      .p
+        color: white
+      .h3
+        padding: 16px 0
+        color: white
+  .values-images
+    display: flex
+    width: 50%
+    justify-content: space-between
+    .column
+      width: 48%
+      display: flex
+      flex-direction: column
+      &:last-child
+        flex-direction: column-reverse
+      .img
+        object-fit: cover
+        width: 100%
+        max-width: 100%
+        &:first-child
+          height: 440px
+        &:last-child
+          height: 264px
+      .top
+        margin-bottom: 25px
+
+.opportunities
+  .h2
+    width: 60%
+    margin-bottom: 80px
+  .element
+    display: flex
+    justify-content: space-between
+    padding-bottom: 64px
+    &:last-child
+      padding-bottom: 0
+    .text
+      width: 25%
+      .p
+        margin-bottom: 16px
+    .image-accordion
+      width: 66.6%
+      .image
+        height: 320px
+        object-fit: cover
+        margin-bottom: 64px
+        max-width: 100%
+        width: 100%
+
+.accordion-menu
+  transition: .4s
+  .accordion-button-title
+    font-weight: 400
+    font-size: 26px
+    line-height: 1.5
+  .accordion-button
+    display: flex
+    align-items: center
+    padding-bottom: 32px
+    .accordion-toggle
+      cursor: pointer
+      transition: .2s
+      transform: rotate(135deg)
+      border-radius: 50%
+      width: 40px
+      height: 40px
+      margin-right: 24px
+      align-items: center
+      display: flex
+      justify-content: center
+      border: 0
+      outline: 0
+  .accordion-content
+    -webkit-transition: .4s
+    transition: .4s
+    .accordion-text
+      max-height: 0
+      margin-left: 64px
+      transition: .4s
+      overflow: hidden
+      .accordion-p
+        color: #1A1A1A
+        font-size: 20px
+        font-weight: 300
+        line-height: 1.5
+
+.transparency-header
+  padding-bottom: 80px
+  .h2
+    padding: 0 60px
+
+.transparency-bg
+  background-color: #1A1A1A
+  width: 100%
+  max-width: 1270px
+  .transparency-primary
+    padding: 64px 60px
+    .transparency-text-image
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 80px
+      &:last-child
+        margin-bottom: 0
+      .text
+        width: 41.66%
+        .h3
+          padding-bottom: 30px
+          color: white
+        .p
+          color: white
+      .image
+        width: 50%
+        .img
+          width: 100%
+          height: 414px
+          object-position: 50% 50%
+          object-fit: cover
+          max-width: 100%
+
+.dropdown-content
+  display: none
+
+.dropdown-active
+  display: block!important
+
+.dropdown-hidden
+  display: none!important
+
+.wrapper-active
+  border-bottom: none!important
+
+.positions
+  .positions-header
+    display: flex
+    justify-content: space-between
+    padding-bottom: 40px
+    .dropdowns
+      width: 50%
+      display: flex
+      .dropdown
+        height: 100%
+        width: 100%
+        z-index: 50
+      .location
+        width: 50%
+        margin-right: 15px
+        position: relative
+        .p
+          margin-bottom: 8px
+          font-size: 16px
+          font-weight: 300
+          line-height: 1.5
+          color: #1a1a1a
+        .dropdown-wrapper
+          display: flex
+          position: relative
+          border: 2px solid #1A1A1A
+          padding: 22px 24px
+          cursor: pointer
+        .dropdown-content
+          background-color: white
+          position: absolute
+          padding: 0 0 22px 24px
+          border: 2px solid #1A1A1A
+          box-sizing: border-box
+          width: 100%
+          block-size: fit-content
+          border-top: none
+          .option
+            padding: 22px 0
+      .categories
+        width: 50%
+        margin-left: 15px
+        position: relative
+        .p
+          margin-bottom: 8px
+          font-size: 16px
+          font-weight: 300
+          line-height: 1.5
+          color: #1a1a1a
+        .dropdown-wrapper
+          display: flex
+          position: relative
+          border: 2px solid #1A1A1A
+          padding: 22px 24px
+          cursor: pointer
+        .dropdown-content
+          background-color: white
+          position: absolute
+          padding: 0 0 22px 24px
+          border: 2px solid #1A1A1A
+          box-sizing: border-box
+          width: 100%
+          block-size: fit-content
+          border-top: none
+          .option
+            padding: 22px 0
+    .filter-button
+      .button
+        text-decoration: none
+        color: #1A1A1A
+        font-weight: 500
+        cursor: pointer
+        max-width: 140px
+        padding: 16px 20px
+        box-sizing: content-box
+        justify-content: center
+        background-color: transparent
+        border-radius: 0
+        border: 2px solid #1A1A1A
+        margin: 0 auto
+        transition: .3s
+        box-shadow: 4px 4px 0 #1A1A1A
+        text-align: center
+        &:hover
+          box-shadow: 2px 2px 0 #1A1A1A
+    .freelance-button
+      .button
+        border: 2px solid #1A1A1A
+        transition: .3s
+        padding: 16px 20px
+        background-color: white
+        border-radius: 0
+        max-width: 140px
+        box-shadow: 6px 6px 0 #00ff15, inset 0 0 0 2px #00ff15
+        text-decoration: none
+        font-size: 16px
+        line-height: 1.5
+        font-weight: 500
+        color: #1A1A1A
+        margin: 0 auto
+        display: inline-block
+        align-items: center
+        &:hover
+          box-shadow: 2px 2px 2px #00FFFF, inset 0 0 0 3px #00FFFF
+          transition: .3s
+  .primary
+    .position-element
+      padding: 40px 0
+      border-bottom: 1px solid rgba(26,26,26,.2)
+      display: flex
+      align-items: center
+      justify-content: space-between
+      .description
+        .p
+          font-weight: 400
+          font-size: 26px
+        .tags
+          display: flex
+          align-items: center
+          .tag
+            .p
+              padding: 4px 10px
+              font-size: 14px
+              margin-right: 16px
+            .location
+              font-size: 20px
+              line-height: 1.5
+              font-weight: 300
+              color: #1a1a1a
+              padding-left: 0
+      .apply-button
+        padding: 16px 20px
+        max-width: 140px
+        justify-content: center
+        color: #1A1A1A
+        background-color: transparent
+        border-radius: 0
+        border: 2px solid #1A1A1A
+        transition: .3s
+        box-shadow: 4px 4px 0 #1A1A1A
+        &:hover
+          box-shadow: 2px 2px 0 #1A1A1A
+        .button
+          text-decoration: none
+          color: #1A1A1A
+          font-weight: 500
+
+.type
+  background-color: #1A1A1A
+  color: white
+  font-weight: 400
+
+.application-bg
+  background-color: #1A1A1A
+  margin-top: 40px
+  .application-primary
+    align-items: center
+    padding: 36px 64px
+    display: flex
+    justify-content: space-between
+    max-width: 100%
+    .p
+      font-weight: 400
+      font-size: 26px
+      line-height: 1.5
+      color: white
+    .apply-button
+      padding: 16px 20px
+      max-width: 140px
+      justify-content: center
+      color: #1A1A1A
+      background-color: transparent
+      border-radius: 0
+      border: 2px solid white
+      transition: .3s
+      box-shadow: 4px 4px 0 white
+      &:hover
+        box-shadow: 2px 2px 0 white
+      .button
+        text-decoration: none
+        color: white
+        font-weight: 500
+
+.instagram
+  .header
+    padding-bottom: 80px
+  .primary
+    display: flex
+    flex-wrap: wrap
+    .image
+      padding: 4px!important
+      width: 24%
+      .link
+        display: block
+        overflow: hidden
+        text-decoration: none
+        .img
+          object-fit: cover
+          transition: .3s
+          width: 100%
+          max-width: 100%
+          height: 276px
+          &:hover
+            transform: scale(1.1)
+
+footer
+  max-width: 100%
+  margin: 0 auto
+  padding: 46px 25px 0 25px
+  background-color: #1A1A1A
+  .footer_container
+    width: 100%
+    max-width: 1270px
+    padding: 0 35px
+    margin: 0 auto
+    .footer-wrapper
+      width: 66.6%
+      img
+        width: 70px
+        margin-bottom: 32px
+        max-width: 100%
+        height: 70px
+      .motto
+        font-weight: 400
+        font-size: 16px
+        line-height: 1.5
+        color: #ffffff
+      .locations
+        display: flex
+        color: #868686
+        padding-top: 2px
+        padding-bottom: 40px
+        .location
+          font-size: 16px
+          font-weight: 300
+          line-height: 1.5
+          &:after
+            content: "\2022"
+            margin: 0 10px
+          &:first-child
+            content: ''!important
+          &:last-child
+            content: ''!important
+      .newsletter-input
+        display: flex
+        gap: 15px
+        input
+          box-sizing: border-box
+          width: 100%
+          background-color: transparent
+          border-radius: unset
+          padding: 16px 20px
+          border: 2px solid #fff
+          color: #fff!important
+          background-clip: padding-box
+          font-size: 16px
+          line-height: 1.5
+          margin-bottom: 0
+          max-width: 100%
+        .input-wrapper
+          margin-bottom: 20px
+          width: 50%
+        .button
+          .subscribe
+            transition: .3s
+            margin-bottom: 20px
+            color: #ffffff
+            cursor: pointer
+            font-size: 16px
+            line-height: 1.5
+            padding: 16px 20px
+            border-radius: 0
+            border: 2px solid #fff
+            background-color: transparent
+            box-shadow: 4px 4px 0 #fff
+            &:hover
+              box-shadow: 2px 2px 0 #fff
+              transition: .3s
+      .logos-wrapper
+        margin-top: 32px
+        margin-bottom: 28px
+        box-sizing: border-box
+        .element
+          width: 25px
+          height: 28px
+          box-sizing: border-box
+        a
+          padding-left: 40px
+          &:first-child
+            padding-left: 0
+        .fa-brands
+          font-size: 28px
+      .links-wrapper
+        .links
+          display: flex
+          .link
+            font-size: 16px
+            font-weight: 300
+            line-height: 1.5
+            color: #fff
+            text-decoration: none
+            padding-left: 32px
+            margin-bottom: 8px
+            &:first-child
+              padding-left: 0
+      .site-name
+        padding-top: 40px
+        p
+          color: #fff
+          font-size: 16px
+          font-weight: 300
+          line-height: 1.5

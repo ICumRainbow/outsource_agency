@@ -2,19 +2,26 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from colorfield.fields import ColorField
 from django.core.validators import FileExtensionValidator
-# Create your models here.
 from django.db.models import TextField
 
+from core.models import BaseModel
 
-class Work(models.Model):
+
+class Work(BaseModel):
     """
     Model for portfolio works.
     """
-    preview_picture = models.ImageField(blank=True, default='img_bbc_lg@2x-1.png')
-    success_story_picture = models.ImageField(default='img_bbc_lg@2x-1.png')
-    color = ColorField(default="#000")
+    preview_picture = models.ImageField(verbose_name='Preview Picture', blank=True, default='img_bbc_lg@2x-1.png')
+    success_story_picture = models.ImageField(verbose_name='Success Story Picture', default='img_bbc_lg@2x-1.png')
+    color = ColorField(verbose_name='Color', default="#000",
+                       help_text='Please select background color for this work that will be used in the Works page.')
     heading = models.CharField(verbose_name='Heading', max_length=255, blank=False, null=False)
-    logo = models.FileField(verbose_name='Logo', validators=[FileExtensionValidator(['pdf', 'doc', 'svg'])])
+    logo_dark = models.FileField(verbose_name='Dark Logo', validators=[FileExtensionValidator(['jpg', 'png', 'svg'])],
+                                 help_text='Please upload a logo that will be visible on light background.',
+                                 default='Black_question_mark.png')
+    logo_light = models.FileField(verbose_name='Light Logo', validators=[FileExtensionValidator(['jpg', 'png', 'svg'])],
+                                  help_text='Please upload a logo that will be visible on dark background.',
+                                  default='78-784866_png-white-question-mark.png')
     description = RichTextField(verbose_name='Description', blank=True, null=True)
     picture1 = models.ImageField(verbose_name='Picture 1')
     what_we_did = RichTextField(verbose_name='What We Did', blank=True, null=True)

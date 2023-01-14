@@ -1,0 +1,26 @@
+{% load static %}
+{% load tags %}
+
+<nav class="page-selector">
+    <ul class="pagination">
+        {% for i in page_range|default_if_none:page.paginator.get_elided_page_range %}
+            {% if page.number == i %}
+                <li class="active page-switch"><span class="page-link">{{ i }} <span
+                        class="sr-only">(current)</span></span>
+                </li>
+            {% else %}
+                {% if i == page.paginator.ELLIPSIS %}
+                    <li class="page-switch"><span class="page-link">{{ i }}</span></li>
+                {% else %}
+                    <li class="page-switch"><a class="page-link" href="{% append_to_url i 'page' %}">{{ i }}</a></li>
+                {% endif %}
+            {% endif %}
+            {#                <li class="page-switch"><a href="{% append_to_url page_number 'page' %}"#}
+            {#                                           class="page-link {% if page_number == page.number %}current{% endif %}">#}
+            {#                {{ page_number }}#}
+            {#            </a>#}
+            {#                </li>#}
+        {% endfor %}
+
+    </ul>
+</nav>

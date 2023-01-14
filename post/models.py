@@ -1,9 +1,14 @@
+from datetime import datetime
+
 from django.db import models
 from ckeditor.fields import RichTextField
 
 
 # Create your models here.
-class Category(models.Model):
+from core.models import BaseModel
+
+
+class Category(BaseModel):
     """
     Model for Categories.
     """
@@ -18,7 +23,7 @@ class Category(models.Model):
         return self.name
 
 
-class Tag(models.Model):
+class Tag(BaseModel):
     """
     Model for Tags.
     """
@@ -32,7 +37,7 @@ class Tag(models.Model):
         return self.name
 
 
-class Author(models.Model):
+class Author(BaseModel):
     """
     Model for Authors.
     """
@@ -48,16 +53,17 @@ class Author(models.Model):
         return self.name
 
 
-class Post(models.Model):
+class Post(BaseModel):
     """
     Model for Posts.
     """
-    picture = models.ImageField()
-    heading = models.CharField(max_length=255)
-    content = RichTextField(blank=False, null=False)
-    category = models.ForeignKey(to=Category, on_delete=models.CASCADE)
-    tag = models.ManyToManyField(to=Tag, blank=True)
-    author = models.ForeignKey(to=Author, on_delete=models.DO_NOTHING, default=1)
+    picture = models.ImageField(verbose_name='Picture')
+    heading = models.CharField(verbose_name='Heading', max_length=255)
+    content = RichTextField(verbose_name='Content', blank=False, null=False)
+    category = models.ForeignKey(verbose_name='Category', to=Category, on_delete=models.CASCADE)
+    tag = models.ManyToManyField(verbose_name='Tag', to=Tag, blank=True)
+    author = models.ForeignKey(verbose_name='Author', to=Author, on_delete=models.DO_NOTHING, default=1)
+    time_to_read = models.CharField(verbose_name='Time to read', blank=True, max_length=255)
 
     class Meta:
         verbose_name = 'Post'

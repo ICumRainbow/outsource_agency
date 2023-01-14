@@ -1,10 +1,10 @@
 'use strict';
 
 const accordionToggle = document.querySelectorAll('.accordion-toggle'),
-      textAreaList = document.querySelectorAll('.accordion-text');
+    textAreaList = document.querySelectorAll('.accordion-text');
 
 accordionToggle.forEach(item => {
-    item.addEventListener('click',(e) => {
+    item.addEventListener('click', (e) => {
         const textAreaParent = item.parentElement;
         const textAreaSibling = textAreaParent.nextElementSibling;
         const textArea = textAreaSibling.firstElementChild;
@@ -30,10 +30,10 @@ accordionToggle.forEach(item => {
 });
 
 const slides = document.querySelectorAll('.members-container'),
-      slideNext = document.querySelectorAll('.button-next'),
-      slidePrev = document.querySelectorAll('.button-prev'),
-      slider = document.querySelectorAll('.pagination'),
-      indicators = document.createElement('ol');
+    slideNext = document.querySelectorAll('.button-next'),
+    slidePrev = document.querySelectorAll('.button-prev'),
+    slider = document.querySelectorAll('.pagination'),
+    indicators = document.createElement('ol');
 
 /*slider.forEach(item => item.style.position = 'relative');*/
 /*indicators.classList.add('carousel-indicators');
@@ -84,10 +84,10 @@ if (slides.length > 0) {
 }
 
 const accordionToggle2 = document.querySelectorAll('.accordion-toggle_2'),
-      textAreaList2 = document.querySelectorAll('.accordion-text_2');
+    textAreaList2 = document.querySelectorAll('.accordion-text_2');
 
 accordionToggle2.forEach(item => {
-    item.addEventListener('click',(e) => {
+    item.addEventListener('click', (e) => {
         const textAreaParent = item.parentElement;
         const textAreaSibling = textAreaParent.nextElementSibling;
         const textArea = textAreaSibling.firstElementChild;
@@ -113,7 +113,7 @@ accordionToggle2.forEach(item => {
 
 let prevScrollPos = window.pageYOffset;
 
-window.onscroll = function() {
+window.onscroll = function () {
     let currentScrollPos = window.pageYOffset;
 
     if (prevScrollPos > currentScrollPos) {
@@ -132,7 +132,7 @@ window.onscroll = function() {
     prevScrollPos = currentScrollPos;
 }
 
-window.addEventListener('DOMContentLoaded',() => {
+window.addEventListener('DOMContentLoaded', () => {
     const exampleElements = document.querySelectorAll('.example_element');
 
     for (let i = 1; i < exampleElements.length; i += 2) {
@@ -140,38 +140,102 @@ window.addEventListener('DOMContentLoaded',() => {
     }
 })
 
-const postsList = document.querySelectorAll(".blog-element"),
-      pageList = document.querySelector(".pagination"),
-      page = document.createElement('li');
+const navButtonsList = document.querySelectorAll('.nav-button'),
+    pageLinkList = document.querySelectorAll('.page-link'),
+    buttonsWrapper = document.querySelector('.buttons'),
+    paginationWrapper = document.querySelector('.pagination');
 
-page.classList.add("page");
+// navButtonsList.forEach(item => {
+//     item.addEventListener('click',(e) => {
+//             navButtonsList.forEach(item => {
+//                 item.classList.remove('active');
+//             })
+//         if (e.target && e.target.tagName === 'DIV') {
+//             e.target.classList.add('active');
+//         }
+//     })
+// })
+//
+// pageSwitchList.forEach(item => {
+//     item.addEventListener('click',(e) => {
+//         pageSwitchList.forEach(item => {
+//             item.classList.remove('page-active');
+//         })
+//         if (e.target && e.target.tagName === 'LI') {
+//             e.target.classList.add('page-active');
+//         }
+//     })
+// })
 
-let pages = document.querySelectorAll('.page');
+let prevButton = navButtonsList[0];
 
-for (let i = 0; i < Math.floor(postsList.length / 10); i++) {
-    pageList.appendChild(page);
-    pages = document.querySelectorAll('.page');
-    pages[i].innerText = `${i + 1}`;
-}
+if (buttonsWrapper) {
+    buttonsWrapper.addEventListener('click', (e) => {
+        const isButton = e.target.nodeName === 'DIV';
 
-console.log(pages.length)
+        if (!isButton || prevButton === e.target) {
+            return
+        }
 
-if ((postsList.length / 10) % 10 !== 0) {
-    pageList.appendChild(page);
-    pages = document.querySelectorAll('.page');
-    pages[pages.length - 1].innerText = `${pages.length}`;
-}
-
-console.log(postsList.length / 10);
-
-const navButtonsList = document.querySelectorAll('.nav-button');
-
-navButtonsList.forEach(item => {
-    item.addEventListener('click',(e) => {
-        navButtonsList.forEach(item => {
-            item.classList.remove('active');
-        })
         e.target.classList.add('active');
+
+        if (prevButton !== null) {
+            prevButton.classList.remove('active');
+        }
+
+        prevButton = e.target;
     })
+}
+
+let prevPageButton = pageLinkList[0];
+
+if (paginationWrapper) {
+    paginationWrapper.addEventListener('click', (e) => {
+        const isButton = e.target.nodeName === 'A';
+
+        e.preventDefault();
+
+        if (!isButton || prevPageButton === e.target) {
+            return
+        }
+
+        e.target.classList.add('page-active');
+
+        if (prevPageButton !== null) {
+            prevPageButton.classList.remove('page-active');
+        }
+
+        prevPageButton = e.target;
+    })
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const textImage = document.querySelectorAll('.transparency-text-image');
+
+    for (let i = 0; i < textImage.length; i += 2) {
+        textImage[i].classList.add("reversed");
+    }
 })
+
+const dropdownsList = document.querySelectorAll('.dropdown-wrapper');
+
+dropdownsList.forEach(item => {
+    item.addEventListener('click',(e) => {
+        dropdownsList.forEach(item => {
+            item.nextElementSibling.classList.remove('dropdown-active')
+            item.classList.remove('wrapper-active');
+        });
+
+        const target = e.target;
+
+        if (item.nextElementSibling.classList.contains('dropdown-active')) {
+            item.nextElementSibling.classList.remove('dropdown-active');
+            item.classList.remove('wrapper-active');
+        } else {
+            item.nextElementSibling.classList.add('dropdown-active');
+            item.classList.add('wrapper-active');
+        }
+    });
+})
+
 

@@ -12,10 +12,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 from contact_bot.utils import send_message
 from core.views import for_CTOs_view
+from outsource.settings import DEFAULT_FROM_EMAIL
 from social.forms import MainContactForm
-
-# os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
-
 
 
 def contact_view(request):
@@ -43,12 +41,9 @@ def contact_view(request):
             message = "\n".join(map(str, body.values()))
             async_to_sync(send_message)(message)
             try:
-                message = EmailMessage(subject, message, 'onetwo20003@gmail.com', ['onetwo20003@gmail.com'])
-                eml_content = message.message().as_bytes()
-                with open('message.eml', mode='wb') as file:
-                    file.write(eml_content)
+                send_mail(subject, message, DEFAULT_FROM_EMAIL, ['to@example.com'], fail_silently=False,)
             except BadHeaderError:
-                return HttpResponse('Invalid header found.')
+                return HttpResponse('Something went wrong. Please try again.')
             return redirect(for_CTOs_view)
     form = MainContactForm()
     context = {

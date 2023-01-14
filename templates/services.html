@@ -7,7 +7,7 @@
             <div class="landing_message__wrapper">
                 <h1 class="landing-h1">Closing the Gap Between Your Idea and Product</h1>
                 <p class="landing-p">From idea to product launch and beyond.</p>
-                <a href="#" class="landing-button_link">Our work</a>
+                <a href="{% url 'works' %}" class="landing-button_link">Our work</a>
             </div>
         </div>
         <div class="top-right_image"></div>
@@ -174,7 +174,7 @@
     <section class="divider-desktop"></section>
     <div class="content_container collaborate-button">
         <h3 class="h3">Do you have a project, or want to say hello?</h3>
-        <a href="#" class="button">Let's collaborate</a>
+        <a href="{% url 'contact' %}" class="button">Let's collaborate</a>
     </div>
     <section class="divider-desktop"></section>
 {% endblock %}

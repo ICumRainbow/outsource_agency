@@ -84,8 +84,8 @@
   transition: 0.3s;
   position: fixed;
   box-sizing: border-box;
-  z-index: 5000;
-  background-color: white;
+  z-index: 9999;
+  background-color: transparent;
 }
 
 .header {
@@ -448,6 +448,36 @@ footer .footer_container .footer-wrapper .site-name p {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
+}
+
+.page-selector .pagination {
+  display: flex;
+  justify-content: center;
+}
+.page-selector .pagination .page-switch {
+  position: relative;
+  min-width: 32px;
+  margin: 4px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 32px;
+  list-style: none;
+  text-align: center;
+  vertical-align: middle;
+  color: #1A1A1A;
+}
+.page-selector .pagination .page-switch .page-link {
+  font-weight: 400;
+  line-height: 1;
+  padding: 18px 21px !important;
+  outline: none !important;
+  font-style: unset;
+  text-decoration: none;
+  color: #1A1A1A;
+}
+.page-selector .pagination .page-switch .page-active {
+  border: 2px solid #1A1A1A;
 }
 
 /*# sourceMappingURL=style-blog.css.map */

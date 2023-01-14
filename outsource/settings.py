@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+from os.path import join
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-d=k1np+y()fj(6qd+6lb&sd=0%798^am$q925@*rckd+r9ir=v
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8d1d-109-105-160-58.eu.ngrok.io',
+    '8930-109-105-160-58.eu.ngrok.io',
     '127.0.0.1',
 ]
 
@@ -145,7 +146,10 @@ CKEDITOR_CONFIGS = {
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = join(BASE_DIR, 'emails')
+EMAIL_HOST_USER = 'no-reply@example.com'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 TELEGRAM = {
     'TOKEN': '5959733238:AAFfrkaFYhDlCsEEKrFbemHG1zEVlxQEPOQ',

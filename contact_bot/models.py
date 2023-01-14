@@ -3,7 +3,10 @@ from django.db import models
 
 
 # Create your models here.
-class TelegramUser(models.Model):
+from core.models import BaseModel
+
+
+class TelegramUser(BaseModel):
     user = models.ForeignKey(verbose_name='User', to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     chat = models.IntegerField(verbose_name='Chat ID')
 

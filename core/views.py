@@ -1,9 +1,11 @@
+from asgiref.sync import async_to_sync
 from django.core.mail import EmailMessage, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from contact_bot.utils import send_message
+from core.models import Vacancy
 from our_works.models import Work
 from social.forms import SecondaryContactForm
 
@@ -25,7 +27,7 @@ def for_CTOs_view(request):
                 'project_details': form.cleaned_data['project_details'],
             }
             message = "\n".join(map(str, body.values()))
-            send_message(message)
+            async_to_sync(send_message)(message)
             try:
                 message = EmailMessage(subject, message, 'onetwo20003@gmail.com', ['onetwo20003@gmail.com'])
                 eml_content = message.message().as_bytes()
@@ -44,3 +46,15 @@ def for_CTOs_view(request):
 
 def product_innovation_view(request):
     return render(request, 'product_innovation.html')
+
+
+def services_view(request):
+    return render(request, 'services.html')
+
+
+def careers_view(request):
+    vacancies = Vacancy.objects.all()
+    context = {
+        'vacancies': vacancies,
+    }
+    return render(request, 'careers.html', context)

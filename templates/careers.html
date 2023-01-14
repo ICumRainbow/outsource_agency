@@ -1,0 +1,835 @@
+{% extends 'utility/base.html' %}
+{% load tags %}
+{% load static %}
+{% block content %}
+<body>
+    <div class="landing_container">
+        <div class="landing_message">
+            <div class="landing_message__wrapper">
+                <h1 class="landing-h1">Shape the Future of Digital Products</h1>
+                <p class="landing-p">Q is home to more than 350+ fast learners and experts helping brands make the world
+                    more digitalized.</p>
+                <a href="#" class="landing-button_link">Open positions</a>
+            </div>
+        </div>
+        <div class="top-right_image"></div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="content_container description-rewards">
+        <div class="text">
+            <h3 class="h3">Join the Best Employer of 2020 & 2021</h3>
+            <p class="p">Qumans have spoken and brought us the most prestigious regional award for employers for the
+                second year in a row.</p>
+            <img src="{% static 'img/careers/decoration.svg' %}" alt="" class="img-decor">
+        </div>
+        <div class="images">
+            <img src="{% static 'img/careers/careers-image-01.jpg' %}" alt="" class="img">
+            <img src="{% static 'img/careers/careers-image-02.jpg' %}" alt="" class="img">
+        </div>
+    </div>
+    <div class="content_container text-image-variations">
+        <div class="text-image reversed">
+            <div class="text">
+                <h3 class="h3">Be a Part of Something Big!</h3>
+                <p class="p">Our team is always looking for extraordinary talent, motivated, passionate, and creative
+                    team players with the desire to bring their ideas to life and positively impact society.</p>
+            </div>
+            <div class="image">
+                <img src="{% static 'img/careers/careers-image-03.jpg' %}" alt="" class="img">
+            </div>
+        </div>
+        <div class="text-image">
+            <div class="text">
+                <h3 class="h3">Recognized fo Putting People First</h3>
+                <p class="p">Our Efforts in creating the best workplace got us 6 Best Employer Brand Adria awards. You
+                    are our priority.</p>
+            </div>
+            <div class="image">
+                <img src="{% static 'img/careers/careers-image-04.jpg' %}" alt="" class="img">
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="content-container values-header">
+        <h2 class="h2">Q Values</h2>
+    </div>
+    <div class="values-bg">
+        <div class="content-container values-primary">
+            <div class="values-text">
+                <div class="element">
+                    <p class="p">01</p>
+                    <h3 class="h3">Move Fast.</h3>
+                    <div class="paragraph">
+                        <p class="p">Think fast and act fast.</p>
+                        <p class="p">Be pragmatic, use Occam's razor.</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <p class="p">02</p>
+                    <h3 class="h3">Be kind.</h3>
+                    <div class="paragraph">
+                        <p class="p">Never lose a good heart.</p>
+                        <p class="p">Think big but stay humble.</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <p class="p">03</p>
+                    <h3 class="h3">Do more.</h3>
+                    <div class="paragraph">
+                        <p class="p">Always do more than people expect.</p>
+                        <p class="p">Be passionate, take the initiative.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="values-images">
+                <div class="first-column column">
+                    <img src="{% static 'img/careers/careers-image-05.jpg' %}" alt="" class="img top">
+                    <img src="{% static 'img/careers/careers-image-07.jpg' %}" alt="" class="img">
+                </div>
+                <div class="second-column column">
+                    <img src="{% static 'img/careers/careers-image-08.jpg' %}" alt="" class="img">
+                    <img src="{% static 'img/careers/careers-image-06.jpg' %}" alt="" class="img top">
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="content_container opportunities">
+        <h2 class="h2">Join Us and You Will Get a Chance To...</h2>
+        <div class="element">
+            <div class="text">
+                <p class="p">01</p>
+                <h3 class="h3">Boost Your Skills and Knowledge</h3>
+            </div>
+            <div class="image-accordion">
+                <img src="{% static 'img/careers/careers-image-09.jpg' %}" alt="" class="image">
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Interesting International Projects</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">You will work on exceptional and stimulating projects for
+                                internationally recognized companies. We make sure you have an environment for personal
+                                development.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">IT Community Involvement</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Stay up-to-date with the latest technologies, meet new people, and
+                                learn new things at our meetups, workshops, or conferences of your choice.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Educational Budget</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Gain new knowledge and invest in your development by using your
+                                education budget ranging between HRK 500 and 5000 per year, based on your seniority
+                                level.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Q Academia</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Q academia consists of internal workshops, lectures, and educational
+                                materials for improving hard and soft skills. Grow personally and professionally.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Inspirational Talks</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Each month, famous and influential entrepreneurs, scientists,
+                                athletes, and techies inspire us with an online 30-minute talk with stories about their
+                                careers and lives.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Free English Classes</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Free English classes for everyone who wants to improve their
+                                business communication! Okay, their? :)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <div class="text">
+                <p class="p">02</p>
+                <h3 class="h3">Work-Life Balance and Health</h3>
+            </div>
+            <div class="image-accordion">
+                <img src="{% static 'img/careers/careers-image-10.jpg' %}" alt="" class="image">
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Remote Work & Flexible Working Hours</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">You will ALWAYS have the freedom to choose where you want to work
+                                from, and we are flexible about the time as well! So you can finally work from the
+                                beach :)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Additional and Supplementary Health Insurance</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Keep your health, money, and time! Cover the basics with an annual
+                                health check-up or get a specialist physical examination at a private clinic.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">100% Paid Sick Leave</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">If you accidentally hurt yourself trying to parkour to work or break
+                                your fingers coding, no worries - stay home and get better, buddy, 'cause we've got you
+                                covered!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Mama Start Package</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Flexibility is music to a working mom's ears. We help new mothers
+                                gradually transition to work by working part-time for the first month while keeping a
+                                full salary.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Kindergarten Compensation</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">If you have a toddler in kindergarten, there is a possibility to get
+                                a refund of up to HRK 600 per month. Use it to buy more ice cream... for yourself, of
+                                course!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Multisport Card</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Gym, tennis, pilates, or sauna & pool? We cover 50% of the Multisport
+                                card expense, so pump it up in almost any sports center for only HRK 105 per month.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Mental Health Day</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Everyone needs a break sometimes, so why don't you take a paid day
+                                off and recharge? Relax, rest, and reset: enjoy nature, take a massage, or read a
+                                book.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Free Psychotherapy/Counseling Session</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Use one session of free counseling psychological or psychotherapy
+                                and see if the therapy feels comfortable or gather helpful resources from the
+                                professional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <div class="text">
+                <p class="p">03</p>
+                <h3 class="h3">But That Is Not All, Folks</h3>
+            </div>
+            <div class="image-accordion">
+                <img src="{% static 'img/careers/careers-image-11.jpg' %}" alt="" class="image">
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Occasional Travels Around the World</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">We work in 20 different countries from Alaska to Dubai, so occasional
+                                biz trips are a must! Probably not to the Maldives, but we've heard Hamburg is
+                                splendid!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Team Building Budget</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Each team gets a quarterly budget for activities of their choice.
+                                So even if it's just food and drinks, spend some time with your teammates and connect
+                                even better.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Loyalty Awards</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">If you stay with us for a few years, here's a fun milestone to look
+                                forward to! For your 3rd and 5th anniversary, you get a weekend getaway for two by your
+                                choice.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Referral Fee</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Recommend your friend who would be a great fit for Q in terms of
+                                technical knowledge and culture-wise. We hope you have many friends!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Xmas Bonus & Gift For Your Children</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">You will get HRK 1500 for your Christmas bonus and an extra HRK 600
+                                for each child under 15. So make sure to get them something nice, it's Christmas!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Rental Allowance</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">If you are renting your apartment, the struggle is real! We want to
+                                ease it up for you, so there is a possibility of getting some extra money for rent added
+                                to your salary.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Pension Third Pillar</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">We don't want to burst your bubble, but everyone gets old. But you
+                                can be old carelessly with a pension third pillar which we cover based on your
+                                seniority.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Transportation Allowance</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Because fuel and public transport cost until we all get electric
+                                cars or master teleportation :). You will get HRK 360 each month.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Food Allowance</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Nobody can perform their best on an empty stomach, right? So here
+                                is a little help to your food budget, so you never get hangry. Bon appetit!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Recourse</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Recourse is paid HRK 1,500 to all employees who decide to go on a
+                                summer vacation. What a tough decision you need to make, huh?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Extra Vacation Days</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Extra vacation days are added based on your role, years of work
+                                experience, number of children, etc. We value your experience and you deserve to
+                                rest.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Cryptocurrencies 100 Club</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">The first 100 Qumans own 1% of the total amount, and each month,
+                                EUR 1000 are invested. If someone leaves Q, the next chronologically employed person
+                                gets in!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <div class="text">
+                <p class="p">04</p>
+                <h3 class="h3">Make Yourself At Home</h3>
+            </div>
+            <div class="image-accordion">
+                <img src="{% static 'img/careers/careers-image-12.jpg' %}" alt="" class="image">
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Bike Parking & Scooters</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">We'll keep your bicycle safe while you're working. If you want to
+                                feel the wind in your hair, you can also help yourself with an electric scooter in the
+                                hall.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Fun & Lounge Zone</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Here you can get your mind away from work and beat someone at FIFA,
+                                ping pong, or billiards. Or, if you're more into relaxing, grab a guitar or a book from
+                                our Q Library.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Fully Stocked Kitchen</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Get some coffee, fresh organic fruit (if you're into vitamins),
+                                cereals, peanuts, or your colleague's lunch leftovers…whatever you crave, at whatever
+                                time of day. ;)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <div class="accordion-button">
+                        <button class="accordion-toggle">
+                            <img src="{% static 'img/btn-img.svg' %}" alt="btn-img" class="btn-img">
+                        </button>
+                        <p class="accordion-button-title">Pet-Friendly Office</p>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p class="accordion-p">Feel free to bring your best friends to work, as long as they are
+                                furry and don't bite. We know it keeps the energy level up and brings joy to all,
+                                so why not?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="content_container transparency-header">
+        <h2 class="h2">100% Transparent Company</h2>
+    </div>
+    <div class="transparency-bg">
+        <div class="transparency-primary">
+            <div class="transparency-text-image">
+                <div class="text">
+                    <h3 class="h3">Monthly Management
+                        Videos</h3>
+                    <p class="p">Each month, all Management team members record the Monthly Management Video in which
+                        they cover highlights from the last month and news for the upcoming one. Funny scenes and jokes
+                        are inserted in the video to make it more enjoyable and interactive.</p>
+                </div>
+                <div class="image">
+                    <img src="{% static 'img/careers/careers-image-13.jpg' %}" alt="" class="img">
+                </div>
+            </div>
+            <div class="transparency-text-image">
+                <div class="text">
+                    <h3 class="h3">Coffee With Sara</h3>
+                    <p class="p">Coffee with Sara is a monthly internal talk show in which our People & Culture
+                        Generalist, Sara, interviews our fellow Qumans. She discusses important topics with the
+                        Management or Heads and Team Leads. Coffee with Sara gives a clear picture of the organization
+                        and culture to current, future, and potential employees.</p>
+                </div>
+                <div class="image">
+                    <img src="{% static 'img/careers/careers-image-14.jpg' %}" alt="" class="img">
+                </div>
+            </div>
+            <div class="transparency-text-image">
+                <div class="text">
+                    <h3 class="h3">Jenz</h3>
+                    <p class="p">Jenz is our official tool for internal communication, where you can read real-time
+                        company news or connect with your coworkers by posting and commenting. On Jenz, we are creating
+                        a more transparent environment through anonymous surveys, public replies to all anonymously
+                        asked questions, and never deleting or censoring.
+                    </p>
+                </div>
+                <div class="image">
+                    <img src="{% static 'img/careers/careers-image-15.jpg' %}" alt="" class="img">
+                </div>
+            </div>
+            <div class="transparency-text-image">
+                <div class="text">
+                    <h3 class="h3">Peakon & Feedback Culture</h3>
+                    <p class="p">We encourage giving real-time feedback, both positive and corrective. That’s why we use
+                        Peakon, an employee engagement tool designed to collect anonymous feedback and measure
+                        engagement. Through Peakon, we send out surveys once a month. In addition, Peakon enables our
+                        employees to communicate directly with their Head, Team Lead, or People & Culture, and still
+                        stay anonymous.</p>
+                </div>
+                <div class="image">
+                    <img src="{% static 'img/careers/careers-image-16.jpg' %}" alt="" class="img">
+                </div>
+            </div>
+            <div class="transparency-text-image">
+                <div class="text">
+                    <h3 class="h3">Salary ranges</h3>
+                    <p class="p">Our salary ranges are available for all Qumans, so you know what salary you can expect
+                        based on your seniority and the technology you work in. We want to make sure that everyone knows
+                        their salary is realistic and fair compared to their colleagues.</p>
+                </div>
+                <div class="image">
+                    <img src="{% static 'img/careers/careers-image-17.jpg' %}" alt="" class="img">
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="content_container positions">
+        <div class="positions-header">
+            <div class="dropdowns">
+                <div class="location">
+                    <p class="p">Location</p>
+                    <div class="dropdown-wrapper">
+                        <div class="dropdown">Any</div>
+                        <div class="arrow-down">
+                            <img src="{% static 'img/careers/select.svg' %}" alt="" class="img">
+                        </div>
+                    </div>
+                    <div class="dropdown-content">
+                        <div class="option">Any</div>
+                        <div class="option">BiH</div>
+                        <div class="option">Croatia</div>
+                        <div class="option">On-Site</div>
+                        <div class="option">Remote</div>
+                        <div class="option">Serbia</div>
+                    </div>
+                </div>
+                <div class="categories">
+                    <p class="p">Categories</p>
+                    <div class="dropdown-wrapper">
+                        <div class="dropdown">All job categories</div>
+                        <div class="arrow-down">
+                            <img src="{% static 'img/careers/select.svg' %}" alt="" class="img">
+                        </div>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="" class="option">All job categories</a>
+                        <a href="" class="option">Business IT & Finance</a>
+                        <a href="" class="option">Design & Development</a>
+                        <a href="" class="option">Other</a>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-button">
+                <a href="#" class="button">Apply Filter</a>
+            </div>
+            <div class="freelance-button">
+                <a href="#" class="button">Freelance</a>
+            </div>
+        </div>
+        <div class="primary">
+            {% for vacancy in vacancies %}
+            <div class="position-element">
+                <div class="description">
+                    <p class="p">{{ vacancy.name}}</p>
+                    <div class="tags">
+                        {% if vacancy.on_site_option %}
+                        <div class="tag">
+                            <p class="p type">ON-SITE</p>
+                        </div>
+                        {% endif %}
+                        {% if vacancy.remote_option %}
+                        <div class="tag">
+                            <p class="p type">REMOTE</p>
+                        </div>
+                        {% endif %}
+                        <div class="tag">
+                            <p class="p location">{{ vacancy.location }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="apply-button">
+                    <a href="#" class="button">Apply Now</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="application-bg">
+        <div class="application-primary">
+            <p class="p">Open Application</p>
+            <div class="apply-button">
+                <a href="#" class="button">Apply Now</a>
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="instagram">
+        <div class="header">
+            <h2 class="h2">Qumans on Instagram</h2>
+        </div>
+        <div class="primary">
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-01.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-02.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-03.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-04.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-01.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-02.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-03.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-04.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-01.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-02.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-03.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-04.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-01.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-02.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-03.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-04.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-01.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-02.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-03.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+            <div class="image">
+                <a href="#" class="link">
+                    <img src="{% static 'img/careers/insta-04.jpg' %}" alt="" class="img">
+                </a>
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+{% endblock %}
+</body>

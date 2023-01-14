@@ -3,8 +3,10 @@ from django.db import models
 
 
 # Create your models here.
+from core.models import BaseModel
 
-class Social(models.Model):
+
+class Social(BaseModel):
     """
     Model for Social Networks.
     """

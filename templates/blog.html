@@ -1,4 +1,5 @@
 {% extends 'utility/base.html' %}
+{% load tags %}
 {% load static %}
 {% block content %}
 <body>
@@ -17,223 +18,67 @@
         <div class="navbar">
             <div class="buttons">
                 <div class="nav-button">
-                    <p class="p">All</p>
+                    <a href="{% append_to_url '' 'category' %}" class="p">All</a>
                 </div>
+                {% for category in categories %}
                 <div class="nav-button">
-                    <p class="p">Life at Q</p>
+                    <a href="{% append_to_url category.id 'category' %}" class="p">{{ category.name }}</a>
                 </div>
-                <div class="nav-button">
-                    <p class="p">Business</p>
-                </div>
-                <div class="nav-button">
-                    <p class="p">Tech</p>
-                </div>
-                <div class="nav-button">
-                    <p class="p">News</p>
-                </div>
+                {% endfor %}
             </div>
             <div class="search-bar">
                 <form action="" class="form">
-                    <input type="search" class="nav-search" placeholder="Search">
+                    <label>
+                        {{ posts.form.heading_and_tag }}
+                    </label>
                 </form>
             </div>
         </div>
         <div class="page-1">
-            <a href="" class="post-link">
+            {% if not request.GET %}
+                <a href="" class="post-link">
                 <div class="headliner">
                     <div class="description">
-                        <h4 class="h4">How Bad Communication with Clients Impacts Delivery</h4>
+                        <h4 class="h4">{{ headliner.heading }}</h4>
                         <div class="post-details">
                             <div class="author-image">
-                                <img src="img/blog/author-image.jpg" alt="" class="img">
+                                <img src="{{ headliner.author.avatar.url }}" alt="" class="img">
                             </div>
                             <div class="details">
-                                <p class="p author">Zvonimir Prpic</p>
-                                <p class="p date">December 16, 2022 - 4 min</p>
+                                <p class="p author">{{ headliner.author.name }}</p>
+                                <p class="p date">{% format_date headliner.created_at %} - 4 min</p>
                             </div>
                         </div>
                     </div>
                     <div class="image">
-                        <img src="img/blog/blog-post-image.jpg" alt="" class="img">
+                        <img src="{{ headliner.picture.url }}" alt="" class="img">
                     </div>
                 </div>
             </a>
+            {% endif %}
             <div class="posts">
+                {% for post in page %}
                 <a href="#" class="post-link">
                     <div class="blog-element">
                         <div class="image">
-                            <img src="img/blog/post-image.jpg" alt="" class="img">
+                            <img src="{{ post.picture.url }}" alt="" class="img">
                         </div>
                         <div class="post-details">
                             <div class="author-image">
-                                <img src="img/blog/mihaela.jpeg" alt="" class="img">
+                                <img src="{{ post.author.avatar.url }}" alt="" class="img">
                             </div>
                             <div class="details">
-                                <p class="p author">Mihaela Cudina</p>
-                                <p class="p date">December 15, 2022 - 2 min</p>
+                                <p class="p author">{{ post.author.name }}</p>
+                                <p class="p date">{{ post.created_at }} - 2 min</p>
                             </div>
                         </div>
-                        <h4 class="h4">Clutch Crowns Q agency as One of the Top 1000 Companies on Their Platform</h4>
+                        <h4 class="h4">{{ post.heading }}</h4>
                     </div>
                 </a>
-                <a href="#" class="post-link">
-                    <div class="blog-element">
-                        <div class="image">
-                            <img src="img/blog/post-image.jpg" alt="" class="img">
-                        </div>
-                        <div class="post-details">
-                            <div class="author-image">
-                                <img src="img/blog/mihaela.jpeg" alt="" class="img">
-                            </div>
-                            <div class="details">
-                                <p class="p author">Mihaela Cudina</p>
-                                <p class="p date">December 15, 2022 - 2 min</p>
-                            </div>
-                        </div>
-                        <h4 class="h4">Clutch Crowns Q agency as One of the Top 1000 Companies on Their Platform</h4>
-                    </div>
-                </a>
-                <a href="#" class="post-link">
-                    <div class="blog-element">
-                        <div class="image">
-                            <img src="img/blog/post-image.jpg" alt="" class="img">
-                        </div>
-                        <div class="post-details">
-                            <div class="author-image">
-                                <img src="img/blog/mihaela.jpeg" alt="" class="img">
-                            </div>
-                            <div class="details">
-                                <p class="p author">Mihaela Cudina</p>
-                                <p class="p date">December 15, 2022 - 2 min</p>
-                            </div>
-                        </div>
-                        <h4 class="h4">Clutch Crowns Q agency as One of the Top 1000 Companies on Their Platform</h4>
-                    </div>
-                </a>
-                <a href="#" class="post-link">
-                    <div class="blog-element">
-                        <div class="image">
-                            <img src="img/blog/post-image.jpg" alt="" class="img">
-                        </div>
-                        <div class="post-details">
-                            <div class="author-image">
-                                <img src="img/blog/mihaela.jpeg" alt="" class="img">
-                            </div>
-                            <div class="details">
-                                <p class="p author">Mihaela Cudina</p>
-                                <p class="p date">December 15, 2022 - 2 min</p>
-                            </div>
-                        </div>
-                        <h4 class="h4">Clutch Crowns Q agency as One of the Top 1000 Companies on Their Platform</h4>
-                    </div>
-                </a>
-                <a href="#" class="post-link">
-                    <div class="blog-element">
-                        <div class="image">
-                            <img src="img/blog/post-image.jpg" alt="" class="img">
-                        </div>
-                        <div class="post-details">
-                            <div class="author-image">
-                                <img src="img/blog/mihaela.jpeg" alt="" class="img">
-                            </div>
-                            <div class="details">
-                                <p class="p author">Mihaela Cudina</p>
-                                <p class="p date">December 15, 2022 - 2 min</p>
-                            </div>
-                        </div>
-                        <h4 class="h4">Clutch Crowns Q agency as One of the Top 1000 Companies on Their Platform</h4>
-                    </div>
-                </a>
-                <a href="#" class="post-link">
-                    <div class="blog-element">
-                        <div class="image">
-                            <img src="img/blog/post-image.jpg" alt="" class="img">
-                        </div>
-                        <div class="post-details">
-                            <div class="author-image">
-                                <img src="img/blog/mihaela.jpeg" alt="" class="img">
-                            </div>
-                            <div class="details">
-                                <p class="p author">Mihaela Cudina</p>
-                                <p class="p date">December 15, 2022 - 2 min</p>
-                            </div>
-                        </div>
-                        <h4 class="h4">Clutch Crowns Q agency as One of the Top 1000 Companies on Their Platform</h4>
-                    </div>
-                </a>
-                <a href="#" class="post-link">
-                    <div class="blog-element">
-                        <div class="image">
-                            <img src="img/blog/post-image.jpg" alt="" class="img">
-                        </div>
-                        <div class="post-details">
-                            <div class="author-image">
-                                <img src="img/blog/mihaela.jpeg" alt="" class="img">
-                            </div>
-                            <div class="details">
-                                <p class="p author">Mihaela Cudina</p>
-                                <p class="p date">December 15, 2022 - 2 min</p>
-                            </div>
-                        </div>
-                        <h4 class="h4">Clutch Crowns Q agency as One of the Top 1000 Companies on Their Platform</h4>
-                    </div>
-                </a>
-                <a href="#" class="post-link">
-                    <div class="blog-element">
-                        <div class="image">
-                            <img src="img/blog/post-image.jpg" alt="" class="img">
-                        </div>
-                        <div class="post-details">
-                            <div class="author-image">
-                                <img src="img/blog/mihaela.jpeg" alt="" class="img">
-                            </div>
-                            <div class="details">
-                                <p class="p author">Mihaela Cudina</p>
-                                <p class="p date">December 15, 2022 - 2 min</p>
-                            </div>
-                        </div>
-                        <h4 class="h4">Clutch Crowns Q agency as One of the Top 1000 Companies on Their Platform</h4>
-                    </div>
-                </a>
-                <a href="#" class="post-link">
-                    <div class="blog-element">
-                        <div class="image">
-                            <img src="img/blog/post-image.jpg" alt="" class="img">
-                        </div>
-                        <div class="post-details">
-                            <div class="author-image">
-                                <img src="img/blog/mihaela.jpeg" alt="" class="img">
-                            </div>
-                            <div class="details">
-                                <p class="p author">Mihaela Cudina</p>
-                                <p class="p date">December 15, 2022 - 2 min</p>
-                            </div>
-                        </div>
-                        <h4 class="h4">Clutch Crowns Q agency as One of the Top 1000 Companies on Their Platform</h4>
-                    </div>
-                </a>
-                <a href="#" class="post-link">
-                    <div class="blog-element">
-                        <div class="image">
-                            <img src="img/blog/post-image.jpg" alt="" class="img">
-                        </div>
-                        <div class="post-details">
-                            <div class="author-image">
-                                <img src="img/blog/mihaela.jpeg" alt="" class="img">
-                            </div>
-                            <div class="details">
-                                <p class="p author">Mihaela Cudina</p>
-                                <p class="p date">December 15, 2022 - 2 min</p>
-                            </div>
-                        </div>
-                        <h4 class="h4">Clutch Crowns Q agency as One of the Top 1000 Companies on Their Platform</h4>
-                    </div>
-                </a>
+                {% endfor %}
             </div>
         </div>
-        <nav class="page-selector">
-            <ul class="pagination"></ul>
-        </nav>
+            {% include "utility/pagination.html" %}
     </div>
     <section class="divider-desktop"></section>
 {% endblock %}
