@@ -13,7 +13,7 @@ class BaseModel(models.Model):
         abstract = True
 
 
-class Category(BaseModel):
+class VacancyCategory(BaseModel):
     name = models.CharField(verbose_name='Name', max_length=255)
 
     class Meta:
@@ -35,7 +35,7 @@ class Location(BaseModel):
 
 class Vacancy(BaseModel):
     name = models.CharField(verbose_name='Name', max_length=255)
-    category = models.ForeignKey(verbose_name='Category', to=Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(verbose_name='Category', to=VacancyCategory, on_delete=models.CASCADE)
     on_site_option = models.BooleanField(verbose_name='On-Site Option', default=False)
     remote_option = models.BooleanField(verbose_name='Remote Option', default=False)
     location = models.ForeignKey(verbose_name='Location', to=Location, on_delete=models.CASCADE)

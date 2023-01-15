@@ -1,10 +1,10 @@
 from django.contrib import admin
 
 # Register your models here.
-from core.models import Category, Location, Vacancy
+from core.models import VacancyCategory, Location, Vacancy
 
 
-@admin.register(Category)
+@admin.register(VacancyCategory)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', ]
 

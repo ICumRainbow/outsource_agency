@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from contact_bot.utils import send_message
 from core.models import Vacancy
+from core.services import get_careers_page_contents
 from our_works.models import Work
 from social.forms import SecondaryContactForm
 
@@ -53,7 +54,14 @@ def services_view(request):
 
 
 def careers_view(request):
-    vacancies = Vacancy.objects.all()
+    query_params = {}
+    location = request.GET.get('location', False)
+    category = request.GET.get('category', False)
+    if location:
+        query_params['location_id'] = int(location)
+    if category:
+        query_params['category_id'] = int(category)
+    categories, vacancies = get_careers_page_contents(request.GET, query_params)
     context = {
         'vacancies': vacancies,
     }
