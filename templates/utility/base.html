@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QAgency</title>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.js' %}"></script>
     {% if request.path == '/' %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endif %}
@@ -19,6 +21,7 @@
     {% endif %}
     {% if request.path == '/careers/' %}
         <link rel="stylesheet" href="{% static 'css/style-careers.css' %}">
+        <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
     {% endif %}
     {% if request.path == '/services/' %}
         <link rel="stylesheet" href="{% static 'css/style-services.css' %}">

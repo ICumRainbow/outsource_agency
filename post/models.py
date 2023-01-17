@@ -62,7 +62,7 @@ class Post(BaseModel):
     content = RichTextField(verbose_name='Content', blank=False, null=False)
     category = models.ForeignKey(verbose_name='Category', to=Category, on_delete=models.CASCADE)
     tag = models.ManyToManyField(verbose_name='Tag', to=Tag, blank=True)
-    author = models.ForeignKey(verbose_name='Author', to=Author, on_delete=models.DO_NOTHING, default=1)
+    author = models.ForeignKey(verbose_name='Author', to=Author, on_delete=models.CASCADE, default=1)
     time_to_read = models.CharField(verbose_name='Time to read', blank=True, max_length=255)
 
     class Meta:

@@ -645,49 +645,23 @@
     <section class="divider-desktop"></section>
     <div class="content_container positions">
         <div class="positions-header">
-            <div class="dropdowns">
+            <form action="" class="dropdowns" method="GET">
                 <div class="location">
                     <p class="p">Location</p>
-                    <div class="dropdown-wrapper">
-                        <div class="dropdown">Any</div>
-                        <div class="arrow-down">
-                            <img src="{% static 'img/careers/select.svg' %}" alt="" class="img">
-                        </div>
-                    </div>
-                    <div class="dropdown-content">
-                        <div class="option">Any</div>
-                        <div class="option">BiH</div>
-                        <div class="option">Croatia</div>
-                        <div class="option">On-Site</div>
-                        <div class="option">Remote</div>
-                        <div class="option">Serbia</div>
-                    </div>
+                    {{ vacancies.form.location }}
                 </div>
                 <div class="categories">
                     <p class="p">Categories</p>
-                    <div class="dropdown-wrapper">
-                        <div class="dropdown">All job categories</div>
-                        <div class="arrow-down">
-                            <img src="{% static 'img/careers/select.svg' %}" alt="" class="img">
-                        </div>
-                    </div>
-                    <div class="dropdown-content">
-                        <a href="" class="option">All job categories</a>
-                        <a href="" class="option">Business IT & Finance</a>
-                        <a href="" class="option">Design & Development</a>
-                        <a href="" class="option">Other</a>
-                    </div>
+                    {{ vacancies.form.category }}
                 </div>
-            </div>
-            <div class="filter-button">
-                <a href="#" class="button">Apply Filter</a>
-            </div>
+                <button type="submit" class="filter-button">Apply Filter</button>
+            </form>
             <div class="freelance-button">
                 <a href="#" class="button">Freelance</a>
             </div>
         </div>
         <div class="primary">
-            {% for vacancy in vacancies %}
+            {% for vacancy in vacancies.qs %}
             <div class="position-element">
                 <div class="description">
                     <p class="p">{{ vacancy.name}}</p>

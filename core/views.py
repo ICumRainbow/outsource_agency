@@ -64,5 +64,6 @@ def careers_view(request):
     categories, vacancies = get_careers_page_contents(request.GET, query_params)
     context = {
         'vacancies': vacancies,
+        'categories': categories,
     }
     return render(request, 'careers.html', context)
