@@ -242,8 +242,8 @@ $(document).ready(function() {
     $('select').niceSelect();
 });
 
-const filterButton = document.querySelector('.filter-button');
-
-filterButton.addEventListener('click',(e) => {
-    e.preventDefault();
-});
+// const filterButton = document.querySelector('.filter-button');
+//
+// filterButton.addEventListener('click',(e) => {
+//     e.preventDefault();
+// });
