@@ -1,0 +1,436 @@
+{% extends 'utility/base.html' %}
+{% load static %}
+{% block content %}
+<body>
+    <div class="landing_container">
+        <img src="{% static 'img/main/home-page-hero.jpeg' %}" alt="" class="image">
+        <div class="landing_message">
+            <div class="landing_message__wrapper">
+                <h1 class="landing-h1">We Are in the Top 15 World's Best Agencies</h1>
+                <p class="p">*Clutch - The leading review platform for IT providers, 2022</p>
+                <p class="landing-p">Together we build inspiring digital products</p>
+                <a href="#" class="landing-button_link">Let's collaborate</a>
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop-200"></section>
+    <div class="content_container">
+        <div class="partners-wrapper">
+            <div class="partners-heading">
+                <h1 class="partners-heading_h1">Helping Various Brands Turn Ideas Into Impact</h1>
+            </div>
+            <div class="brands-img">
+                <img src="{% static 'img/brands.svg' %}" alt="brands" class="brands">
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="works-container">
+        {% for work in works %}
+            <div class="example-element" style="background-color: {{ work.color }}">
+                <a href="{% url 'works_details' work.id %}" class="cover-link">
+                    <div class="element">
+                        <div class="text-logo">
+                            <img src="{{ work.logo_light.url }}" alt="" class="logo">
+                            <div class="text">
+                                <h3 class="h3">{{ work.heading }}</h3>
+                                <p class="p">{{ work.brief }}</p>
+                            </div>
+                            <div class="button">
+                                <div class="button-wrapper">
+                                    <p class="p">View case study</p>
+                                    <img src="{% static 'img/arrow.svg' %}" alt="" class="arrow">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="{% static 'img/the-times.png' %}" alt="" class="img">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+        <div class="button-wrapper">
+            <a href="{% url 'works' %}" class="button-link">See all projects</a>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="content_container text-buttons">
+        <div class="element">
+            <div class="text">
+                <h2 class="h2">Do You Have a New Idea or Existing Product to Improve?</h2>
+                <p class="p">Our experts from different fields collaborate with yours throughout the product lifecycle.
+                    Solving the right problems for your target audience by designing and building the products in an
+                    agile and scalable manner.</p>
+                <img src="{% static 'img/decoration.svg' %}" alt="" class="decoration">
+            </div>
+            <div class="buttons">
+                <a href="{% url 'product-innovation' %}" class="button-link">
+                    <div class="text-wrapper">
+                        <h5 class="h5">From Idea to Product</h5>
+                        <p class="p">Create a digital product based on your industry knowledge with a high market
+                            adoption
+                            tailored to your audience's needs.</p>
+                    </div>
+                </a>
+                <a href="{% url 'for_CTOs' %}" class="button-link">
+                    <div class="text-wrapper">
+                        <h5 class="h5">Dedicated Team</h5>
+                        <p class="p">Team of experts dedicated to your needs that we manage for you, or you take the
+                        lead with your in-house processes.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="services">
+        <div class="services-wrapper content_container">
+            <div class="image">
+                <img src="{% static 'img/main/home-page-image-02.jpg' %}" alt="" class="img">
+            </div>
+            <div class="text">
+                <div class="text-wrapper">
+                    <p class="p">We solve complex challenges for big corporates, SME’s, startups and investors.</p>
+                    <p class="p">Together with you, we build digital experiences that engage and inspire.</p>
+                </div>
+                <a href="{% url 'services' %}" class="button-link">Check all our services</a>
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="content_container reviews_wrapper">
+        <div class="reviews-header">
+            <h2 class="header-h2">What Can You Get From Q?</h2>
+            <h2 class="header-h3">Quality and Reliability</h2>
+            <p class="header-p">We have a proven track record of:</p>
+        </div>
+        <div class="reviews_primary">
+            <div class="reviews-element">
+                <img src="{% static 'img/review-1.svg' %}" alt="" class="review-image">
+                <p class="reviews-element-p-title">Clutch</p>
+                <p class="reviews-element-p">Top 15 companies</p>
+            </div>
+            <div class="reviews-element">
+                <img src="{% static 'img/review-2.svg' %}" alt="" class="review-image">
+                <p class="reviews-element-p-title">Quality</p>
+                <p class="reviews-element-p">ISO 9001:2015</p>
+            </div>
+            <div class="reviews-element">
+                <img src="{% static 'img/review-3.svg' %}" alt="" class="review-image">
+                <p class="reviews-element-p-title">Security</p>
+                <p class="reviews-element-p">ISO 27001:2013</p>
+            </div>
+            <div class="reviews-element">
+                <img src="{% static 'img/review-4.svg' %}" alt="" class="review-image">
+                <p class="reviews-element-p-title">Privacy</p>
+                <p class="reviews-element-p">ISO 27701:2019</p>
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="reviews-container reviews-element-active">
+        <div class="reviews-wrapper">
+            <div class="reviews-primary">
+                <div class="reviews-image">
+                    <img src="{% static 'img/main/testimonial-usa-02.jpg' %}" alt="usa" class="review-img">
+                </div>
+                <div class="reviews-description">
+                    <div class="name-buttons-wrapper">
+                        <div class="reviews-name">
+                            <img src="{% static 'img/main/testimonial-manpower-logo.svg' %}" alt="">
+                        </div>
+                        <div class="buttons">
+                            <div class="button-prev button">
+                                <img src="{% static 'img/arrow-prev.svg' %}" alt="prev" class="arrow">
+                            </div>
+                            <div class="button-next button">
+                                <img src="{% static 'img/arrow-next.svg' %}" alt="next" class="arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <span class="pagination-element pagination-element-active"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                    </div>
+                    <div class="description">
+                        <p class="description-p">“Q is a very important innovation and disruptive partner for us. We
+                            are very, very happy.”</p>
+                        <div class="author">
+                            <img src="{% static 'img/main/testimonial-bojan-radlovic-1.jpg' %}" alt="" class="img">
+                            <p class="p">Dr. Tomas Chamorro, Chief Innovation Officer, Manpower - Fortune 500, USA</p>
+                        </div>
+                        <a href="Services.html" class="button-link">View case study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews-container">
+        <div class="reviews-wrapper">
+            <div class="reviews-primary">
+                <div class="reviews-image">
+                    <img src="{% static 'img/main/testimonial-uk-02.jpg' %}" alt="uk" class="review-img">
+                </div>
+                <div class="reviews-description">
+                    <div class="name-buttons-wrapper">
+                        <div class="reviews-name">
+                            <img src="{% static 'img/main/testimonial-times-logo.svg' %}" alt="">
+                        </div>
+                        <div class="buttons">
+                            <div class="button-prev button">
+                                <img src="{% static 'img/arrow-prev.svg' %}" alt="prev" class="arrow">
+                            </div>
+                            <div class="button-next button">
+                                <img src="{% static 'img/arrow-next.svg' %}" alt="next" class="arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element pagination-element-active"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                    </div>
+                    <div class="description">
+                        <p class="description-p">"I’m really enjoying working with an Agency with a similar culture to
+                            ourselves, who strives to work hard and play hard, and achieve the best outcomes for their
+                            clients."</p>
+                        <div class="author">
+                            <img src="{% static 'img/main/the-times-author.jpeg' %}" alt="" class="img">
+                            <p class="p">Rai Eastham, Head of Engineering, The Times, UK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews-container">
+        <div class="reviews-wrapper">
+            <div class="reviews-primary">
+                <div class="reviews-image">
+                    <img src="{% static 'img/main/testimonial-germany-01.jpg' %}" alt="uk" class="review-img">
+                </div>
+                <div class="reviews-description">
+                    <div class="name-buttons-wrapper">
+                        <div class="reviews-name">
+                            <img src="{% static 'img/main/testimonial-medi-logo.svg' %}" alt="">
+                        </div>
+                        <div class="buttons">
+                            <div class="button-prev button">
+                                <img src="{% static 'img/arrow-prev.svg' %}" alt="prev" class="arrow">
+                            </div>
+                            <div class="button-next button">
+                                <img src="{% static 'img/arrow-next.svg' %}" alt="next" class="arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element pagination-element-active"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                    </div>
+                    <div class="description">
+                        <p class="description-p">“You’re not just doing what we ask you to rather than you’re really
+                            reflecting on what we want and always exceeding the expectations in this regard.”</p>
+                        <div class="author">
+                            <img src="{% static 'img/main/testimonial-moritz-neise.jpg' %}" alt="" class="img">
+                            <p class="p">Moritz Neise, IT Manager Business & Digital Solutions, Medi GmbH, Germany</p>
+                        </div>
+                        <a href="Services.html" class="button-link">View case study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews-container">
+        <div class="reviews-wrapper">
+            <div class="reviews-primary">
+                <div class="reviews-image">
+                    <img src="{% static 'img/main/testimonial-switzerland-01.jpg' %}" alt="uk" class="review-img">
+                </div>
+                <div class="reviews-description">
+                    <div class="name-buttons-wrapper">
+                        <div class="reviews-name">
+                            <img src="{% static 'img/main/testimonial-maxbrain-logo.svg' %}" alt="">
+                        </div>
+                        <div class="buttons">
+                            <div class="button-prev button">
+                                <img src="{% static 'img/arrow-prev.svg' %}" alt="prev" class="arrow">
+                            </div>
+                            <div class="button-next button">
+                                <img src="{% static 'img/arrow-next.svg' %}" alt="next" class="arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element pagination-element-active"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                    </div>
+                    <div class="description">
+                        <p class="description-p">“I  think that culturally our two companies and cultures are really
+                            close together and I think that’s also been part of the secret DNA that it matches so well.”
+                        </p>
+                        <div class="author">
+                            <img src="{% static 'img/main/testimonial-alex-blattmann.jpg' %}" alt="" class="img">
+                            <p class="p">Alex Blattman, CEO, Maxbrain,  Switzerland</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews-container">
+        <div class="reviews-wrapper">
+            <div class="reviews-primary">
+                <div class="reviews-image">
+                    <img src="{% static 'img/main/testimonial-switzerland-02.jpg' %}" alt="uk" class="review-img">
+                </div>
+                <div class="reviews-description">
+                    <div class="name-buttons-wrapper">
+                        <div class="reviews-name">
+                            <img src="{% static 'img/main/testimonial-airex-logo.svg' %}" alt="">
+                        </div>
+                        <div class="buttons">
+                            <div class="button-prev button">
+                                <img src="{% static 'img/arrow-prev.svg' %}" alt="prev" class="arrow">
+                            </div>
+                            <div class="button-next button">
+                                <img src="{% static 'img/arrow-next.svg' %}" alt="next" class="arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element pagination-element-active"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                    </div>
+                    <div class="description">
+                        <p class="description-p">"When we started to talk with you guys, it was a bit kitschy, but maybe
+                            like 'Singing in the rain', it was like love on first view. We said “okay those guys
+                            understand us”, they are keen on getting to know our business, they don’t treat us just
+                            like a client. I feel when I work with you, I feel like you are my prolonged hand."</p>
+                        <div class="author">
+                            <img src="{% static 'img/main/testimonial-thorsten-walter.jpg' %}" alt="" class="img">
+                            <p class="p">Thorsten Walter, Director Soft Foams & Director Marketing, Airex,
+                                Switzerland</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews-container">
+        <div class="reviews-wrapper">
+            <div class="reviews-primary">
+                <div class="reviews-image">
+                    <img src="{% static 'img/main/testimonial-denmark-01.jpg' %}" alt="uk" class="review-img">
+                </div>
+                <div class="reviews-description">
+                    <div class="name-buttons-wrapper">
+                        <div class="reviews-name">
+                            <img src="{% static 'img/main/testimonial-streamways-logo.svg' %}" alt="">
+                        </div>
+                        <div class="buttons">
+                            <div class="button-prev button">
+                                <img src="{% static 'img/arrow-prev.svg' %}" alt="prev" class="arrow">
+                            </div>
+                            <div class="button-next button">
+                                <img src="{% static 'img/arrow-next.svg' %}" alt="next" class="arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element pagination-element-active"></span>
+                        <span class="pagination-element"></span>
+                    </div>
+                    <div class="description">
+                        <p class="description-p">"The output and the skills of both individually but also as a team
+                            from you guys has been exceptional. So both the output is really great but the process was
+                            really enjoyable too. As you know, the people just are amazing to work with."</p>
+                        <div class="author">
+                            <img src="{% static 'img/main/testimonial-person-placeholder.png' %}" alt="" class="img">
+                            <p class="p">Christian Karstoft & Magnus Werner,  Co-Founders and CEOs, Streamways,
+                                Denmark</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews-container">
+        <div class="reviews-wrapper">
+            <div class="reviews-primary">
+                <div class="reviews-image">
+                    <img src="{% static 'img/main/testimonial-uk-01.jpg' %}" alt="uk" class="review-img">
+                </div>
+                <div class="reviews-description">
+                    <div class="name-buttons-wrapper">
+                        <div class="reviews-name">
+                            <img src="{% static 'img/main/testimonial-rvu-logo.svg' %}" alt="">
+                        </div>
+                        <div class="buttons">
+                            <div class="button-prev button">
+                                <img src="{% static 'img/arrow-prev.svg' %}" alt="prev" class="arrow">
+                            </div>
+                            <div class="button-next button">
+                                <img src="{% static 'img/arrow-next.svg' %}" alt="next" class="arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element"></span>
+                        <span class="pagination-element pagination-element-active"></span>
+                    </div>
+                    <div class="description">
+                        <p class="description-p">"So Q was working together with a team in a very integrated fashion and
+                            that proved to be quite a big success. Because what we have seen afterwards it’s kind of Q
+                            spread a little bit like wildfire."</p>
+                        <div class="author">
+                            <img src="{% static 'img/main/testimonial-bojan-radlovic.jpg' %}" alt="" class="img">
+                            <p class="p">Bojan Radlovic, CEO, RVU & Money.co.uk, United Kingdom</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+    <div class="content_container collaborate-button">
+        <h3 class="h3">Have a project, or want to say hello?</h3>
+        <a href="{% url 'services' %}" class="button">Let's collaborate</a>
+    </div>
+    <section class="divider-desktop"></section>
+{% endblock %}
+</body>

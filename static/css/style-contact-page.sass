@@ -1,0 +1,656 @@
+*
+  margin: 0
+  padding: 0
+  font-family: 'Rubik', sans-serif
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400;500;600;700&display=swap')
+
+.h1, .h2, .h3, .h4, .h5, .h6
+  line-height: 1.25
+
+.h1
+  font-size: 62px
+  font-weight: 700
+  color: #1a1a1a
+
+.h2
+  font-size: 48px
+  font-weight: 700
+  color: #1a1a1a
+
+.h3
+  font-size: 40px
+  font-weight: 700
+  color: #1A1A1A
+
+.h4
+  font-size: 32px
+  font-weight: 600
+
+.h5
+  font-size: 26px
+  font-weight: 600
+  color: #1A1A1A
+  line-height: 1.25
+
+.h6
+  font-size: 20px
+  font-weight: 600
+  color: #1a1a1a
+  line-height: 1.25
+
+.p
+  font-size: 20px
+  line-height: 1.5
+  font-weight: 300
+  color: #1a1a1a
+
+.content_container
+  padding: 0 35px
+
+.logo-motto__aside
+  top: 0
+  position: fixed
+  display: flex
+  flex-direction: column
+  align-items: center
+  height: 412px
+  width: 6%
+  -webkit-mask-image: url(../img/logomask.svg)
+  mask-image: url(../img/logomask.svg)
+  background-color: white
+
+.img-logo
+  width: 54px
+  height: 54px
+  margin-top: 20px
+
+.motto_text-vertical
+  writing-mode: vertical-rl
+  text-orientation: mixed
+  transform: rotate(180deg)
+  font-weight: 200
+  margin-top: 30px
+
+.wrapper
+  max-width: 1270px
+  margin: 0 auto
+
+.landing_container
+  display: flex
+  padding: 0 35px
+
+.header-wrapper
+  width: 100%
+  padding: 20px 35px
+  top: 0
+  transition: .3s
+  position: fixed
+  box-sizing: border-box
+  z-index: 9999
+  background-color: transparent
+
+.header
+  display: flex
+  position: static
+  font-weight: 200
+  max-width: 1270px
+
+.navigation_list
+  display: flex
+  flex-direction: row
+  margin: 0
+  padding: 0
+  list-style: none
+  min-height: 60px
+  align-items: center
+
+.navigation_link
+  margin-right: 25px
+  padding: 16px 0
+  text-decoration: none
+  color: black
+  width: 100%
+  line-height: 1.5
+
+.landing_message
+  padding-top: 150px
+  display: flex
+  flex-wrap: wrap
+  width: 66.6%
+  .landing_message__wrapper
+    width: 100%
+    .landing-h1
+      font-family: Rubik, sans-serif
+      font-size: 62px
+      font-weight: 700
+      line-height: 1.25
+    .landing-p
+      font-family: Rubik, sans-serif
+      font-size: 26px
+      font-weight: 300
+      line-height: 1.5
+      padding-top: 48px
+      padding-bottom: 62px
+
+.contact-button_wrapper
+  width: 140px
+  display: flex
+  justify-content: center
+  position: fixed
+  right: 0
+  padding-right: 25px
+  z-index: 9999
+
+.contact-button
+  text-align: center
+  width: 140px
+  border: 2px solid #1a1a1a
+  padding: 16px 20px
+  color: #1a1a1a
+  background-color: #fff
+  border-radius: 0
+  box-shadow: 4px 4px 0 #1a1a1a
+  font-weight: 400
+  font-size: 16px
+  line-height: 1.5
+  transition: .3s
+  text-decoration: none
+  &:hover
+    box-shadow: 2px 2px 0 #1a1a1a
+    transition: .3s
+
+.top-right_image
+  background-image: url('../img/contact/contact-image-hero.jpg')
+  position: absolute
+  background-repeat: no-repeat
+  right: 0
+  background-size: 370px
+  object-fit: cover
+  width: 370px
+  height: 614px
+  -webkit-mask-repeat: no-repeat
+  -webkit-mask-image: url('../img/image-mask.svg')
+  z-index: 9000
+
+.divider-desktop
+  padding-bottom: 160px
+
+.headquarters
+  display: flex
+  align-items: center
+  justify-content: space-between
+  .text-column
+    width: 41.66%
+    .p
+      font-size: 26px
+    .h2
+      padding: 80px 0
+    .headquarters-locations
+      display: flex
+      justify-content: space-between
+      .headquarters-location
+        width: 50%
+        padding-right: 64px
+        border-right: 1px dashed rgba(26,26,26,.2)
+        &:last-child
+          padding-right: 0
+          padding-left: 64px
+          border-right: none
+        .h5
+          padding-bottom: 24px
+        .headquarters-link
+          text-decoration: underline
+          font-size: 20px
+          line-height: 1.5
+          font-weight: 300
+          color: #1A1A1A
+  .headquarters-images
+    width: 50%
+    display: flex
+    .headquarters-image
+      height: 440px
+      object-fit: cover
+      width: calc(50% - 12.5px)
+      &:last-child
+        margin-top: 80px
+        margin-left: 25px
+
+.nice-select
+  -webkit-tap-highlight-color: transparent
+  background-color: #fff
+  border: solid 1px #1a1a1a
+  box-sizing: border-box
+  clear: both
+  cursor: pointer
+  display: block
+  float: left
+  font-family: inherit
+  font-size: 14px
+  font-weight: normal
+  height: 64px
+  line-height: 40px
+  outline: none
+  padding-left: 18px
+  padding-right: 30px
+  position: relative
+  text-align: left !important
+  -webkit-transition: all 0.2s ease-in-out
+  transition: all 0.2s ease-in-out
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  white-space: nowrap
+  width: auto
+  .nice-select:active, .nice-select.open, .nice-select:focus
+    border-color: #999
+  .nice-select:after
+    border-bottom: 2px solid #999
+    border-right: 2px solid #999
+    content: ''
+    display: block
+    height: 5px
+    margin-top: -4px
+    pointer-events: none
+    position: absolute
+    right: 12px
+    top: 50%
+    -webkit-transform-origin: 66% 66%
+    -ms-transform-origin: 66% 66%
+    transform-origin: 66% 66%
+    -webkit-transform: rotate(45deg)
+    -ms-transform: rotate(45deg)
+    transform: rotate(45deg)
+    -webkit-transition: all 0.15s ease-in-out
+    transition: all 0.15s ease-in-out
+    width: 5px
+  .nice-select.open:after
+    -webkit-transform: rotate(-135deg)
+    -ms-transform: rotate(-135deg)
+    transform: rotate(-135deg)
+  .nice-select.open .list
+    opacity: 1
+    pointer-events: auto
+    -webkit-transform: scale(1) translateY(0)
+    -ms-transform: scale(1) translateY(0)
+    transform: scale(1) translateY(0)
+  .nice-select.disabled
+    border-color: #ededed
+    color: #1a1a1a
+    pointer-events: none
+    .nice-select.disabled:after
+      border-color: #cccccc
+  .nice-select.wide
+    width: 100%
+    .nice-select.wide .list
+      left: 0 !important
+      right: 0 !important
+  .nice-select.right
+    float: right
+    .nice-select.right .list
+      left: auto
+      right: 0
+  .nice-select.small
+    font-size: 12px
+    height: 36px
+    line-height: 34px
+    .nice-select.small:after
+      height: 4px
+      width: 4px
+    .nice-select.small .option
+      line-height: 34px
+      min-height: 34px
+  .nice-select .list
+    background-color: #fff
+    box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11)
+    box-sizing: border-box
+    margin-top: 4px
+    opacity: 0
+    overflow: hidden
+    padding: 0
+    pointer-events: none
+    position: absolute
+    top: 100%
+    left: 0
+    -webkit-transform-origin: 50% 0
+    -ms-transform-origin: 50% 0
+    transform-origin: 50% 0
+    -webkit-transform: scale(0.75) translateY(-21px)
+    -ms-transform: scale(0.75) translateY(-21px)
+    transform: scale(0.75) translateY(-21px)
+    -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out
+    z-index: 9
+    .nice-select .list:hover .option:not(:hover)
+      background-color: transparent !important
+  .nice-select .option
+    cursor: pointer
+    font-weight: 400
+    line-height: 40px
+    list-style: none
+    min-height: 40px
+    outline: none
+    padding-left: 18px
+    padding-right: 29px
+    text-align: left
+    -webkit-transition: all 0.2s
+    transition: all 0.2s
+    .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus
+      background-color: #f6f6f6
+    .nice-select .option.selected
+      font-weight: bold
+    .nice-select .option.disabled
+      background-color: transparent
+      color: #999
+      cursor: default
+
+.no-csspointerevents .nice-select .list
+  display: none
+
+.no-csspointerevents .nice-select.open .list
+  display: block
+
+.label
+  font-size: 16px
+  font-weight: 500!important
+
+.dropdown-wrapper
+  margin-bottom: 40px
+
+.dropdown
+  width: 100%!important
+
+.contact-form-primary
+  border: 2px solid #1A1A1A
+  padding: 80px!important
+  width: 100%
+  box-sizing: border-box
+
+.checkbox-active
+  &:after
+    content: url(../img/contact/inputcheckbox.svg)
+    position: absolute
+    top: 0
+
+.form-columns
+  display: flex
+  justify-content: space-between
+
+.contact-form-wrapper
+  .contact-form
+    .column
+      width: 50%
+      margin-right: 24px
+      &:last-child
+        margin-right: 0
+        margin-left: 24px
+      .input-element
+        width: 100%
+        margin-bottom: 40px
+        display: inline-block
+        .checkbox-wrapper
+          display: flex
+          flex-direction: column
+          .checkbox-element
+            margin-bottom: 16px
+            &:first-child
+              margin-top: 24px
+            &:last-child
+              margin-bottom: 0
+            .checkbox-label
+              .checkbox-input
+                border-radius: 0
+                outline: 2px solid #1a1a1a
+                width: 20px
+                height: 20px
+                position: relative
+                vertical-align: middle
+                margin-right: 16px
+                appearance: none
+        .label-wrapper
+          margin-bottom: 8px!important
+        .form-input
+          background-clip: padding-box
+          background-image: none
+          color: #495057
+          font-size: 16px
+          line-height: 1.5
+          margin-bottom: 0
+          width: 100%
+          border-radius: 0!important
+          border: 2px solid #1A1A1A
+          padding: 18px 24px
+          box-sizing: border-box
+    .additional-info
+      margin-bottom: 40px
+      .info-label
+        display: inline-block
+        font-weight: 500
+        font-size: 16px
+      .form-input-wide
+        background-clip: padding-box
+        background-image: none
+        color: #495057
+        font-size: 16px
+        line-height: 1.5
+        margin-bottom: 0
+        width: 100%
+        border-radius: 0!important
+        border: 2px solid #1A1A1A
+        padding: 18px 24px
+        box-sizing: border-box
+        margin-top: 8px
+    .p
+      font-size: 16px
+      font-weight: 300
+      line-height: 1.5
+      margin-bottom: 24px
+    .p-link
+      text-decoration: underline
+      color: #1A1A1A
+    .send-button
+      cursor: pointer
+      display: inline-block
+      line-height: 1.5
+      font-size: 16px
+      position: relative
+      text-align: center
+      font-weight: 500
+      padding: 20px 63px
+      border-radius: 0
+      border: 2px solid #1A1A1A
+      transition: .3s
+      box-shadow: 6px 6px 0 #00ff15, inset 0 0 0 2px #00ff15
+      background-color: white
+      &:hover
+        box-shadow: 3px 3px 0 #00FFFF, inset 0 0 0 4px #00FFFF
+
+.list
+  max-height: 400px!important
+  overflow-y: scroll!important
+
+.assistance
+  background-color: #1A1A1A
+  .assistance-wrapper
+    align-items: center
+    display: flex
+    justify-content: space-between
+    padding: 64px 60px
+    .image
+      width: 50%
+      .img
+        height: 640px
+        object-fit: cover
+        max-width: 100%
+    .text
+      width: 46%
+      .text-wrapper
+        margin-bottom: 20px
+        .p
+          color: white
+          font-size: 26px
+          font-weight: 300
+          line-height: 1.5
+          margin-bottom: 30px
+          &:last-child
+            margin-bottom: 40px!important
+        .email-link
+          text-decoration: underline
+          color: #fff
+          font-size: 26px
+          font-weight: 300
+      .button-link
+        box-shadow: 4px 4px 0 #fff
+        color: #fff
+        padding: 15px 20px
+        justify-content: center
+        background-color: transparent
+        border-radius: 0
+        border: 2px solid #fff
+        transition: .3s
+        font-size: 16px
+        position: relative
+        line-height: 1.5
+        font-weight: 500
+        text-decoration: none
+        box-sizing: border-box
+        min-width: unset
+        &:hover
+          box-shadow: 2px 2px 0 #fff
+
+.collaborate-button
+  display: flex
+  justify-content: center
+  flex-direction: column
+  flex-wrap: wrap
+  .h3
+    padding-bottom: 40px
+    margin: 0 auto
+    font-weight: 400!important
+  .button
+    margin: 0 auto
+    text-align: center
+    border: 2px solid #1A1A1A
+    transition: .3s
+    padding: 16px 20px
+    color: #1A1A1A
+    background-color: #fff
+    border-radius: 0
+    min-width: 140px
+    box-shadow: 6px 6px 0 #00ff15, inset 0 0 0 2px #00ff15
+    font-size: 16px
+    line-height: 1.5
+    font-weight: 500
+    text-decoration: none
+    width: 10%
+    &:hover
+      box-shadow: 2px 2px 0 #00ff15, inset 0 0 0 2px #00ff15
+
+footer
+  max-width: 100%
+  margin: 0 auto
+  padding: 46px 25px 0 25px
+  background-color: #1A1A1A
+  .footer_container
+    width: 100%
+    max-width: 1270px
+    padding: 0 35px
+    margin: 0 auto
+    .footer-wrapper
+      width: 66.6%
+      img
+        width: 70px
+        margin-bottom: 32px
+        max-width: 100%
+        height: 70px
+      .motto
+        font-weight: 400
+        font-size: 16px
+        line-height: 1.5
+        color: #ffffff
+      .locations
+        display: flex
+        color: #868686
+        padding-top: 2px
+        padding-bottom: 40px
+        .location
+          font-size: 16px
+          font-weight: 300
+          line-height: 1.5
+          &:after
+            content: "\2022"
+            margin: 0 10px
+          &:first-child
+            content: ''!important
+          &:last-child
+            content: ''!important
+      .newsletter-input
+        display: flex
+        gap: 15px
+        input
+          box-sizing: border-box
+          width: 100%
+          background-color: transparent
+          border-radius: unset
+          padding: 16px 20px
+          border: 2px solid #fff
+          color: #fff!important
+          background-clip: padding-box
+          font-size: 16px
+          line-height: 1.5
+          margin-bottom: 0
+          max-width: 100%
+        .input-wrapper
+          margin-bottom: 20px
+          width: 50%
+        .button
+          .subscribe
+            transition: .3s
+            margin-bottom: 20px
+            color: #ffffff
+            cursor: pointer
+            font-size: 16px
+            line-height: 1.5
+            padding: 16px 20px
+            border-radius: 0
+            border: 2px solid #fff
+            background-color: transparent
+            box-shadow: 4px 4px 0 #fff
+            &:hover
+              box-shadow: 2px 2px 0 #fff
+              transition: .3s
+      .logos-wrapper
+        margin-top: 32px
+        margin-bottom: 28px
+        box-sizing: border-box
+        .element
+          width: 25px
+          height: 28px
+          box-sizing: border-box
+        a
+          padding-left: 40px
+          &:first-child
+            padding-left: 0
+        .fa-brands
+          font-size: 28px
+      .links-wrapper
+        .links
+          display: flex
+          .link
+            font-size: 16px
+            font-weight: 300
+            line-height: 1.5
+            color: #fff
+            text-decoration: none
+            padding-left: 32px
+            margin-bottom: 8px
+            &:first-child
+              padding-left: 0
+      .site-name
+        padding-top: 40px
+        p
+          color: #fff
+          font-size: 16px
+          font-weight: 300
+          line-height: 1.5

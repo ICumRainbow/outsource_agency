@@ -1,0 +1,338 @@
+*
+  margin: 0
+  padding: 0
+  font-family: 'Rubik', sans-serif
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400;500;600;700&display=swap')
+
+.h1, .h2, .h3, .h4, .h5, .h6
+  line-height: 1.25
+
+.h2
+  font-size: 48px
+  font-weight: 700
+  color: #1a1a1a
+
+.h3
+  font-size: 40px
+  font-weight: 700
+  color: #1A1A1A
+
+.h4
+  font-size: 32px
+  font-weight: 600
+
+.h5
+  font-size: 26px
+  font-weight: 600
+  color: #1a1a1a
+  line-height: 1.25
+
+.h6
+  font-size: 20px
+  line-height: 1.25
+  font-weight: 600
+  color: #1a1a1a
+
+.p
+  font-size: 20px
+  line-height: 1.5
+  font-weight: 300
+  color: #1a1a1a
+
+.content_container
+  padding: 0 35px
+
+.logo-motto__aside
+  top: 0
+  position: fixed
+  display: flex
+  flex-direction: column
+  align-items: center
+  height: 412px
+  width: 6%
+  -webkit-mask-image: url(../img/logomask.svg)
+  mask-image: url(../img/logomask.svg)
+  background-color: white
+
+.img-logo
+  width: 54px
+  height: 54px
+  margin-top: 20px
+
+.motto_text-vertical
+  writing-mode: vertical-rl
+  text-orientation: mixed
+  transform: rotate(180deg)
+  font-weight: 200
+  margin-top: 30px
+
+.wrapper
+  max-width: 1270px
+  margin: 0 auto
+
+.landing_container
+  display: flex
+  padding: 0 35px
+  .image
+    object-position: 47.74% 3.79%
+    object-fit: cover
+    top: 110px
+    width: 50%
+    height: 700px
+    mask-repeat: no-repeat
+    position: absolute
+    right: 0
+
+.header-wrapper
+  width: 100%
+  padding: 20px 35px
+  top: 0
+  transition: .3s
+  position: fixed
+  box-sizing: border-box
+  z-index: 9999
+  background-color: transparent
+
+.header
+  display: flex
+  position: static
+  font-weight: 200
+  max-width: 1270px
+
+.navigation_list
+  display: flex
+  flex-direction: row
+  margin: 0
+  padding: 0
+  list-style: none
+  min-height: 60px
+  align-items: center
+
+.navigation_link
+  margin-right: 25px
+  padding: 16px 0
+  text-decoration: none
+  color: black
+  width: 100%
+  line-height: 1.5
+
+.contact-button_wrapper
+  width: 140px
+  display: flex
+  justify-content: center
+  position: fixed
+  right: 0
+  padding-right: 25px
+  z-index: 9999
+
+.contact-button
+  text-align: center
+  width: 140px
+  border: 2px solid #1a1a1a
+  padding: 16px 20px
+  color: #1a1a1a
+  background-color: #fff
+  border-radius: 0
+  box-shadow: 4px 4px 0 #1a1a1a
+  font-weight: 400
+  font-size: 16px
+  line-height: 1.5
+  transition: .3s
+  text-decoration: none
+  &:hover
+    box-shadow: 2px 2px 0 #1a1a1a
+    transition: .3s
+
+.divider-desktop
+  padding-bottom: 160px
+
+.divider-desktop-200
+  padding-bottom: 200px
+
+.position-heading
+  padding-top: 150px
+  .h1
+    font-size: 62px
+    font-weight: 700
+    color: #1A1A1A
+    line-height: 1.25
+  .p-tags
+    padding-top: 48px
+    font-size: 26px
+    font-weight: 300
+    line-height: 1.5
+
+.image-wrapper
+  .img-freelance
+    height: 400px
+    object-fit: cover
+    margin-top: 100px
+    margin-bottom: 160px
+    width: 100%
+
+.job-description
+  display: flex
+  justify-content: space-between
+  .description
+    width: 66.6%
+    .h5
+      padding: 18px 0
+    .description-list
+      padding-left: 20px
+      .description-element
+        margin-bottom: 8px
+        font-size: 20px
+        line-height: 1.5
+        font-weight: 300
+        color: #1A1A1A
+        &:last-child
+          margin-bottom: 0
+    .p-bold
+      font-weight: 600
+      font-size: 20px
+      margin-top: 18px
+    .apply-button_link
+      margin-top: 40px
+      display: inline-block
+      border: 2px solid #1a1a1a
+      padding: 16px 20px
+      color: #1a1a1a
+      background-color: #fff
+      border-radius: 0
+      min-width: 140px
+      box-shadow: 6px 6px 0 #00ff15, inset 0 0 0 2px #00ff15
+      font-weight: 500
+      font-size: 16px
+      line-height: 1.5
+      transition: .3s
+      text-decoration: none
+      text-align: center
+      &:hover
+        box-shadow: 2px 2px 2px #00FFFF, inset 0 0 0 3px #00FFFF
+        transition: .3s
+  .contact
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    width: 25%
+    padding-top: 18px
+    .mail-link
+      margin-top: 16px
+      margin-bottom: 40px
+      text-decoration: underline
+      font-size: 20px
+      line-height: 1.5
+      font-weight: 300
+      color: #1A1A1A
+
+footer
+  max-width: 100%
+  margin: 0 auto
+  padding: 46px 25px 0 25px
+  background-color: #1A1A1A
+  .footer_container
+    width: 100%
+    max-width: 1270px
+    padding: 0 35px
+    margin: 0 auto
+    .footer-wrapper
+      width: 66.6%
+      img
+        width: 70px
+        margin-bottom: 32px
+        max-width: 100%
+        height: 70px
+      .motto
+        font-weight: 400
+        font-size: 16px
+        line-height: 1.5
+        color: #ffffff
+      .locations
+        display: flex
+        color: #868686
+        padding-top: 2px
+        padding-bottom: 40px
+        .location
+          font-size: 16px
+          font-weight: 300
+          line-height: 1.5
+          &:after
+            content: "\2022"
+            margin: 0 10px
+          &:first-child
+            content: ''!important
+          &:last-child
+            content: ''!important
+      .newsletter-input
+        display: flex
+        gap: 15px
+        input
+          box-sizing: border-box
+          width: 100%
+          background-color: transparent
+          border-radius: unset
+          padding: 16px 20px
+          border: 2px solid #fff
+          color: #fff!important
+          background-clip: padding-box
+          font-size: 16px
+          line-height: 1.5
+          margin-bottom: 0
+          max-width: 100%
+        .input-wrapper
+          margin-bottom: 20px
+          width: 50%
+        .button
+          .subscribe
+            transition: .3s
+            margin-bottom: 20px
+            color: #ffffff
+            cursor: pointer
+            font-size: 16px
+            line-height: 1.5
+            padding: 16px 20px
+            border-radius: 0
+            border: 2px solid #fff
+            background-color: transparent
+            box-shadow: 4px 4px 0 #fff
+            &:hover
+              box-shadow: 2px 2px 0 #fff
+              transition: .3s
+      .logos-wrapper
+        margin-top: 32px
+        margin-bottom: 28px
+        box-sizing: border-box
+        .element
+          width: 25px
+          height: 28px
+          box-sizing: border-box
+        a
+          padding-left: 40px
+          &:first-child
+            padding-left: 0
+        .fa-brands
+          font-size: 28px
+      .links-wrapper
+        .links
+          display: flex
+          .link
+            font-size: 16px
+            font-weight: 300
+            line-height: 1.5
+            color: #fff
+            text-decoration: none
+            padding-left: 32px
+            margin-bottom: 8px
+            &:first-child
+              padding-left: 0
+      .site-name
+        padding-top: 40px
+        p
+          color: #fff
+          font-size: 16px
+          font-weight: 300
+          line-height: 1.5
+
+.nav-link-active
+  text-decoration: underline #00ff15

@@ -1,15 +1,9 @@
-from core.filters import VacancyFilter
-from core.models import Vacancy, VacancyCategory
+from our_works.models import Work
 
 
-def get_careers_page_contents(request_dict: dict = None, query_params: dict = None):
+def get_works() -> Work:
     """
-    Getting all the contents for the Careers page.
+    Returns all Work objects.
     """
-    categories = VacancyCategory.objects.all()
-    vacancies_by_date = Vacancy.objects.order_by('-created_at')
-    # vacancies = None
-    # if query_params:
-    vacancies = vacancies_by_date.filter(**query_params)
-    vacancies = VacancyFilter(request_dict, queryset=vacancies)
-    return categories, vacancies
+    works = Work.objects.all()
+    return works

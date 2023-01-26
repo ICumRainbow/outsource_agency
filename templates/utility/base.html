@@ -5,33 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QAgency</title>
-    <script src="{% static 'js/jquery.js' %}"></script>
-    <script src="{% static 'js/jquery.nice-select.js' %}"></script>
+
     {% if request.path == '/' %}
+        <link rel="stylesheet" href="{% static 'css/style-main.css' %}">
+    {% endif %}
+
+    {% if request.path == '/for-ctos/' %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endif %}
+
     {% if request.path == '/product-innovation/' %}
         <link rel="stylesheet" href="{% static 'css/style-PI.css' %}">
     {% endif %}
+
     {% if request.path == '/works/' %}
         <link rel="stylesheet" href="{% static 'css/style-our-work.css' %}">
     {% endif %}
+
+    {% if '/work/' in request.path %}
+        <link rel="stylesheet" href="{% static 'css/style-portfolio-example.css' %}">
+    {% endif %}
+
     {% if request.path == '/blog/' %}
         <link rel="stylesheet" href="{% static 'css/style-blog.css' %}">
     {% endif %}
-    {% if request.path == '/careers/' %}
+
+    {% if '/careers/' in request.path %}
         <link rel="stylesheet" href="{% static 'css/style-careers.css' %}">
         <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style-job-details.css' %}">
     {% endif %}
+
+    {% if request.path == '/freelance/' %}
+        <link rel="stylesheet" href="{% static 'css/style-job-details.css' %}">
+    {% endif %}
+
     {% if request.path == '/services/' %}
         <link rel="stylesheet" href="{% static 'css/style-services.css' %}">
     {% endif %}
+
+    {% if request.path == '/contact/' %}
+        <link rel="stylesheet" href="{% static 'css/style-contact-page.css' %}">
+        <link rel="stylesheet" href="{% static 'css/nice-select-contact.css' %}">
+    {% endif %}
+
+    {% if request.path == '/culture/' %}
+        <link rel="stylesheet" href="{% static 'css/style-culture.css' %}">
+    {% endif %}
+
+    {% if 'post' in request.path %}
+        <link rel="stylesheet" href="{% static 'css/style-post.css' %}">
+    {% endif %}
     <script src="https://kit.fontawesome.com/c8e9354b59.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.js' %}"></script>
 </head>
 <body>
 <div class="logo-motto__aside">
     <div class="logo_wrapper">
-        <a href="q.agency">
+        <a href="{% url 'home' %}">
             <img src="{% static 'img/img-logo.svg' %}" alt="qAgency logo" class="img-logo">
         </a>
     </div>
@@ -63,7 +95,7 @@
                         <a class="navigation_link" href="{% url 'careers' %}">Careers</a>
                     </li>
                     <li class="navigation_item">
-                        <a class="navigation_link" href="">Culture</a>
+                        <a class="navigation_link" href="{% url 'culture' %}">Culture</a>
                     </li>
                 </ul>
             </div>
@@ -86,14 +118,6 @@
                 <p class="location">Belgrade</p>
                 <p class="location last">Zagreb HQ</p>
             </div>
-            <div class="newsletter-input">
-                <div class="input-wrapper">
-                    <input type="email" id="email-newsletter" placeholder="Subscribe to newsletter">
-                </div>
-                <div class="button">
-                    <button class="subscribe">Subscribe</button>
-                </div>
-            </div>
             <div class="logos-wrapper">
                 {% for social in socials %}
                 <a href="{{ social.link }}"><img src="{{ social.logo.url }}" alt="{{ social.name }}" class="element"></a>
@@ -104,7 +128,7 @@
             </div>
             <div class="links-wrapper">
                 <div class="links">
-                    <a href="#" class="link">Culture</a>
+                    <a href="{% url 'culture' %}" class="link">Culture</a>
                     <a href="{% url 'blog' %}" class="link">Blog</a>
                     <a href="{% url 'contact' %}" class="link">Contact Us</a>
                     <a href="#" class="link">Privacy Policy</a>

@@ -372,7 +372,7 @@
 }
 
 .top-right_image {
-  background-image: url("../img/image-2.jpg");
+  background-image: url("../img/careers/careers-image-hero.jpg");
   position: absolute;
   background-repeat: no-repeat;
   right: 0;
@@ -1163,6 +1163,10 @@ footer .footer_container .footer-wrapper .site-name p {
 
 .no-csspointerevents .nice-select.open .list {
   display: block;
+}
+
+.nav-link-active {
+  text-decoration: underline #00ff15;
 }
 
 /*# sourceMappingURL=style-careers.css.map */

@@ -1,7 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 
-# Create your views here.
-from our_works.models import Work
 from our_works.services import get_work_and_next_in_line, get_works
 
 
@@ -18,7 +16,7 @@ def works_view(request):
 
 def work_details_view(request, id_: int):
     """
-    View for details pages of portfolio works.
+    View for details page of portfolio works.
     """
     work, next_in_line = get_work_and_next_in_line(id_)
     context = {

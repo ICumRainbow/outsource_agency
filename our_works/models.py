@@ -9,7 +9,9 @@ from core.models import BaseModel
 
 class Work(BaseModel):
     """
-    Model for portfolio works.
+    Model for portfolio works, includes preview picture, success story picture, colo, heading, logo dark, logo light,
+    description, picture1, what we did, industry, team, team size, location, brief, approach, impact, metric,
+    interesting features, picture2, what we built, deliverables, picture3 and content fields.
     """
     preview_picture = models.ImageField(verbose_name='Preview Picture', blank=True, default='img_bbc_lg@2x-1.png')
     success_story_picture = models.ImageField(verbose_name='Success Story Picture', default='img_bbc_lg@2x-1.png')
@@ -22,7 +24,7 @@ class Work(BaseModel):
     logo_light = models.FileField(verbose_name='Light Logo', validators=[FileExtensionValidator(['jpg', 'png', 'svg'])],
                                   help_text='Please upload a logo that will be visible on dark background.',
                                   default='78-784866_png-white-question-mark.png')
-    description = RichTextField(verbose_name='Description', blank=True, null=True)
+    description = TextField(verbose_name='Description', blank=True, null=True)
     picture1 = models.ImageField(verbose_name='Picture 1')
     what_we_did = RichTextField(verbose_name='What We Did', blank=True, null=True)
     industry = models.CharField(verbose_name='Industry', max_length=255)
@@ -30,12 +32,12 @@ class Work(BaseModel):
     team_size = models.IntegerField(verbose_name='Team Size', blank=True, null=True)
     location = models.CharField(verbose_name='Location', max_length=255, blank=True, null=True)
     brief = TextField(verbose_name='Brief', blank=False, null=True)
-    approach = RichTextField(verbose_name='Approach', blank=True, null=True)
-    impact = RichTextField(verbose_name='Impact', blank=True, null=True)
-    metric = RichTextField(verbose_name='Metric', blank=True, null=True)
-    interesting_features = RichTextField(verbose_name='Interesting Features', blank=True, null=True)
+    approach = TextField(verbose_name='Approach', blank=True, null=True)
+    impact = TextField(verbose_name='Impact', blank=True, null=True)
+    metric = TextField(verbose_name='Metric', blank=True, null=True)
+    interesting_features = TextField(verbose_name='Interesting Features', blank=True, null=True)
     picture2 = models.ImageField(verbose_name='Picture 2', blank=True)
-    what_we_built = RichTextField(verbose_name='What We Built', blank=False, null=False)
+    what_we_built = TextField(verbose_name='What We Built', blank=False, null=False)
     deliverables = RichTextField(verbose_name='Deliverables', blank=False, null=False)
     picture3 = models.ImageField(verbose_name='Picture 3')
     content = RichTextField(verbose_name='Content', blank=False, null=False)

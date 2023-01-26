@@ -1,0 +1,68 @@
+{% extends 'utility/base.html' %}
+{% load tags %}
+{% load static %}
+{% block content %}
+<body>
+    <div class="content_container position-heading">
+        <h1 class="h1">Freelance</h1>
+        <p class="p-tags">Remote</p>
+    </div>
+    <div class="image-wrapper">
+        <img src="{% static 'img/job details - freelance/freelance.webp' %}" alt="" class="img-freelance">
+    </div>
+    <div class="content_container job-description">
+        <div class="description">
+            <h5 class="h5">Freelancing alone in outer space has its challenges, but since you’re already here, brought
+                by a mysterious force, let’s see what we can launch together.</h5>
+            <p class="p">While brushing up your negotiation skills for your future clients or developing your online
+                presence, you can join us on a short term mission (or two). We could use your help.</p>
+            <br>
+            <p class="p">We are looking for freelance developers & designers to join our team on a mission to find the
+                As to the most challenging Qs of today. And we offer you freelance cooperation free from the negative
+                sides of freelance. Are you ready for a challenge?</p>
+            <br>
+            <p class="p">Join our network of freelance professionals and get a steady flow of projects in various
+                existing technologies.</p>
+            <h5 class="h5">We bring you:</h5>
+            <ul class="description-list">
+                <li class="description-element">Flexible & full remote collaboration</li>
+                <li class="description-element">Work with new technologies in a high-performance environment</li>
+                <li class="description-element">Diverse international projects (from 3-week microservice apps to 6+
+                    month enterprise solutions)</li>
+                <li class="description-element">Opportunity to work with big names and global brands</li>
+            </ul>
+            <h5 class="h5">Technologies we use:</h5>
+            <ul class="description-list">
+                <li class="description-element"><strong>Backend</strong> (PHP; .NET, Node.js; Ruby, Java, Unity,
+                    Go)</li>
+                <li class="description-element"><strong>Frontend</strong> (React, Angular, JavaScript ES6, HTML &
+                    CSS)</li>
+                <li class="description-element"><strong>Mobile</strong> (Flutter, React Native, Ionic, Swift, Kotlin,
+                    Java)</li>
+                <li class="description-element"><strong>UX/UI Design</strong> (Sketch, Figma, Adobe, Miro, InVision,
+                    Zeplin)</li>
+            </ul>
+            <h5 class="h5">Common questions:</h5>
+            <ul class="description-list">
+                <li class="description-element"><strong>Contract?</strong> A long-term B2B contract & constant flow of
+                    projects in various industries</li>
+                <li class="description-element"><strong>Engagement?</strong> Possibility to choose/tailor your
+                    engagement scope</li>
+                <li class="description-element"><strong>Time tracking?</strong> Simple and intuitive tool for time
+                    tracking - Teamwork</li>
+                <li class="description-element"><strong>What if the project gets cancelled/ends?</strong> Upon a
+                    projects ending or cancellation, get relocated by our Production Resourcing Team to another project
+                    in our dynamic pipeline</li>
+            </ul>
+            <p class="p-bold">Let's join forces!</p>
+            <a href="#" class="apply-button_link">Apply now</a>
+        </div>
+        <div class="contact">
+            <h6 class="h6">CONTACT ADDRESS</h6>
+            <a href="#" class="mail-link">apply@q.agency</a>
+            <img src="{% static 'img/decoration.svg' %}" alt="" class="img">
+        </div>
+    </div>
+    <section class="divider-desktop"></section>
+{% endblock %}
+</body>

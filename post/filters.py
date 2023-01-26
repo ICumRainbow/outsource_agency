@@ -11,7 +11,8 @@ class PostFilter(FilterSet):
     """
     Filter to search posts by name and category.
     """
-    heading_and_tag = CharFilter(method='heading_and_tag_filter', lookup_expr='icontains')
+    heading_and_tag = CharFilter(method='heading_and_tag_filter', lookup_expr='icontains',
+                                 widget=forms.TextInput(attrs={'id': 'id_heading'}))
 
     class Meta:
         model = Post

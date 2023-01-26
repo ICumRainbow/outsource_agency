@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'our_works',
     'core',
     'contact_bot',
+    'careers',
 ]
 
 MIDDLEWARE = [
@@ -125,7 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = 'C:/Users/Ernest/Desktop/outsource/static/'
+# STATIC_ROOT = 'I:/user/Desktop/work/outsource_agency/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]

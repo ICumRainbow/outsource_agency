@@ -214,7 +214,7 @@
 .primary-container .search-bar {
   display: flex;
 }
-.primary-container .search-bar .form .nav-search {
+.primary-container .search-bar .form #id_heading {
   position: relative;
   height: 40px;
   min-height: 40px;
@@ -478,6 +478,10 @@ footer .footer_container .footer-wrapper .site-name p {
 }
 .page-selector .pagination .page-switch .page-active {
   border: 2px solid #1A1A1A;
+}
+
+.nav-link-active {
+  text-decoration: underline #00ff15;
 }
 
 /*# sourceMappingURL=style-blog.css.map */

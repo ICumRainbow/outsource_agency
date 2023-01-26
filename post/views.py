@@ -1,8 +1,7 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
 
-# Create your views here.
-from post.services import get_blog_page_contents
+from post.services import get_blog_page_contents, get_post_and_related_posts
 
 
 def blog_view(request):
@@ -29,3 +28,17 @@ def blog_view(request):
         'page_range': page_range
     }
     return render(request, 'blog.html', context)
+
+
+def post_view(request, id_):
+    """
+    View for Post details page.
+    """
+    post, related_posts = get_post_and_related_posts(id_)
+    tags = post.tag.all()
+    context = {
+        'post': post,
+        'related_posts': related_posts,
+        'tags': tags,
+    }
+    return render(request, 'post.html', context)

@@ -1,19 +1,15 @@
-from datetime import datetime
-
-from django.db import models
 from ckeditor.fields import RichTextField
+from django.db import models
 
-
-# Create your models here.
 from core.models import BaseModel
 
 
 class Category(BaseModel):
     """
-    Model for Categories.
+    Model for Categories, includes name and description fields.
     """
-    name = models.CharField(max_length=255)
-    description = models.TextField(blank=True, null=True)
+    name = models.CharField(verbose_name='Category', max_length=255)
+    description = models.TextField(verbose_name='Description', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Category'
@@ -25,9 +21,9 @@ class Category(BaseModel):
 
 class Tag(BaseModel):
     """
-    Model for Tags.
+    Model for Tags, includes name field.
     """
-    name = models.CharField(max_length=255)
+    name = models.CharField(verbose_name='Tag', max_length=255)
 
     class Meta:
         verbose_name = 'Tag'
@@ -39,11 +35,12 @@ class Tag(BaseModel):
 
 class Author(BaseModel):
     """
-    Model for Authors.
+    Model for Authors, includes name, avatar, occupation and about fields.
     """
-    name = models.CharField(max_length=255)
-    avatar = models.ImageField(blank=False, default='blank_avatar.jpg')
-    occupation = models.CharField(max_length=255)
+    name = models.CharField(verbose_name='Author', max_length=255)
+    avatar = models.ImageField(verbose_name='Avatar', blank=False, default='blank_avatar.jpg')
+    occupation = models.CharField(verbose_name='Occupation', max_length=255)
+    about = models.TextField(verbose_name='About', max_length=500)
 
     class Meta:
         verbose_name = 'Author'
@@ -55,7 +52,7 @@ class Author(BaseModel):
 
 class Post(BaseModel):
     """
-    Model for Posts.
+    Model for Posts, includes picture, heading, content, category, tag, author and time to read fields.
     """
     picture = models.ImageField(verbose_name='Picture')
     heading = models.CharField(verbose_name='Heading', max_length=255)
@@ -71,4 +68,3 @@ class Post(BaseModel):
 
     def __str__(self):
         return self.heading
-

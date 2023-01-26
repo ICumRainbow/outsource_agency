@@ -29,7 +29,7 @@ accordionToggle.forEach(item => {
     })
 });
 
-const slides = document.querySelectorAll('.members-container'),
+const slides = document.querySelectorAll('.reviews-container'),
     slideNext = document.querySelectorAll('.button-next'),
     slidePrev = document.querySelectorAll('.button-prev'),
     slider = document.querySelectorAll('.pagination'),
@@ -61,9 +61,9 @@ if (slides.length > 0) {
             slideIndex = slides.length;
         }
 
-        slides.forEach(item => item.style.display = 'none');
+        slides.forEach(item => item.classList.remove('reviews-element-active'));
 
-        slides[slideIndex - 1].style.display = 'block';
+        slides[slideIndex - 1].classList.add('reviews-element-active');
     }
 
     function plusSlides(n) {
@@ -217,16 +217,22 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 })
 
+window.addEventListener('DOMContentLoaded', () => {
+    const cultureTextImage = document.querySelectorAll('.culture-text-image');
+
+    for (let i = 0; i < cultureTextImage.length; i += 2) {
+        cultureTextImage[i].classList.add("reversed");
+    }
+})
+
 const dropdownsList = document.querySelectorAll('.dropdown-wrapper');
 
 dropdownsList.forEach(item => {
-    item.addEventListener('click',(e) => {
+    item.addEventListener('click', (e) => {
         dropdownsList.forEach(item => {
             item.nextElementSibling.classList.remove('dropdown-active')
             item.classList.remove('wrapper-active');
         });
-
-        const target = e.target;
 
         if (item.nextElementSibling.classList.contains('dropdown-active')) {
             item.nextElementSibling.classList.remove('dropdown-active');
@@ -238,12 +244,45 @@ dropdownsList.forEach(item => {
     });
 })
 
-$(document).ready(function() {
+$(document).ready(function () {
     $('select').niceSelect();
 });
 
-// const filterButton = document.querySelector('.filter-button');
-//
-// filterButton.addEventListener('click',(e) => {
-//     e.preventDefault();
-// });
+const filterButton = document.querySelector('.filter-button');
+
+if (filterButton) {
+    filterButton.addEventListener('click', (e) => {
+        e.preventDefault();
+    });
+}
+
+const navLinksList = document.querySelectorAll('.navigation_link');
+
+navLinksList.forEach(item => {
+    item.addEventListener('click', () => {
+        navLinksList.forEach(item => {
+            item.classList.remove('nav-link-active')
+        })
+        item.classList.add('nav-link-active')
+    })
+})
+
+const checkboxElementList = document.querySelectorAll('.checkbox-element');
+
+checkboxElementList.forEach(item => {
+    item.addEventListener('click', () => {
+        const checkboxFirstChild = item.firstElementChild,
+              checkboxElement = checkboxFirstChild.firstElementChild;
+        if (!checkboxElement.classList.contains("checkbox-active")) {
+            checkboxElement.classList.add('checkbox-active');
+        } else {
+            checkboxElement.classList.remove('checkbox-active');
+        }
+    })
+})
+
+$(document).ready(function(){
+    $('.menu-burger-icon').click(function(){
+        $(this).toggleClass('open');
+    });
+});

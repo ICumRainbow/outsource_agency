@@ -1,4 +1,3 @@
-from django.db.models import QuerySet
 from django.shortcuts import get_object_or_404
 
 from our_works.models import Work
@@ -7,7 +6,6 @@ from our_works.models import Work
 def get_work_and_next_in_line(id_: int) -> tuple[Work, Work]:
     """
     Accepts id_ as parameter, returns work with this id and next work (or if this work is the latest, the first work).
-    :param id_:
     """
     work = get_object_or_404(Work, id=id_)
     next_work = Work.objects.filter(id__gt=id_)
@@ -21,7 +19,7 @@ def get_work_and_next_in_line(id_: int) -> tuple[Work, Work]:
     return work, next_in_line
 
 
-def get_works() -> QuerySet:
+def get_works() -> Work:
     """
     Returns all works from the Work model.
     """
