@@ -4,7 +4,7 @@
 {% block content %}
 <body>
     <div class="post-info">
-        <p class="p date">{{ post.created_at|date:'F d, Y' }} - {{ post.time_to_read }}</p>
+        <p class="p date">{{ post.created_at|date:'F d, Y' }}{% if post.time_to_read %} - {{ post.time_to_read }}{% endif %}</p>
         <h1 class="h1 heading">{{ post.heading }}</h1>
         <div class="author">
             <img src="{{ post.author.avatar.url }}" alt="" class="img-author">

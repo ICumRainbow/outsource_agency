@@ -140,7 +140,8 @@ CKEDITOR_UPLOAD_PATH = "/media/"
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 CKEDITOR_CONFIGS = {
     'default': {
-        'allowedContent': True
+        'allowedContent': True,
+        'toolbar': 'full',
     }
 }
 

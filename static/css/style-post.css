@@ -200,10 +200,20 @@
   margin: 0 auto;
   width: 66.66%;
 }
-.primary-container .primary .p {
+.primary-container .primary p {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #1a1a1a;
   margin-bottom: 18px;
 }
-.primary-container .primary .h2 {
+.primary-container .primary p img {
+  object-fit: cover;
+  box-sizing: border-box;
+  margin-bottom: 18px;
+  width: 100%;
+}
+.primary-container .primary h2 {
   margin-top: 36px;
   margin-bottom: 18px;
 }
@@ -217,12 +227,6 @@
   line-height: 1.5;
   color: #1A1A1A;
   margin-bottom: 8px;
-}
-.primary-container .primary .cover-wrapper .cover {
-  object-fit: cover;
-  box-sizing: border-box;
-  margin-bottom: 18px;
-  width: 100%;
 }
 .primary-container .primary a {
   color: #1A1A1A;
@@ -506,4 +510,4 @@ footer .footer_container .footer-wrapper .site-name p {
   line-height: 1.5;
 }
 
-/*# sourceMappingURL=style-post.css.map */
+/*# sourceMappingURL=style-post-new.css.map */

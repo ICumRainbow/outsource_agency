@@ -205,8 +205,40 @@
 .job-description .description {
   width: 66.6%;
 }
-.job-description .description .h5 {
+.job-description .description ul {
+  padding-left: 20px;
+}
+.job-description .description ul li {
+  margin-bottom: 8px;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #1A1A1A;
+}
+.job-description .description ul li:last-child {
+  margin-bottom: 0;
+}
+.job-description .description h1 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #1A1A1A;
+  margin-bottom: 34px;
+}
+.job-description .description h2 {
   padding: 18px 0;
+  margin-bottom: 18px;
+  margin-top: 34px;
+}
+.job-description .description p {
+  margin-bottom: 8px;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #1A1A1A;
+}
+.job-description .description p:last-child {
+  margin-bottom: 0;
 }
 .job-description .description .description-list {
   padding-left: 20px;
@@ -399,4 +431,4 @@ footer .footer_container .footer-wrapper .site-name p {
   text-decoration: underline #00ff15;
 }
 
-/*# sourceMappingURL=style-job-details.css.map */
+/*# sourceMappingURL=style-job-details-new.css.map */

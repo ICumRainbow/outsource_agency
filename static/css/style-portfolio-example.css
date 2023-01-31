@@ -45,6 +45,7 @@
   line-height: 1.5;
   font-weight: 300;
   color: #1a1a1a;
+  list-style: circle;
 }
 
 .content_container {
@@ -207,27 +208,15 @@
 .details-wrapper .h2 {
   padding-bottom: 40px;
 }
-.details-wrapper .primary {
-  display: flex;
-  justify-content: space-between;
-}
-.details-wrapper .primary .list {
-  padding-left: 20px;
-  width: 50%;
-}
-.details-wrapper .primary .list .list-element {
+.details-wrapper p {
   font-size: 20px;
   line-height: 1.5;
   font-weight: 300;
   margin-bottom: 8px;
-}
-.details-wrapper .primary .text-wrapper {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-}
-.details-wrapper .primary .text-wrapper .text-column .h6 {
-  margin-bottom: 16px;
+  text-indent: 1em;
+  list-style-type: disc;
+  display: list-item;
+  margin-left: 20px;
 }
 
 .text-variations {
@@ -290,14 +279,25 @@
   width: 100%;
 }
 
-.description {
-  width: 46.66%;
-}
-.description .h1 {
+h1 {
   margin-bottom: 18px;
 }
-.description .h2 {
+
+h2 {
   margin-bottom: 58px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+p img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  height: 560px !important;
+  width: 100% !important;
 }
 
 .next-example .heading {
@@ -559,4 +559,4 @@ footer .footer_container .footer-wrapper .site-name p {
   text-decoration: underline #00ff15;
 }
 
-/*# sourceMappingURL=style-portfolio-example.css.map */
+/*# sourceMappingURL=style-portfolio-example-new.css.map */

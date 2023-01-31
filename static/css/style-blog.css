@@ -205,11 +205,12 @@
   cursor: pointer;
   box-sizing: border-box;
 }
-.primary-container .navbar .buttons .nav-button .p {
+.primary-container .navbar .buttons .nav-button a {
   padding: 0;
   font-size: 16px;
   font-weight: 500;
   word-break: break-word;
+  text-decoration: none;
 }
 .primary-container .search-bar {
   display: flex;
@@ -218,7 +219,6 @@
   position: relative;
   height: 40px;
   min-height: 40px;
-  width: 100%;
   margin: 0;
   background: none;
   border-width: 2px;
@@ -484,4 +484,4 @@ footer .footer_container .footer-wrapper .site-name p {
   text-decoration: underline #00ff15;
 }
 
-/*# sourceMappingURL=style-blog.css.map */
+/*# sourceMappingURL=style-blog-new.css.map */

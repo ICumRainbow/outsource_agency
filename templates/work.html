@@ -48,18 +48,24 @@
             </div>
         </div>
         <div class="column-border">
-            <div class="paragraph">
-                <h6 class="h6">IMPACT</h6>
-                <p class="p">{{ work.impact }}</p>
-            </div>
-            <div class="paragraph">
-                <h6 class="h6">NORTH STAR METRIC</h6>
-                <p class="p">{{ work.metric }}</p>
-            </div>
-            <div class="paragraph">
-                <h6 class="h6">INTERESTING FEATURES</h6>
-                <p class="p">{{ work.interesting_features }}</p>
-            </div>
+            {% if work.impact %}
+                <div class="paragraph">
+                    <h6 class="h6">IMPACT</h6>
+                    <p class="p">{{ work.impact }}</p>
+                </div>
+            {% endif %}
+            {% if work.metric %}
+                <div class="paragraph">
+                    <h6 class="h6">NORTH STAR METRIC</h6>
+                    <p class="p">{{ work.metric }}</p>
+                </div>
+            {% endif %}
+            {% if work.interesting_features %}
+                <div class="paragraph">
+                    <h6 class="h6">INTERESTING FEATURES</h6>
+                    <p class="p">{{ work.interesting_features }}</p>
+                </div>
+            {% endif %}
         </div>
     </div>
     <section class="divider-desktop"></section>

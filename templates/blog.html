@@ -34,7 +34,7 @@
         </div>
         <div class="page-1">
             {% if not request.GET %}
-                <a href="" class="post-link">
+                <a href="{% url 'post' headliner.id %}" class="post-link">
                 <div class="headliner">
                     <div class="description">
                         <h4 class="h4">{{ headliner.heading }}</h4>
@@ -56,7 +56,7 @@
             {% endif %}
             <div class="posts">
                 {% for post in page %}
-                <a href="#" class="post-link">
+                <a href="{% url 'post' post.id %}" class="post-link">
                     <div class="blog-element">
                         <div class="image">
                             <img src="{{ post.picture.url }}" alt="" class="img">

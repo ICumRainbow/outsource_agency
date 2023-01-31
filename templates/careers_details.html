@@ -3,7 +3,7 @@
 {% block content %}
 <body>
     <div class="content_container position-heading">
-        <h1 class="h1">Data Engineer</h1>
+        <h1 class="h1">{{ vacancy.name }}</h1>
         <p class="p-tags">{{ vacancy.location }}{% if vacancy.on_site_option %}, On-Site{% endif %}{% if vacancy.remote_option %}, Remote{% endif %}</p>
     </div>
     <div class="image-wrapper">
