@@ -160,7 +160,7 @@ EMAIL_HOST_USER = 'no-reply@example.com'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 TELEGRAM = {
-    'TOKEN': '5959733238:AAFfrkaFYhDlCsEEKrFbemHG1zEVlxQEPOQ',
+    'TOKEN': os.environ['BOT_TOKEN'],
     'LINK': 't.me/contact_outsource_bot',
 }
 
