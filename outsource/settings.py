@@ -161,6 +161,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 TELEGRAM = {
     'TOKEN': os.environ['BOT_TOKEN'],
+
     'LINK': 't.me/contact_outsource_bot',
 }
 
