@@ -16,6 +16,9 @@ class VacancyCategory(BaseModel):
     def __str__(self):
         return self.name
 
+    def __repr__(self):
+        return f"<Category {self.name}>"
+
 
 class Location(BaseModel):
     """
@@ -28,6 +31,9 @@ class Location(BaseModel):
 
     def __str__(self):
         return self.name
+
+    def __repr__(self):
+        return f"<Location {self.name}>"
 
 
 class Vacancy(BaseModel):
@@ -47,3 +53,8 @@ class Vacancy(BaseModel):
 
     def __str__(self):
         return self.name
+
+    def __repr__(self):
+        return f"<Vacancy {self.name}>"
+
+

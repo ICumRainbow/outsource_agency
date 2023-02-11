@@ -29,13 +29,15 @@ def for_ctos_view(request):
         if form.errors:
             print(form.errors.as_text)
         if form.is_valid():
+            form.save()
+
             # forming a message
             subject = "Website Inquiry"
-            body = {
-                'business_email': form.cleaned_data['business_email'],
-                'project_details': form.cleaned_data['project_details'],
-            }
-            message = "\n".join(map(str, body.values()))
+            message = \
+                (
+                 f"Email: {form.cleaned_data['business_email']}\n"
+                 f"Project details: {form.cleaned_data['project_details']}\n"
+                 )
             async_to_sync(send_message)(message)
             try:
                 message = EmailMessage(subject, message, 'onetwo20003@gmail.com', ['onetwo20003@gmail.com'])

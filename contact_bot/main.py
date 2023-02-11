@@ -1,15 +1,14 @@
 import logging
 import os
-import requests
+
 from django.conf import settings
-import telegram
 from telegram import Update
 from telegram.constants import ParseMode
-from telegram.ext import Updater, CommandHandler, ApplicationBuilder, ContextTypes
+from telegram.ext import CommandHandler, ApplicationBuilder, ContextTypes
 
-# from contact_bot.context_processors import TelegramSigner
+TOKEN = settings.TELEGRAM['TOKEN']
+
 PORT = int(os.environ.get('PORT', '8443'))
-TOKEN = '5959733238:AAFfrkaFYhDlCsEEKrFbemHG1zEVlxQEPOQ'
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
@@ -34,6 +33,6 @@ if __name__ == '__main__':
         listen="127.0.0.1",
         port=PORT,
         url_path=TOKEN,
-        webhook_url='https://8d1d-109-105-160-58.eu.ngrok.io/telegram/contact_outsource_bot/' + TOKEN,
+        webhook_url='https://a835-213-230-80-188.eu.ngrok.io/telegram/contact_outsource_bot/' + TOKEN,
     )
     # application.run_polling()  # we use polling in case we want to test it by running it on our PC

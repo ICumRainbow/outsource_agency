@@ -32,8 +32,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8930-109-105-160-58.eu.ngrok.io',
     '127.0.0.1',
+    'a835-213-230-80-188.eu.ngrok.io'
 ]
 
 # Application definition
@@ -81,7 +81,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'social.context_processors.get_socials',
-                'contact_bot.context_processors.get_telegram_link'
+                'contact_bot.context_processors.get_telegram_link',
+                'contact_bot.context_processors.check_user_linked',
             ],
         },
     },

@@ -4,6 +4,7 @@
 <head>
 <title>{% block title %}{% endblock %}</title>
 <link rel="stylesheet" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}">
+<link rel="stylesheet" href="{% static "admin/css/tooltip.css" %}">
 {% block dark-mode-vars %}
   <link rel="stylesheet" href="{% static "admin/css/dark_mode.css" %}">
 {% endblock %}
@@ -38,7 +39,13 @@
         {% block usertools %}
         {% if has_permission %}
         <div id="user-tools">
-            <a target="_blank" href="https://t.me/contact_outsource_bot?start={{ link }}">Link <strong>Telegram account</strong></a>
+            <div class="tooltip">
+                <a target="_blank" href="https://t.me/contact_outsource_bot?start={{ link }}">{% if user_linked %}Re-{% endif %}Link <strong>Telegram account</strong></a>
+                <span class="tooltiptext">
+                    Click this link and you will be transferred to our Telegram bot, you need to press Start in order to
+                    have contact form messages forwarded to you.
+                </span>
+            </div>
             {% block welcome-msg %}
                 {% translate 'Welcome,' %}
                 <strong>{% firstof user.get_short_name user.get_username %}</strong>.

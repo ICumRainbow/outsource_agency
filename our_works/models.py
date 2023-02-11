@@ -48,3 +48,6 @@ class Work(BaseModel):
 
     def __str__(self):
         return self.heading
+
+    def __repr__(self):
+        return f"<Work {self.heading}>"

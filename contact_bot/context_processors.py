@@ -1,9 +1,6 @@
-import os
-
-from django.conf import settings
 from django.core.signing import Signer
 
-# os.environ['DJANGO_SETTINGS_MODULE'] = 'outsource.settings'
+from .models import TelegramUser
 
 
 class TelegramSigner(Signer):
@@ -27,3 +24,8 @@ def get_telegram_link(request):
         'link': signed,
     }
     return context
+
+
+def check_user_linked(request):
+    user_linked = request.user.id in TelegramUser.objects.values_list('user_id', flat=True)
+    return {'user_linked': user_linked}

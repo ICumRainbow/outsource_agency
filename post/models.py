@@ -18,6 +18,9 @@ class Category(BaseModel):
     def __str__(self):
         return self.name
 
+    def __repr__(self):
+        return f"<Category {self.name}>"
+
 
 class Tag(BaseModel):
     """
@@ -31,6 +34,9 @@ class Tag(BaseModel):
 
     def __str__(self):
         return self.name
+
+    def __repr__(self):
+        return f"<Tag {self.name}>"
 
 
 class Author(BaseModel):
@@ -48,6 +54,9 @@ class Author(BaseModel):
 
     def __str__(self):
         return self.name
+
+    def __repr__(self):
+        return f"<Author {self.name}>"
 
 
 class Post(BaseModel):
@@ -68,3 +77,6 @@ class Post(BaseModel):
 
     def __str__(self):
         return self.heading
+
+    def __repr__(self):
+        return f"<Post {self.heading}>"
