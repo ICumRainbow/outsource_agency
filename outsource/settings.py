@@ -17,7 +17,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'ckeditor',
     'colorfield',
+    'captcha',
     'post',
     'social',
     'our_works',
@@ -184,3 +184,8 @@ LOGGING = {
         },
     },
 }
+
+# reCAPTCHA
+RECAPTCHA_PUBLIC_KEY = os.environ['RECAPTCHA_PUBLIC_KEY']
+RECAPTCHA_PRIVATE_KEY = os.environ['RECAPTCHA_PRIVATE_KEY']
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']

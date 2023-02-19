@@ -1,4 +1,7 @@
+import os
+
 from asgiref.sync import async_to_sync
+from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -19,6 +22,7 @@ def contact_view(request):
         form = MainContactForm(request.POST)
         if form.errors:
             print(form.errors.as_text)
+            messages.success(request, 'Something went wrong, please try again!')
         if form.is_valid():
             form.save()
 
@@ -37,6 +41,7 @@ def contact_view(request):
                  f"Needs: {', '.join([NEEDS[i] for i in form.cleaned_data['needs']])}"
                  )
             async_to_sync(send_message)(body)
+            messages.success(request, 'Thank you for your message! We will answer you soon!')
             try:
                 send_mail(subject, body, DEFAULT_FROM_EMAIL, ['to@example.com'], fail_silently=False)
             except BadHeaderError:

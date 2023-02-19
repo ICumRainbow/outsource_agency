@@ -10,8 +10,7 @@ async def send_message(message: str) -> None:
     Accepts message as parameter and sends it to specified chat_id.
     :param message:
     """
-    telegram_settings = settings.TELEGRAM
-    bot = telegram.Bot(token=telegram_settings['TOKEN'])
+    bot = telegram.Bot(token=settings.TELEGRAM['TOKEN'])
     users = TelegramUser.objects.all()
     async for user in users:
         await bot.send_message(chat_id=user.chat,

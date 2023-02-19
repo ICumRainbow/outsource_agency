@@ -22,7 +22,7 @@ class Social(BaseModel):
         return self.name
 
     def __repr__(self):
-        return f"<Social {self.name}>"
+        return f"Social(name='{self.name}')"
 
 
 class MainFormRequest(BaseModel):
@@ -55,7 +55,7 @@ class MainFormRequest(BaseModel):
         return self.company
 
     def __repr__(self):
-        return f"<Request from {self.company}>"
+        return f"MainFormRequest(company='{self.company}', first_name='{self.first_name}', business_title='{self.business_title}')"
 
 
 class SecondaryFormRequest(BaseModel):
@@ -72,4 +72,4 @@ class SecondaryFormRequest(BaseModel):
         return self.business_email
 
     def __repr__(self):
-        return f"<Request from {self.business_email}>"
+        return f"SecondaryFormRequest(business_email='{self.business_email}')"

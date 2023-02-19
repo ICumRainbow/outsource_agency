@@ -1,4 +1,5 @@
 from asgiref.sync import async_to_sync
+from django.contrib import messages
 from django.core.mail import EmailMessage, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -39,6 +40,7 @@ def for_ctos_view(request):
                  f"Project details: {form.cleaned_data['project_details']}\n"
                  )
             async_to_sync(send_message)(message)
+            messages.success(request, 'Thank you for your message! We will answer you soon!')
             try:
                 message = EmailMessage(subject, message, 'onetwo20003@gmail.com', ['onetwo20003@gmail.com'])
                 eml_content = message.message().as_bytes()

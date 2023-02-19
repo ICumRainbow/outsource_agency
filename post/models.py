@@ -19,7 +19,7 @@ class Category(BaseModel):
         return self.name
 
     def __repr__(self):
-        return f"<Category {self.name}>"
+        return f"Category(name='{self.name}')"
 
 
 class Tag(BaseModel):

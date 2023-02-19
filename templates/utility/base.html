@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QAgency</title>
 
+    <link rel="stylesheet" href="{% static 'css/message.css' %}">
+
     {% if request.path == '/' %}
         <link rel="stylesheet" href="{% static 'css/style-main.css' %}">
     {% endif %}
@@ -56,9 +58,11 @@
     {% if 'post' in request.path %}
         <link rel="stylesheet" href="{% static 'css/style-post.css' %}">
     {% endif %}
+
     <script src="https://kit.fontawesome.com/c8e9354b59.js" crossorigin="anonymous"></script>
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/jquery.nice-select.js' %}"></script>
+    <script src="{% static 'js/message.js' %}"></script>
 </head>
 <body>
 <div class="logo-motto__aside">
@@ -104,7 +108,17 @@
             </div>
         </header>
     </div>
-
+{% if messages %}
+    {% for message in messages %}
+        <div id="toast">
+            <div id="img"><span class="fa {% if 'wrong' in message %} fa-exclamation-circle {% else %}fa-check-circle{% endif %}"></span></div>
+            <div id="desc"><p>{{ message }}</p></div>
+        </div>
+        <script>
+            launch_toast()
+        </script>
+    {% endfor %}
+{% endif %}
 {% block content %}{% endblock %}
 </div>
 <footer>

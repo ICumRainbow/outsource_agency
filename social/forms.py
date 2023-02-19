@@ -1,12 +1,19 @@
+import os
+
 from django import forms
 
-# Create your forms here.
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV3
 from social.constants import COUNTRY_CHOICES, BUDGET_CHOICES, NEEDS_CHOICES
 
 from .models import MainFormRequest, SecondaryFormRequest
+from outsource import settings
 
 
 class MainContactForm(forms.ModelForm):
+    """
+    Main contact form with captcha field.
+    """
     class Meta:
         model = MainFormRequest
         fields = ['first_name', 'last_name', 'business_email', 'country', 'company', 'business_title',
@@ -29,8 +36,17 @@ class MainContactForm(forms.ModelForm):
     budget = forms.ChoiceField(choices=BUDGET_CHOICES, required=False, widget=forms.Select(attrs={'class': 'dropdown'}))
     needs = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=NEEDS_CHOICES, required=False)
 
+    captcha = ReCaptchaField(
+        public_key=settings.RECAPTCHA_PUBLIC_KEY,
+        private_key=settings.RECAPTCHA_PRIVATE_KEY,
+        widget=ReCaptchaV3
+    )
+
 
 class SecondaryContactForm(forms.ModelForm):
+    """
+    Secondary contact form with captcha field.
+    """
     class Meta:
         model = SecondaryFormRequest
         fields = ['business_email', 'project_details']
@@ -38,3 +54,8 @@ class SecondaryContactForm(forms.ModelForm):
     business_email = forms.EmailField(
         widget=forms.TextInput(attrs={'class': 'input', 'id': 'email', 'placeholder': 'Email Address'}))
     project_details = forms.CharField(widget=forms.Textarea, max_length=2000, required=False)
+    captcha = ReCaptchaField(
+        public_key=settings.RECAPTCHA_PUBLIC_KEY,
+        private_key=settings.RECAPTCHA_PRIVATE_KEY,
+        widget=ReCaptchaV3
+    )

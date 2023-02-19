@@ -17,7 +17,7 @@ class VacancyCategory(BaseModel):
         return self.name
 
     def __repr__(self):
-        return f"<Category {self.name}>"
+        return f"VacancyCategory(name='{self.name}')"
 
 
 class Location(BaseModel):
@@ -33,7 +33,7 @@ class Location(BaseModel):
         return self.name
 
     def __repr__(self):
-        return f"<Location {self.name}>"
+        return f"Location(name='{self.name}')"
 
 
 class Vacancy(BaseModel):
@@ -55,6 +55,6 @@ class Vacancy(BaseModel):
         return self.name
 
     def __repr__(self):
-        return f"<Vacancy {self.name}>"
+        return f"Vacancy(name='{self.name}', category='{self.category}')"
 
 

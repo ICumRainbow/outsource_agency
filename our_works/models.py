@@ -50,4 +50,4 @@ class Work(BaseModel):
         return self.heading
 
     def __repr__(self):
-        return f"<Work {self.heading}>"
+        return f"Work(heading='{self.heading}')"
