@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="page-1">
-            {% if not request.GET %}
+            {% if not request.GET and headliner %}
                 <a href="{% url 'post' headliner.id %}" class="post-link">
                 <div class="headliner">
                     <div class="description">
