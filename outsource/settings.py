@@ -31,8 +31,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1',
-    '44b6-213-230-114-202.eu.ngrok.io'
+    'localhost',
+
 ]
 
 # Application definition
@@ -48,15 +48,13 @@ INSTALLED_APPS = [
     'ckeditor',
     'colorfield',
     'captcha',
+    'core',
     'post',
     'social',
     'our_works',
-    'core',
     'contact_bot',
     'careers',
 ]
-
-AUTH_USER_MODEL = 'core.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,7 +1,7 @@
 from ckeditor.fields import RichTextField
 from django.db import models
 
-from core.models import BaseModel
+from utils.models import BaseModel
 
 
 class VacancyCategory(BaseModel):

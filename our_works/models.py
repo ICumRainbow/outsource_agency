@@ -5,7 +5,7 @@ from colorfield.fields import ColorField
 from django.core.validators import FileExtensionValidator
 from django.db.models import TextField
 
-from core.models import BaseModel
+from utils.models import BaseModel
 
 
 class Work(BaseModel):
