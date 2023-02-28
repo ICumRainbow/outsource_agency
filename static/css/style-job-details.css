@@ -540,7 +540,7 @@ footer .footer_container .footer-wrapper .site-name p {
   height: 100%;
 }
 .apply-modal .form-wrapper {
-  z-index: 100;
+  z-index: 300;
   height: 100%;
   position: fixed;
   width: 100%;
