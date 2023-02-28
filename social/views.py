@@ -1,17 +1,13 @@
-import os
-
 from asgiref.sync import async_to_sync
+from contact_bot.utils import send_message
+from core.views import home_view
 from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-
-from contact_bot.utils import send_message
-from core.views import for_ctos_view, home_view
 from outsource.settings import DEFAULT_FROM_EMAIL
 from social.constants import BUDGET, COUNTRY, NEEDS
 from social.forms import MainContactForm
-from .models import MainFormRequest
 
 
 def contact_view(request):

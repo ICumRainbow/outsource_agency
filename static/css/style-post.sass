@@ -45,6 +45,10 @@
   font-weight: 300
   color: #1a1a1a
 
+.accordion-active
+  transform: rotate(0deg)!important
+  transition: .2s!important
+
 .content_container
   padding: 0 35px
 
@@ -77,20 +81,104 @@
   margin: 0 auto
 
 .header-wrapper
-  width: 100%
+  width: -webkit-fill-available
   padding: 20px 35px
   top: 0
   transition: .3s
   position: fixed
   box-sizing: border-box
-  z-index: 9999
+  z-index: 10
   background-color: transparent
 
 .header
   display: flex
-  position: static
   font-weight: 200
-  max-width: 1270px
+  width: 100%
+  align-items: center
+  justify-content: space-between
+
+.mobile
+  display: none
+
+.burger-menu-wrapper
+  display: flex
+  position: absolute
+  right: 32px
+  z-index: 99
+  width: 64px
+  height: 56px
+  border: 2px solid #1A1A1A
+  box-shadow: 4px 4px 0 #1A1A1A
+  margin: 30px 0 30px auto
+  cursor: pointer
+  justify-content: center
+  align-items: center
+  .burger-menu
+    width: 18px
+    height: 10px
+    position: relative
+    .burger-element
+      width: 100%
+      height: 2px
+      background-color: #1A1A1A
+      position: absolute
+      transition: .2s
+      &:first-child
+        top: 0
+      &:last-child
+        bottom: 0
+
+.mobile-nav
+  display: none
+  flex-direction: column
+  justify-content: center
+  width: 100%
+  height: 100%
+  position: fixed
+  overflow: hidden
+  top: 0
+  background-color: white
+  transition: .3s
+  .navigation_list
+    display: flex
+    height: 100%
+    padding: 100px 0
+    flex-direction: column
+    margin-top: 30px
+    transition: .3s
+    .navigation_item
+      font-size: 20px
+      line-height: 1.5
+      font-weight: 300
+      .navigation_link
+        margin-right: 0
+        font-size: 28px
+        padding: 8px 0
+        position: relative
+  .contact-button
+    text-align: center
+    width: 140px
+    border: 2px solid #1a1a1a
+    padding: 16px 20px
+    color: #1a1a1a
+    background-color: #fff
+    border-radius: 0
+    box-shadow: 4px 4px 0 #1a1a1a
+    font-weight: 400
+    font-size: 16px
+    line-height: 1.5
+    transition: .3s
+    text-decoration: none
+    z-index: 9999
+    &:hover
+      box-shadow: 2px 2px 0 #1a1a1a
+      transition: .3s
+
+.mobile-nav-active
+  display: block
+  z-index: 1
+  height: 100%
+  transition: .3s
 
 .navigation_list
   display: flex
@@ -322,7 +410,6 @@ footer
   padding: 46px 25px 0 25px
   background-color: #1A1A1A
   .footer_container
-    width: 100%
     max-width: 1270px
     padding: 0 35px
     margin: 0 auto
@@ -423,3 +510,595 @@ footer
           font-size: 16px
           font-weight: 300
           line-height: 1.5
+
+ul
+  padding-left: 20px
+  li
+    font-size: 20px
+    font-weight: 400
+    line-height: 1.5
+
+p
+  font-size: 20px
+  font-weight: 300
+  line-height: 1.5
+  img
+    width: fit-content
+    height: auto
+    max-width: 100%
+
+h2
+  font-size: 48px
+
+h3
+  font-size: 40px
+
+.burger-element-top-active
+  transform: rotate(45deg)!important
+  top: 50%!important
+
+.burger-element-bottom-active
+  transform: rotate(-45deg)!important
+  top: 50%!important
+  bottom: unset!important
+
+@media screen and (max-width: 1500px)
+  .wrapper
+    padding: 0 118px
+
+@media screen and (max-width: 1450px)
+  footer
+    .footer_container
+      padding: 0 100px
+
+@media screen and (max-width: 960px)
+  .logo-motto__aside
+    width: 8%
+  body
+    .wrapper
+      padding: 0 90px
+  .members-header
+    .header-h2
+      font-size: 37px
+  .tools-wrapper
+    .tools-header
+      .header-h2
+        width: -webkit-fill-available
+        font-size: 37px
+
+@media screen and (max-width: 1200px)
+  body
+    .wrapper
+      .list-wrapper
+        .list-primary_wrapper
+          .element
+            display: block
+            .heading
+              width: 100%
+              display: block
+              padding-bottom: 32px
+            .description
+              padding-left: 0
+              margin-left: 0
+              width: 100%
+              .list
+                padding-left: 20px
+  .logo-motto__aside
+    width: 10%
+  .wrapper
+    max-width: 780px
+    padding: 0
+    .header-wrapper
+      .header
+        .header_nav-menu
+          display: none
+        .contact-button_wrapper
+          display: none
+  .top-right_image
+    display: none
+  .landing_message
+    padding-top: 120px
+  .landing_container
+    margin: 0 auto
+    max-width: 780px
+    .landing_message__wrapper
+      width: 100%
+      .landing-h1
+        font-size: 50px
+      .landing-p
+        font-size: 24px
+  .plug-img_wrapper
+    .plug_img
+      object-position: 50% 50%
+      object-fit: cover
+      height: 260px
+  .wrapper
+    .content_container
+      .partners-wrapper
+        .partners-heading
+          width: 100%
+  .heading-wrapper-laptop
+    width: 70%
+  .heading-laptop
+    font-size: 42px!important
+  .plug-img_3_wrapper
+    .plug_img-3
+      height: 260px
+  .example_heading
+    width: 100%
+  .example_element
+    display: block
+    .example_image
+      width: 100%
+      margin-bottom: 32px
+      .img
+        height: 289px
+        object-fit: cover
+    .example_description
+      width: 100%
+  .header-h2
+    width: 100%
+    font-size: 42px
+  .header-h3
+    font-size: 34px
+  .scopes-container
+    display: block
+    .scopes-image
+      width: 100%
+      .scopes-img
+        height: 528px
+        object-fit: cover
+    .scopes-description
+      width: 100%
+      padding: 0
+      margin: 0
+  .header-h2
+    font-size: 34px
+  .members-container
+    .members-wrapper
+      padding: 0 40px
+      .members-primary
+        display: block
+        padding: 20px 0 32px
+        .members-image
+          width: 100%
+          .member-img
+            object-position: 49.61% 21.6%
+            object-fit: cover
+            height: 640px
+            margin-bottom: 32px
+            width: 100%
+        .members-description
+          padding-left: 0
+          width: 100%
+          margin-left: 0
+          .name-buttons-wrapper
+            .members-name
+              .name
+                font-size: 34px
+  .members-header
+    width: -webkit-fill-available
+    padding-left: 40px
+    padding-bottom: 40px
+    padding-right: 40px
+  .achievements-wrapper
+    .achievements-primary
+      display: block
+      .description
+        width: 100%
+      .image
+        padding-left: 0
+        margin-left: 0
+        width: 100%
+        .img
+          object-fit: cover
+          object-position: 47.12% 11.7%
+          height: 289px
+          margin-top: 32px
+          width: 100%
+  .review-wrapper
+    .review-text
+      width: 100%
+      .h2
+        font-size: 42px
+    .secondary
+      .element
+        padding-left: 15px
+        padding-right: 15px
+        &:first-child
+          padding-left: 0
+        &:last-child
+          padding-right: 0
+        .img
+          max-width: 100%
+          height: auto
+        .element-p-title
+          font-size: 34px
+  .form-wrapper
+    display: block
+    .form-description
+      width: 100%
+      padding-right: 0
+      .decoration
+        display: none
+    .form
+      width: 100%
+      padding-left: 0
+      margin-left: 0
+  .faq
+    padding: 0 35px
+    .h2
+      font-size: 42px
+      width: 100%
+    .faq-accordion-menu
+      .faq-accordion-button
+        .accordion-button-title
+          font-size: 24px
+          width: 99%
+  .achievements-wrapper
+    .achievements-primary
+      .description
+        h2
+          font-size: 42px
+  .offices-wrapper
+    .h2
+      font-size: 42px
+      padding-bottom: 64px
+    .primary
+      width: 100%
+      flex-wrap: wrap
+      .office-element
+        padding-bottom: 30px
+        width: 47%
+        box-sizing: border-box
+        &:nth-child(2)
+          padding-right: 0
+        &:nth-child(3)
+          padding-left: 0
+        &:nth-child(4)
+          padding-right: 0
+  body
+    footer
+      .footer_container
+        max-width: 780px
+        width: auto
+        .footer-wrapper
+          width: auto
+          padding: 0 35px
+          .newsletter-input
+            flex-direction: column
+            .input-wrapper
+              width: 100%
+  .header-wrapper
+    padding: 0
+    min-height: 120px
+  .mobile-nav
+    .button-container
+      width: fit-content
+      height: fit-content
+      display: flex
+      justify-content: center
+      margin: 0 auto
+      .contact-button_wrapper
+        box-sizing: border-box
+        margin-left: 14px
+        padding-right: 0
+        justify-content: center
+        display: inline-block
+        z-index: 5000
+        margin-bottom: 20px
+        position: static
+        margin-top: 40px
+        .contact-button
+          text-align: center
+          width: 140px
+          border: 2px solid #1a1a1a
+          padding: 16px 20px
+          color: #1a1a1a
+          background-color: #fff
+          border-radius: 0
+          box-shadow: 4px 4px 0 #1a1a1a
+          font-weight: 400
+          font-size: 16px
+          line-height: 1.5
+          transition: .3s
+          text-decoration: none
+          z-index: 9999
+          &:hover
+            box-shadow: 2px 2px 0 #1a1a1a
+            transition: .3s
+    .navigation_list
+      padding-top: 100px
+      padding-bottom: 0
+  .mobile
+    display: block
+  .tools-element
+    width: 25%
+  .tools_primary
+    justify-content: space-between
+  .benefits-wrapper
+    .benefits-heading_wrapper
+      width: 100%
+    .benefits-primary_wrapper
+      .benefits-element
+        padding: 60px 0
+        display: block
+        .benefits-heading
+          display: block
+          padding-bottom: 32px
+          width: 100%
+          h4
+            font-size: 26px
+          p
+            margin-bottom: 8px
+        .benefits-description
+          margin-left: 0
+          padding-left: 0
+          width: 100%
+  .accents-wrapper
+    .accents-heading_wrapper
+      width: 100%
+    .accents-primary_wrapper
+      .accents-element
+        display: block
+        padding: 60px 0
+        .accents-heading
+          display: block
+          padding-bottom: 32px
+          width: 100%
+          h4
+            font-size: 26px
+          p
+            margin-bottom: 8px
+        .accents-description
+          margin-left: 0
+          padding-left: 0
+          width: 100%
+  body
+    .wrapper
+      .video
+        .video-wrapper
+          display: block
+          .YT-embedded
+            width: 100%
+          .text
+            width: 100%
+            padding-top: 30px
+  body
+    .wrapper
+      .primary-container
+        .navbar
+          flex-direction: column
+          justify-content: center
+          .buttons
+            margin: 0 auto
+            padding-bottom: 30px
+          .search-bar
+            display: block
+            margin: 0 auto
+            width: 100%
+            .form
+              .nav-search
+                width: 100%
+        .page-1
+          .post-link
+            .headliner
+              display: block
+              .description
+                width: 100%
+              .image
+                width: 100%
+                .img
+                  width: 100%
+          .posts
+            .post-link
+              width: 100%
+  body
+    .wrapper
+      .description-rewards
+        display: block
+        .text
+          width: 100%
+          .img-decor
+            display: none
+        .images
+          width: 100%
+          display: block
+          .img
+            object-fit: cover
+            object-position: 50% 50%
+            height: 573px
+      .text-image-variations
+        .text-image
+          flex-direction: column
+          .text
+            width: 100%
+            margin-bottom: 64px
+          .image
+            width: 100%
+            .img
+              width: 100%
+              object-fit: cover
+              object-position: 50% 50%
+              height: 289px
+      .values-primary
+        display: block
+        .values-text
+          width: 100%
+          .element
+            margin-bottom: 32px
+        .values-images
+          width: 100%
+      .opportunities
+        .element
+          display: block
+          .text
+            width: 100%
+            padding-bottom: 32px
+          .image-accordion
+            width: 100%
+            .image
+              height: 260px
+      .transparency-header
+        h2
+          padding: 0
+      .transparency-bg
+        .transparency-primary
+          .transparency-text-image
+            flex-direction: column-reverse
+            .text
+              width: 100%
+            .image
+              width: 100%
+              padding-bottom: 32px
+              .img
+                height: 289px
+                object-fit: cover
+                object-position: 50% 50%
+      .positions
+        .positions-header
+          .dropdowns
+            .filter-button
+              display: none
+      .primary-container
+        .primary
+          max-width: 780px
+          width: auto
+      .content_container
+        .author-bottom
+          .author-info
+            display: block
+            .author
+              width: 100%
+              padding-bottom: 16px
+            .description
+              width: 100%
+        .suggestions
+          display: block
+          .post-link
+            width: 100%
+
+
+
+@media screen and (max-width: 720px)
+  .logo-motto__aside
+    display: none
+  body
+    .wrapper
+      padding: 0 16px
+      .list-wrapper
+        .list-primary_wrapper
+          .element
+            .description
+              display: block
+              .list
+                width: 100%
+                &:last-child
+                  margin-left: 0
+  .landing_container
+    padding: 0 16px
+  .content_container
+    padding: 0 16px
+  .heading-wrapper-laptop
+    width: 100%!important
+    .heading-laptop
+      font-size: 37px!important
+  .landing_message
+    .landing_message__wrapper
+      .landing-h1
+        font-size: 44px!important
+      .landing-p
+        font-size: 21px
+  .members-header
+    padding-left: 0
+    padding-right: 0
+  .tools-wrapper
+    .tools-header
+      .header-h2
+        width: -webkit-fill-available
+  body
+    footer
+      .footer_container
+        padding: 0 35px
+        .footer-wrapper
+          padding: 0
+          .links-wrapper
+            .links
+              flex-direction: column
+              .link
+                padding-left: 0
+          .logos-wrapper
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            a
+              padding: 0
+    .wrapper
+      .works-container
+        .example-element
+          .cover-link
+            .element
+              display: flex
+              flex-direction: column-reverse
+              .image
+                padding-left: 0
+                width: fit-content
+              .text-logo
+                width: fit-content
+                padding-left: 40px
+                .text
+                  h3
+                    font-size: 26px
+                  p
+                    font-size: 16px
+  body
+    .wrapper
+      .positions
+        .positions-header
+          display: block
+          .dropdowns
+            display: block
+            width: 100%
+            .location
+              width: 100%
+            .categories
+              padding-top: 64px
+              width: 100%
+              margin-left: -2px
+          .freelance-button
+            box-sizing: border-box
+            padding-top: 48px
+            width: 100%
+        .primary
+          .position-element
+            display: block
+            .description
+              padding-bottom: 18px
+            .apply-button
+              .button
+                width: 100%
+                box-sizing: border-box
+                min-width: 140px
+                display: flex
+                justify-content: center
+      .instagram
+        .primary
+          .image
+            width: 50%
+            .link
+              .img
+                height: 179px
+
+@media screen and (max-width: 550px)
+  .members-container
+    .members-wrapper
+      .members-primary
+        .members-description
+          .name-buttons-wrapper
+            flex-direction: column
+            align-items: flex-start
+            .members-name
+              padding-bottom: 8px
+
+.nav-link-active
+  text-decoration: underline #00ff15

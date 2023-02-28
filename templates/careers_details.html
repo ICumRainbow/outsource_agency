@@ -1,10 +1,40 @@
 {% extends 'utility/base.html' %}
 {% load static %}
 {% block content %}
-<body>
+    {#  MODAL  #}
+    <div class="apply-modal">
+        <div class="form-wrapper">
+            <div data-modal class="form-container">
+                <div class="modal-close-wrapper">
+                    <div class="text">
+                        <h4>We'll get in touch with you!</h4>
+                    </div>
+                    <div class="container">
+                        <button class="modal-close">X</button>
+                    </div>
+                </div>
+                <form action="" method="POST" class="apply-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label for="name"></label>
+                    {{ form.full_name }}
+                    <label for="email"></label>
+                    {{ form.email }}
+                    <label for="CV"></label>
+                    {{ form.resume }}
+                    {{ form.captcha }}
+                    <div class="button-container">
+                        <button type="submit" class="submit-button">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {#  MODAL  #}
     <div class="content_container position-heading">
         <h1 class="h1">{{ vacancy.name }}</h1>
-        <p class="p-tags">{{ vacancy.location }}{% if vacancy.on_site_option %}, On-Site{% endif %}{% if vacancy.remote_option %}, Remote{% endif %}</p>
+        <p class="p-tags">
+            {{ vacancy.location }}{% if vacancy.on_site_option %}, On-Site{% endif %}{% if vacancy.remote_option %},
+                Remote{% endif %}</p>
     </div>
     <div class="image-wrapper">
         <img src="{{ vacancy.picture.url }}" alt="" class="img-data-engineer">
@@ -12,90 +42,14 @@
     <div class="content_container job-description">
         <div class="description">
             {{ vacancy.content|safe }}
-{#            <h5 class="h5">Life at Q is anything but boring! We’re on a mission to find the As to the most challenging#}
-{#                Qs of today. That makes our everyday lives more fun, our team more cohesive and our daily tasks more#}
-{#                exciting. Are you ready for a challenge?</h5>#}
-{#            <p class="p">We are looking for a <strong>Data Engineer</strong> who will work on various internal data#}
-{#                projects with requirements coming from multiple organizational units and different data-related#}
-{#                problems to solve. The ideal candidate is adept at assembling different types of data processing#}
-{#                pipelines and ETLs. Experience using various data engineering patterns and tools to collect and convert#}
-{#                raw data into normalized datasets ready for dashboarding or further processing and reporting. Following#}
-{#                new trends and investing in your knowledge is a must.</p>#}
-{#            <h5 class="h5">What is it all about?</h5>#}
-{#            <ul class="description-list">#}
-{#                <li class="description-element">Communication & coordination with internal stakeholders</li>#}
-{#                <li class="description-element">Participation in planning and project estimations</li>#}
-{#                <li class="description-element">Participation in the data architecture and design of the application</li>#}
-{#                <li class="description-element">Planning and setting up the data processing part of the project from#}
-{#                    scratch</li>#}
-{#                <li class="description-element">Using business context awareness, as well as an ability to communicate#}
-{#                    complex findings in a simple, actionable way</li>#}
-{#                <li class="description-element">Using your combined knowledge of computer science and applications,#}
-{#                    modeling, statistics, analytics and maths to meet the requirements and solve challenges</li>#}
-{#                <li class="description-element">Maintaining ongoing projects deliverables</li>#}
-{#                <li class="description-element">Proactively proposing pragmatic and cost effective data processing#}
-{#                    solutions</li>#}
-{#                <li class="description-element">Close collaboration with other team members</li>#}
-{#                <li class="description-element">Participate in an agile development process with your project team</li>#}
-{#                <li class="description-element">Developing custom data processing pipelines</li>#}
-{#                <li class="description-element">Perform various ad hoc reporting as per the requests of the#}
-{#                    stakeholders</li>#}
-{#            </ul>#}
-{#            <h5 class="h5">What do we expect from you?</h5>#}
-{#            <ul class="description-list">#}
-{#                <li class="description-element">2+ years of experience in the data management field</li>#}
-{#                <li class="description-element">Have SQL skills and experience with NoSQL databases</li>#}
-{#                <li class="description-element">Coding knowledge of the following languages: SQL and Python</li>#}
-{#                <li class="description-element">Familiarity with ETL processes is a plus</li>#}
-{#                <li class="description-element">Familiarity with AWS is a plus</li>#}
-{#                <li class="description-element">Familiarity with distributed data/computing tools: Map/Reduce, Hadoop,#}
-{#                    Hive, Spark, Gurobi, or similar is a plus</li>#}
-{#                <li class="description-element">Familiarity with visualizing/presenting data in the most effective way#}
-{#                    possible using: Periscope, Microsoft Power BI, Looker Studio, Oracle Business Intelligence, Tableau,#}
-{#                    Business Objects, D3, ggplot or similar is a plus</li>#}
-{#                <li class="description-element">Theoretical knowledge of data modeling and warehousing fundamentals#}
-{#                    (star, snowflake schema, data marts,...)</li>#}
-{#                <li class="description-element">Ability to analyze and solve complex business problems</li>#}
-{#                <li class="description-element">Good work ethics</li>#}
-{#                <li class="description-element">Desire to continuously develop and learn new skills</li>#}
-{#                <li class="description-element">Willingness to exchange knowledge, provide help and collaborate with#}
-{#                    team members</li>#}
-{#                <li class="description-element">Ability to work independently or within a team</li>#}
-{#                <li class="description-element">Ability to slice, estimate and prioritize assigned work as well as#}
-{#                    deliver work done respecting given deadlines</li>#}
-{#                <li class="description-element">Advanced English language skills</li>#}
-{#                <li class="description-element">Ability to adapt to different tools and ways of working</li>#}
-{#                <li class="description-element">Ability to laugh at least a little bit at this: A SQL query walks into#}
-{#                    a bar, walks up to two tables and asks “Can I join you?”</li>#}
-{#                <li class="description-element">Of course, this joke has SQL: An hour later the query stumbles out of#}
-{#                    the bar, with a broken nose, two black eyes, and bruises all over. Its friend asks "what happened?#}
-{#                    I thought you joined those tables!" And the query replies "Yup, but they were pretty big, I probably#}
-{#                    shouldn't have crossed them"</li>#}
-{#            </ul>#}
-{#            <h5 class="h5">What we bring on the table:</h5>#}
-{#            <ul class="description-list">#}
-{#                <li class="description-element">The location choice is yours: remote, on-site or hybrid</li>#}
-{#                <li class="description-element">Flexible working hours</li>#}
-{#                <li class="description-element">Work with new technologies in a high-performance environment</li>#}
-{#                <li class="description-element">IT community involvement — Meetups, Workshops & Articles</li>#}
-{#                <li class="description-element">Internal workshops & personal development</li>#}
-{#                <li class="description-element">Educational budget</li>#}
-{#                <li class="description-element">100% paid sick leave</li>#}
-{#                <li class="description-element">Paid health insurance</li>#}
-{#                <li class="description-element">Subvention of Multisport card</li>#}
-{#                <li class="description-element">Transport allowance & meal allowance</li>#}
-{#            </ul>#}
-{#            <h5 class="h5">Salary range</h5>#}
-{#            <p class="p">Salary is based on your experience, level of knowledge & technical interview.</p>#}
             <p class="p-bold">Sounds exciting? Click on the button below and apply now :)</p>
             <a href="#" class="apply-button_link">Apply now</a>
         </div>
         <div class="contact">
             <h6 class="h6">CONTACT ADDRESS</h6>
-            <a href="#" class="mail-link">apply@q.agency</a>
+            <a href="mailto:apply@q.agency" class="mail-link">apply@q.agency</a>
             <img src="{% static 'img/decoration.svg' %}" alt="" class="img">
         </div>
     </div>
     <section class="divider-desktop"></section>
 {% endblock %}
-</body>

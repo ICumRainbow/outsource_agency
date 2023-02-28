@@ -8,6 +8,8 @@ from contact_bot.utils import send_message
 from core.services import get_works
 from social.forms import SecondaryContactForm
 
+from our_works.models import Work
+
 
 def home_view(request):
     """
@@ -61,7 +63,11 @@ def product_innovation_view(request):
     """
     View for Product Innovation page.
     """
-    return render(request, 'product_innovation.html')
+    latest_work = Work.objects.last()
+    context = {
+        'latest_work': latest_work,
+    }
+    return render(request, 'product_innovation.html', context)
 
 
 def services_view(request):

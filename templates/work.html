@@ -1,7 +1,6 @@
 {% extends 'utility/base.html' %}
 {% load static %}
 {% block content %}
-<body>
     <div class="content_container example-heading">
         <img src="{{ work.logo_dark.url }}" alt="" class="logo">
         <h1 class="h1">{{ work.heading }}</h1>
@@ -12,28 +11,7 @@
     </div>
     <div class="content_container details-wrapper">
         <h2 class="h2">What We Did</h2>
-{#        <div class="primary">#}
-{#            <ul class="list">#}
-{#                <li class="list-element">Web app</li>#}
-{#                <li class="list-element">Team augmentation/dedicated team</li>#}
-{#                <li class="list-element">QA automation</li>#}
-{#            </ul>#}
-{#            <div class="text-wrapper">#}
-{#                <div class="text-column">#}
-{#                    <h6 class="h6">INDUSTRY</h6>#}
-{#                    <p class="p">Travel</p>#}
-{#                </div>#}
-{#                <div class="text-column">#}
-{#                    <h6 class="h6">TEAM SIZE</h6>#}
-{#                    <p class="p">11 People</p>#}
-{#                </div>#}
-{#                <div class="text-column">#}
-{#                    <h6 class="h6">LOCATION</h6>#}
-{#                    <p class="p">United Kingdom</p>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-    {{ work.what_we_did|safe }}
+        {{ work.what_we_did|safe }}
     </div>
     <section class="divider-desktop"></section>
     <div class="content_container text-variations">
@@ -92,41 +70,43 @@
         <img src="{{ work.picture3.url }}" alt="" class="img-times">
     </div>
     <section class="divider-desktop"></section>
-    {{ work.content|safe }}
-    <section class="divider-desktop"></section>
-    <div class="next-example">
-        <div class="content_container heading">
-            <h2 class="h2">Next in Line</h2>
-        </div>
-        <div class="example-element bbc">
-            <a href="#" class="cover-link">
-                <div class="element">
-                    <div class="text-logo">
-                        <img src="{% static 'img/our%20work/bbc.svg' %}" alt="" class="logo">
-                        <div class="text">
-                            <h3 class="h3">Pandemic App</h3>
-                            <p class="p">Northern Irish agency Big Motive partnered with Q to build an app that would
-                                simulate and predict future pandemic spread.</p>
-                        </div>
-                        <div class="button">
-                            <div class="button-wrapper">
-                                <p class="p">View case study</p>
-                                <img src="{% static 'img/arrow.svg' %}" alt="" class="arrow">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image">
-                        <img src="{% static 'img/our%20work/img_bbc.png' %}" alt="" class="img">
-                    </div>
-                </div>
-            </a>
-        </div>
+    <div class="work_content">
+        {{ work.content|safe }}
     </div>
     <section class="divider-desktop"></section>
+    {% if next_in_line %}
+        <div class="next-example">
+            <div class="content_container heading">
+                <h2 class="h2">Next in Line</h2>
+            </div>
+            <div class="example-element" style="background-color: {{ next_in_line.color }}">
+                <a href="{% url 'works_details' next_in_line.id %}" class="cover-link">
+                    <div class="element">
+                        <div class="text-logo">
+                            <img src="{{ next_in_line.logo_light.url }}" alt="" class="logo">
+                            <div class="text">
+                                <h3 class="h3">{{ next_in_line.heading }}</h3>
+                                <p class="p">{{ next_in_line.brief }}</p>
+                            </div>
+                            <div class="button">
+                                <div class="button-wrapper">
+                                    <p class="p">View case study</p>
+                                    <img src="{% static 'img/arrow.svg' %}" alt="" class="arrow">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="{{ next_in_line.preview_picture.url }}" alt="" class="img">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <section class="divider-desktop"></section>
+    {% endif %}
     <div class="content_container collaborate-button">
         <h3 class="h3">Have a project, or want to say hello?</h3>
-        <a href="Services.html" class="button">Let's collaborate</a>
+        <a href="{% url 'contact' %}" class="button">Let's collaborate</a>
     </div>
     <section class="divider-desktop"></section>
 {% endblock %}
-</body>

@@ -2,7 +2,35 @@
 {% load tags %}
 {% load static %}
 {% block content %}
-<body>
+    {#  MODAL  #}
+    <div class="apply-modal">
+        <div class="form-wrapper">
+            <div data-modal class="form-container">
+                <div class="modal-close-wrapper">
+                    <div class="text">
+                        <h4>We'll get in touch with you!</h4>
+                    </div>
+                    <div class="container">
+                        <button class="modal-close">X</button>
+                    </div>
+                </div>
+                <form action="" method="POST" class="apply-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label for="name"></label>
+                    {{ form.full_name }}
+                    <label for="email"></label>
+                    {{ form.email }}
+                    <label for="CV"></label>
+                    {{ form.resume }}
+                    {{ form.captcha }}
+                    <div class="button-container">
+                        <button type="submit" class="submit-button">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {#  MODAL  #}
     <div class="content_container position-heading">
         <h1 class="h1">Freelance</h1>
         <p class="p-tags">Remote</p>
@@ -28,31 +56,40 @@
                 <li class="description-element">Flexible & full remote collaboration</li>
                 <li class="description-element">Work with new technologies in a high-performance environment</li>
                 <li class="description-element">Diverse international projects (from 3-week microservice apps to 6+
-                    month enterprise solutions)</li>
+                    month enterprise solutions)
+                </li>
                 <li class="description-element">Opportunity to work with big names and global brands</li>
             </ul>
             <h5 class="h5">Technologies we use:</h5>
             <ul class="description-list">
                 <li class="description-element"><strong>Backend</strong> (PHP; .NET, Node.js; Ruby, Java, Unity,
-                    Go)</li>
+                    Go)
+                </li>
                 <li class="description-element"><strong>Frontend</strong> (React, Angular, JavaScript ES6, HTML &
-                    CSS)</li>
+                    CSS)
+                </li>
                 <li class="description-element"><strong>Mobile</strong> (Flutter, React Native, Ionic, Swift, Kotlin,
-                    Java)</li>
+                    Java)
+                </li>
                 <li class="description-element"><strong>UX/UI Design</strong> (Sketch, Figma, Adobe, Miro, InVision,
-                    Zeplin)</li>
+                    Zeplin)
+                </li>
             </ul>
             <h5 class="h5">Common questions:</h5>
             <ul class="description-list">
                 <li class="description-element"><strong>Contract?</strong> A long-term B2B contract & constant flow of
-                    projects in various industries</li>
+                    projects in various industries
+                </li>
                 <li class="description-element"><strong>Engagement?</strong> Possibility to choose/tailor your
-                    engagement scope</li>
+                    engagement scope
+                </li>
                 <li class="description-element"><strong>Time tracking?</strong> Simple and intuitive tool for time
-                    tracking - Teamwork</li>
+                    tracking - Teamwork
+                </li>
                 <li class="description-element"><strong>What if the project gets cancelled/ends?</strong> Upon a
                     projects ending or cancellation, get relocated by our Production Resourcing Team to another project
-                    in our dynamic pipeline</li>
+                    in our dynamic pipeline
+                </li>
             </ul>
             <p class="p-bold">Let's join forces!</p>
             <a href="#" class="apply-button_link">Apply now</a>
@@ -65,4 +102,3 @@
     </div>
     <section class="divider-desktop"></section>
 {% endblock %}
-</body>

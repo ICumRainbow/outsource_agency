@@ -5,7 +5,12 @@ const accordionToggle = document.querySelectorAll('.accordion-toggle'),
 
 accordionToggle.forEach(item => {
     item.addEventListener('click', (e) => {
-        const textAreaParent = item.parentElement;
+        /*const textAreaParent = item.parentElement;
+        const textAreaSibling = textAreaParent.nextElementSibling;
+        const textArea = textAreaSibling.firstElementChild;*/
+
+        const textAreaParentContainer = item.parentElement;
+        const textAreaParent = textAreaParentContainer.parentElement;
         const textAreaSibling = textAreaParent.nextElementSibling;
         const textArea = textAreaSibling.firstElementChild;
 
@@ -15,16 +20,37 @@ accordionToggle.forEach(item => {
                 item.style.paddingBottom = '0px';
             }
         })
-        if (textArea.style.maxHeight === `120px`) {
-            e.target.style.transform = 'rotate(0deg)';
-            e.target.style.transition = '.2s';
-            textArea.style.maxHeight = '0px';
-            textArea.style.paddingBottom = '0px';
-        } else {
-            e.target.style.transform = 'rotate(135deg)';
-            e.target.style.transition = '.2s';
-            textArea.style.maxHeight = '120px';
-            textArea.style.paddingBottom = '40px';
+
+        if (e.target.tagName === 'BUTTON') {
+            if (!e.target.classList.contains('accordion-active')) {
+                accordionToggle.forEach(item => {
+                    item.classList.remove('accordion-active');
+                })
+                e.target.classList.add('accordion-active');
+                e.target.style.transition = '.4s';
+                textArea.style.maxHeight = 'fit-content';
+                textArea.style.paddingBottom = '40px';
+            } else {
+                e.target.classList.remove('accordion-active');
+                e.target.style.transition = '.4s';
+                textArea.style.maxHeight = '0px';
+                textArea.style.paddingBottom = '0';
+            }
+        } else if (e.target.parentElement.tagName === 'BUTTON') {
+            if (!e.target.parentElement.classList.contains('accordion-active')) {
+                accordionToggle.forEach(item => {
+                    item.classList.remove('accordion-active');
+                })
+                e.target.parentElement.classList.add('accordion-active');
+                e.target.parentElement.style.transition = '.4s';
+                textArea.style.maxHeight = 'fit-content';
+                textArea.style.paddingBottom = '40px';
+            } else {
+                e.target.parentElement.classList.remove('accordion-active');
+                e.target.parentElement.style.transition = '.4s';
+                textArea.style.maxHeight = '0px';
+                textArea.style.paddingBottom = '0';
+            }
         }
     })
 });
@@ -83,30 +109,109 @@ if (slides.length > 0) {
     })
 }
 
+
+const membersSlides = document.querySelectorAll('.members-container');
+/*slideNext = document.querySelectorAll('.button-next'),
+slidePrev = document.querySelectorAll('.button-prev'),
+slider = document.querySelectorAll('.pagination'),
+indicators = document.createElement('ol');*/
+
+/*slider.forEach(item => item.style.position = 'relative');*/
+/*indicators.classList.add('carousel-indicators');
+
+slider.forEach(item => item.append(indicators));
+
+for(let i = 0; i < slides.length; i++) {
+    const dot = document.createElement('li');
+    dot.setAttribute('data-slide-to', i + 1);
+    indicators.append(dot);
+}*/
+
+if (membersSlides.length > 0) {
+
+    let slideIndex = 1;
+
+    membersShowSlides(slideIndex);
+
+    function membersShowSlides(n) {
+        if (n > membersSlides.length) {
+            slideIndex = 1;
+        }
+
+        if (n < 1) {
+            slideIndex = membersSlides.length;
+        }
+
+        membersSlides.forEach(item => item.classList.remove('element-active'));
+
+        membersSlides[slideIndex - 1].classList.add('element-active');
+    }
+
+    function membersPlusSlides(n) {
+        membersShowSlides(slideIndex += n);
+    }
+
+    slidePrev.forEach(item => {
+        item.addEventListener('click', () => {
+            membersPlusSlides(-1);
+        })
+    })
+
+    slideNext.forEach(item => {
+        item.addEventListener('click', () => {
+            membersPlusSlides(1);
+        })
+    })
+}
+
+
 const accordionToggle2 = document.querySelectorAll('.accordion-toggle_2'),
     textAreaList2 = document.querySelectorAll('.accordion-text_2');
 
 accordionToggle2.forEach(item => {
     item.addEventListener('click', (e) => {
-        const textAreaParent = item.parentElement;
+        const textAreaParentContainer = item.parentElement;
+        const textAreaParent = textAreaParentContainer.parentElement;
         const textAreaSibling = textAreaParent.nextElementSibling;
         const textArea = textAreaSibling.firstElementChild;
+
         textAreaList2.forEach(item => {
             if (item !== textArea) {
                 item.style.maxHeight = '0px';
                 item.style.paddingBottom = '0px';
             }
         })
-        if (textArea.style.maxHeight === `120px`) {
-            e.target.style.transform = 'rotate(0deg)';
-            e.target.style.transition = '.2s';
-            textArea.style.maxHeight = '0px';
-            textArea.style.paddingBottom = '0px';
-        } else {
-            e.target.style.transform = 'rotate(135deg)';
-            e.target.style.transition = '.2s';
-            textArea.style.maxHeight = '120px';
-            textArea.style.paddingBottom = '40px';
+
+        if (e.target.tagName === 'BUTTON') {
+            if (!e.target.classList.contains('accordion-active')) {
+                accordionToggle2.forEach(item => {
+                    item.classList.remove('accordion-active');
+                })
+                e.target.classList.add('accordion-active');
+                e.target.style.transition = '.2s';
+                textArea.style.maxHeight = 'fit-content';
+                textArea.style.paddingBottom = '40px';
+            } else {
+                e.target.classList.remove('accordion-active');
+                e.target.style.transition = '.2s';
+                textArea.style.maxHeight = '0px';
+                textArea.style.paddingBottom = '0';
+            }
+        } else if (e.target.parentElement.tagName === 'BUTTON') {
+            if (!e.target.parentElement.classList.contains('accordion-active')) {
+                accordionToggle2.forEach(item => {
+                    item.classList.remove('accordion-active');
+                })
+                e.target.parentElement.classList.add('accordion-active');
+                e.target.parentElement.style.transition = '.2s';
+                textArea.style.maxHeight = 'fit-content';
+                textArea.style.paddingBottom = '40px';
+            } else {
+                e.target.parentElement.classList.remove('accordion-active');
+                e.target.parentElement.style.transition = '.2s';
+                textArea.style.maxHeight = '0px';
+                textArea.style.paddingBottom = '0';
+            }
         }
     })
 });
@@ -119,7 +224,7 @@ window.onscroll = function () {
     if (prevScrollPos > currentScrollPos) {
         document.querySelector(".header-wrapper").style.top = "0";
     } else {
-        document.querySelector(".header-wrapper").style.top = "-100px";
+        document.querySelector(".header-wrapper").style.top = "-120px";
     }
 
     if (currentScrollPos <= 20) {
@@ -169,22 +274,24 @@ const navButtonsList = document.querySelectorAll('.nav-button'),
 
 let prevButton = navButtonsList[0];
 
-if (buttonsWrapper) {
-    buttonsWrapper.addEventListener('click', (e) => {
-        const isButton = e.target.nodeName === 'DIV';
+if (prevButton) {
+    if (buttonsWrapper) {
+        buttonsWrapper.addEventListener('click', (e) => {
+            const isButton = e.target.nodeName === 'DIV';
 
-        if (!isButton || prevButton === e.target) {
-            return
-        }
+            if (!isButton || prevButton === e.target) {
+                return
+            }
 
-        e.target.classList.add('active');
+            e.target.classList.add('active');
 
-        if (prevButton !== null) {
-            prevButton.classList.remove('active');
-        }
+            if (prevButton !== null) {
+                prevButton.classList.remove('active');
+            }
 
-        prevButton = e.target;
-    })
+            prevButton = e.target;
+        })
+    }
 }
 
 let prevPageButton = pageLinkList[0];
@@ -248,13 +355,13 @@ $(document).ready(function () {
     $('select').niceSelect();
 });
 
-const filterButton = document.querySelector('.filter-button');
+// const filterButton = document.querySelector('.filter-button');
 
-if (filterButton) {
-    filterButton.addEventListener('click', (e) => {
-        e.preventDefault();
-    });
-}
+// if (filterButton) {
+//     filterButton.addEventListener('click', (e) => {
+//         e.preventDefault();
+//     });
+// }
 
 const navLinksList = document.querySelectorAll('.navigation_link');
 
@@ -272,7 +379,7 @@ const checkboxElementList = document.querySelectorAll('.checkbox-element');
 checkboxElementList.forEach(item => {
     item.addEventListener('click', () => {
         const checkboxFirstChild = item.firstElementChild,
-              checkboxElement = checkboxFirstChild.firstElementChild;
+            checkboxElement = checkboxFirstChild.firstElementChild;
         if (!checkboxElement.classList.contains("checkbox-active")) {
             checkboxElement.classList.add('checkbox-active');
         } else {
@@ -281,8 +388,72 @@ checkboxElementList.forEach(item => {
     })
 })
 
-$(document).ready(function(){
-    $('.menu-burger-icon').click(function(){
+$(document).ready(function () {
+    $('.menu-burger-icon').click(function () {
         $(this).toggleClass('open');
     });
 });
+
+const burgerElementsList = document.querySelectorAll('.burger-element'),
+      burgerWrapper = document.querySelector('.burger-menu-wrapper'),
+      mobileNav = document.querySelector('.mobile-nav');
+
+if (burgerWrapper) {
+    burgerWrapper.addEventListener('click', () => {
+        if (burgerElementsList[0].classList.contains('burger-element-top-active') &&
+            burgerElementsList[1].classList.contains('burger-element-bottom-active')) {
+            burgerElementsList[0].classList.remove('burger-element-top-active');
+            burgerElementsList[1].classList.remove('burger-element-bottom-active');
+            mobileNav.classList.remove('mobile-nav-active');
+            document.body.style.overflow = 'auto';
+        } else {
+            burgerElementsList[0].classList.add('burger-element-top-active');
+            burgerElementsList[1].classList.add('burger-element-bottom-active');
+            mobileNav.classList.add('mobile-nav-active');
+            document.body.style.overflow = 'hidden';
+        }
+    })
+}
+
+const modalWindow = document.querySelector('[data-modal]'),
+      modalTrigger = document.querySelector('.apply-button_link'),
+      modalCloseButton = document.querySelector('.modal-close'),
+      modalSubstrate = document.querySelector('.form-wrapper');
+
+if (modalWindow) {
+    modalTrigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!modalWindow.classList.contains('modal-active')) {
+            modalSubstrate.style.animation = 'background-fadeIn 1s both';
+            modalSubstrate.style.animationDelay = '.5s'
+            modalSubstrate.classList.add('substrate-active');
+            modalWindow.classList.add('modal-active');
+            document.body.style.overflowY = 'hidden';
+        } else if (modalWindow.classList.contains('modal-active')) {
+            modalSubstrate.style.animation = 'none';
+            modalSubstrate.classList.remove('substrate-active');
+            modalWindow.classList.remove('modal-active');
+            document.body.style.overflowY = 'auto';
+        }
+    })
+}
+
+if (modalCloseButton) {
+    modalCloseButton.addEventListener('click', () => {
+        modalSubstrate.style.animation = 'none';
+        modalSubstrate.classList.remove('substrate-active');
+        modalWindow.classList.remove('modal-active');
+        document.body.style.overflowY = 'auto';
+    })
+}
+
+if (modalSubstrate) {
+    modalSubstrate.addEventListener('click', (e) => {
+        if (e.target === modalSubstrate) {
+            modalSubstrate.style.animation = 'none';
+            modalSubstrate.classList.remove('substrate-active');
+            modalWindow.classList.remove('modal-active');
+            document.body.style.overflowY = 'auto';
+        }
+    })
+}

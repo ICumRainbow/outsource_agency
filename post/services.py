@@ -10,11 +10,13 @@ def get_blog_page_contents(request_dict: dict = None, query_params: dict = None)
     """
     categories = Category.objects.all()
     headliner = Post.objects.first()
-    posts_by_date = Post.objects.order_by('-created_at')
     posts = None
+    posts_by_date = Post.objects.order_by('-created_at')
     if query_params:
         posts = posts_by_date.filter(**query_params)
         posts = PostFilter(request_dict, queryset=posts)
+    else:
+        posts_by_date = posts_by_date.exclude(pk=headliner.pk)
     return categories, headliner, posts_by_date, posts
 
 

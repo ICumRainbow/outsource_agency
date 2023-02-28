@@ -1,7 +1,6 @@
 {% extends 'utility/base.html' %}
 {% load static %}
 {% block content %}
-<body>
     <div class="landing_container">
         <img src="{% static 'img/main/home-page-hero.jpeg' %}" alt="" class="image">
         <div class="landing_message">
@@ -9,7 +8,7 @@
                 <h1 class="landing-h1">We Are in the Top 15 World's Best Agencies</h1>
                 <p class="p">*Clutch - The leading review platform for IT providers, 2022</p>
                 <p class="landing-p">Together we build inspiring digital products</p>
-                <a href="#" class="landing-button_link">Let's collaborate</a>
+                <a href="{% url 'contact' %}" class="landing-button_link">Let's collaborate</a>
             </div>
         </div>
     </div>
@@ -433,4 +432,3 @@
     </div>
     <section class="divider-desktop"></section>
 {% endblock %}
-</body>

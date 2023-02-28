@@ -1,8 +1,7 @@
 {% extends 'utility/base.html' %}
 {% load static %}
 {% block content %}
-<body>
-<div class="landing_container">
+    <div class="landing_container">
         <div class="landing_message">
             <div class="landing_message__wrapper">
                 <h1 class="landing-h1">Create Engaging Digital Products</h1>
@@ -14,246 +13,32 @@
     </div>
     <section class="divider-desktop"></section>
     <div class="works-container">
-    {% for work in works %}
-        <div class="example-element" style="background-color: {{ work.color }}">
-            <a href="{% url 'works_details' work.id %}" class="cover-link">
-                <div class="element">
-                    <div class="text-logo">
-                        <img src="{{ work.logo_light.url }}" alt="" class="logo">
-                        <div class="text">
-                            <h3 class="h3">{{ work.heading }}</h3>
-                            <p class="p">{{ work.brief }}</p>
-                        </div>
-                        <div class="button">
-                            <div class="button-wrapper">
-                                <p class="p">View case study</p>
-                                <img src="{% static 'img/arrow.svg' %}" alt="" class="arrow">
+        {% if works %}
+            {% for work in works %}
+                <div class="example-element" style="background-color: {{ work.color }}">
+                    <a href="{% url 'works_details' work.id %}" class="cover-link">
+                        <div class="element">
+                            <div class="text-logo">
+                                <img src="{{ work.logo_light.url }}" alt="" class="logo">
+                                <div class="text">
+                                    <h3 class="h3">{{ work.heading }}</h3>
+                                    <p class="p">{{ work.brief }}</p>
+                                </div>
+                                <div class="button">
+                                    <div class="button-wrapper">
+                                        <p class="p">View case study</p>
+                                        <img src="{% static 'img/arrow.svg' %}" alt="" class="arrow">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="{{ work.preview_picture.url }}" alt="" class="img">
                             </div>
                         </div>
-                    </div>
-                    <div class="image">
-                        <img src="{{ work.preview_picture.url }}" alt="" class="img">
-                    </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        {% endfor %}
-{#        <div class="example-element airex">#}
-{#            <a href="#" class="cover-link">#}
-{#                <div class="element">#}
-{#                    <div class="text-logo">#}
-{#                        <img src="{% static 'img/our work/logo_airex.svg' %}" alt="" class="logo">#}
-{#                        <div class="text">#}
-{#                            <h3 class="h3">App for a Strong Training Community</h3>#}
-{#                            <p class="p">Airex is a company that produces high-quality training mats. They saw an#}
-{#                                opportunity#}
-{#                                to grow by expanding from product to service-oriented business by establishing new#}
-{#                                digital#}
-{#                                touchpoints.</p>#}
-{#                        </div>#}
-{#                        <div class="button">#}
-{#                            <div class="button-wrapper">#}
-{#                                <p class="p">View case study</p>#}
-{#                                <img src="{% static 'img/arrow.svg' %}" alt="" class="arrow">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="image">#}
-{#                        <img src="{% static 'img/our work/airex_img.png' %}" alt="" class="img">#}
-{#                    </div>#}
-{#                </div>#}
-{#            </a>#}
-{#        </div>#}
-{#        <div class="example-element medi">#}
-{#            <a href="#" class="cover-link">#}
-{#                <div class="element">#}
-{#                    <div class="text-logo">#}
-{#                        <img src="{% static 'img/our work/medi-logo.svg' %}" alt="" class="logo">#}
-{#                        <div class="text">#}
-{#                            <h3 class="h3">Contactless Measurements</h3>#}
-{#                            <p class="p">By thinking beyond borders and breaking new grounds Medi found a steady partner#}
-{#                                in#}
-{#                                Q with the know-how to develop Medi Vision together.</p>#}
-{#                        </div>#}
-{#                        <div class="button">#}
-{#                            <div class="button-wrapper">#}
-{#                                <p class="p">View case study</p>#}
-{#                                <img src="{% static 'img/arrow.svg' %}" alt="" class="arrow">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="image">#}
-{#                        <img src="{% static 'img/our work/medi-image.png' %}" alt="" class="img">#}
-{#                    </div>#}
-{#                </div>#}
-{#            </a>#}
-{#        </div>#}
-{#        <div class="example-element ginetta">#}
-{#            <a href="#" class="cover-link">#}
-{#                <div class="element">#}
-{#                    <div class="text-logo">#}
-{#                        <img src="img/our work/ginetta.svg" alt="" class="logo">#}
-{#                        <div class="text">#}
-{#                            <h3 class="h3">Shop and Racing Centre in One Solution</h3>#}
-{#                            <p class="p">Ginetta is one of the leading British race car manufacturers and is putting the#}
-{#                                UK at the heart of world-class motorsport again.</p>#}
-{#                        </div>#}
-{#                        <div class="button">#}
-{#                            <div class="button-wrapper">#}
-{#                                <p class="p">View case study</p>#}
-{#                                <img src="img/arrow.svg" alt="" class="arrow">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="image">#}
-{#                        <img src="img/our work/img_ginetta.png" alt="" class="img">#}
-{#                    </div>#}
-{#                </div>#}
-{#            </a>#}
-{#        </div>#}
-{#        <div class="example-element streamways">#}
-{#            <a href="#" class="cover-link">#}
-{#                <div class="element">#}
-{#                    <div class="text-logo">#}
-{#                        <img src="img/our work/streamways.svg" alt="" class="logo">#}
-{#                        <div class="text">#}
-{#                            <h3 class="h3">Play and Learn How to Drive</h3>#}
-{#                            <p class="p">Streamways is a company that had a brilliant idea to develop the best driving#}
-{#                                school app in Germany. They had noticed that learning behavior patterns were changing#}
-{#                                rapidly and it was time for innovation.</p>#}
-{#                        </div>#}
-{#                        <div class="button">#}
-{#                            <div class="button-wrapper">#}
-{#                                <p class="p">View case study</p>#}
-{#                                <img src="img/arrow.svg" alt="" class="arrow">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="image">#}
-{#                        <img src="img/our work/img_streamways.png" alt="" class="img">#}
-{#                    </div>#}
-{#                </div>#}
-{#            </a>#}
-{#        </div>#}
-{#        <div class="example-element bbc">#}
-{#            <a href="#" class="cover-link">#}
-{#                <div class="element">#}
-{#                    <div class="text-logo">#}
-{#                        <img src="img/our work/bbc.svg" alt="" class="logo">#}
-{#                        <div class="text">#}
-{#                            <h3 class="h3">Pandemic App</h3>#}
-{#                            <p class="p">Northern Irish agency Big Motive partnered with Q to build an app that would#}
-{#                                simulate and predict future pandemic spread.</p>#}
-{#                        </div>#}
-{#                        <div class="button">#}
-{#                            <div class="button-wrapper">#}
-{#                                <p class="p">View case study</p>#}
-{#                                <img src="img/arrow.svg" alt="" class="arrow">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="image">#}
-{#                        <img src="img/our work/img_bbc.png" alt="" class="img">#}
-{#                    </div>#}
-{#                </div>#}
-{#            </a>#}
-{#        </div>#}
-{#        <div class="example-element jenz">#}
-{#            <a href="#" class="cover-link">#}
-{#                <div class="element">#}
-{#                    <div class="text-logo">#}
-{#                        <img src="img/our work/jenz.svg" alt="" class="logo">#}
-{#                        <div class="text">#}
-{#                            <h3 class="h3">Internal Social Media Network for Companies</h3>#}
-{#                            <p class="p">Jenz is a mobile app developed and verified by Q. It is an internal social#}
-{#                                network that works as the company's live newsletter and intranet.</p>#}
-{#                        </div>#}
-{#                        <div class="button">#}
-{#                            <div class="button-wrapper">#}
-{#                                <p class="p">View case study</p>#}
-{#                                <img src="img/arrow.svg" alt="" class="arrow">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="image">#}
-{#                        <img src="img/our work/img_jenz.png" alt="" class="img">#}
-{#                    </div>#}
-{#                </div>#}
-{#            </a>#}
-{#        </div>#}
-{#        <div class="example-element times-mm">#}
-{#            <a href="#" class="cover-link">#}
-{#                <div class="element">#}
-{#                    <div class="text-logo">#}
-{#                        <img src="img/our work/mm_logo.svg" alt="" class="logo">#}
-{#                        <div class="text">#}
-{#                            <h3 class="h3">Make the Right Decisions With Your Money</h3>#}
-{#                            <p class="p">Whether it's working out if you have enough cash to go on holiday, saving#}
-{#                                into a pension, renewing your can insurance, or paying the rent or mortgage, money tips#}
-{#                                and#}
-{#                                tricks are always welcomed by the public.</p>#}
-{#                        </div>#}
-{#                        <div class="button">#}
-{#                            <div class="button-wrapper">#}
-{#                                <p class="p">View case study</p>#}
-{#                                <img src="img/arrow.svg" alt="" class="arrow">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="image">#}
-{#                        <img src="img/our work/img_mm.png" alt="" class="img">#}
-{#                    </div>#}
-{#                </div>#}
-{#            </a>#}
-{#        </div>#}
-{#        <div class="example-element manpower">#}
-{#            <a href="#" class="cover-link">#}
-{#                <div class="element">#}
-{#                    <div class="text-logo">#}
-{#                        <img src="img/our work/manpower-logo.svg" alt="" class="logo">#}
-{#                        <div class="text">#}
-{#                            <h3 class="h3">Innovative Workforce Solutions</h3>#}
-{#                            <p class="p">Q partnered with Manpower group to build a psychological tests/assessments#}
-{#                                platform (Construct), which is being used during recruitment processes worldwide that#}
-{#                                will empower all of their end-users.</p>#}
-{#                        </div>#}
-{#                        <div class="button">#}
-{#                            <div class="button-wrapper">#}
-{#                                <p class="p">View case study</p>#}
-{#                                <img src="img/arrow.svg" alt="" class="arrow">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="image">#}
-{#                        <img src="img/our work/img_manpower.png" alt="" class="img">#}
-{#                    </div>#}
-{#                </div>#}
-{#            </a>#}
-{#        </div>#}
-{#        <div class="example-element camper">#}
-{#            <a href="#" class="cover-link">#}
-{#                <div class="element">#}
-{#                    <div class="text-logo">#}
-{#                        <img src="img/our work/camper.svg" alt="" class="logo">#}
-{#                        <div class="text">#}
-{#                            <h3 class="h3">Book Your Camper Adventure With Just a Couple of Clicks</h3>#}
-{#                            <p class="p">FreewayCamper operates a rental station in the south of Munich and offers a#}
-{#                                wide portfolio of campers and motorhomes for every need. They continue to modernise the#}
-{#                                industry with new stations and the possibility to book campsites.</p>#}
-{#                        </div>#}
-{#                        <div class="button">#}
-{#                            <div class="button-wrapper">#}
-{#                                <p class="p">View case study</p>#}
-{#                                <img src="img/arrow.svg" alt="" class="arrow">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="image">#}
-{#                        <img src="img/our work/img_camper.png" alt="" class="img">#}
-{#                    </div>#}
-{#                </div>#}
-{#            </a>#}
-{#        </div>#}
+            {% endfor %}
+        {% endif %}
     </div>
     <section class="divider-desktop"></section>
     <div class="content_container clients">
@@ -277,8 +62,7 @@
     <section class="divider-desktop"></section>
     <div class="content_container collaborate-button">
         <h3 class="h3">Have a project, or want to say hello?</h3>
-        <a href="#" class="button">Let's collaborate</a>
+        <a href="{% url 'contact' %}" class="button">Let's collaborate</a>
     </div>
     <section class="divider-desktop"></section>
 {% endblock %}
-</body>

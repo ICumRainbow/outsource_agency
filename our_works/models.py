@@ -1,3 +1,4 @@
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 from ckeditor.fields import RichTextField
 from colorfield.fields import ColorField
@@ -40,7 +41,7 @@ class Work(BaseModel):
     what_we_built = TextField(verbose_name='What We Built', blank=False, null=False)
     deliverables = RichTextField(verbose_name='Deliverables', blank=False, null=False)
     picture3 = models.ImageField(verbose_name='Picture 3')
-    content = RichTextField(verbose_name='Content', blank=False, null=False)
+    content = RichTextUploadingField(verbose_name='Content', blank=False, null=False)
 
     class Meta:
         verbose_name = 'Work'

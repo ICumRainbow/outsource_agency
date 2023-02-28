@@ -30,7 +30,6 @@
     color: #fff;
 }
 #toast #desc{
-    color: #fff;
     padding: 16px;
     width: 100%;
 	white-space: nowrap;
@@ -39,6 +38,7 @@
 
 #toast #desc p{
     padding-left: 50px;
+    color: #fff;
 }
 
 #toast.show {

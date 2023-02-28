@@ -7,4 +7,8 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
+      // Pressing Enter will create a new <div> element.
+      // config.enterMode = CKEDITOR.ENTER_P;
+      // // Pressing Shift+Enter will create a new <p> element.
+      // config.shiftEnterMode= CKEDITOR.ENTER_DIV;
 };

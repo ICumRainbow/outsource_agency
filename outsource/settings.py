@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'a835-213-230-80-188.eu.ngrok.io'
+    '44b6-213-230-114-202.eu.ngrok.io'
 ]
 
 # Application definition
@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'contact_bot',
     'careers',
 ]
+
+AUTH_USER_MODEL = 'core.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,7 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = 'I:/user/Desktop/work/outsource_agency/static/'
+# STATIC_ROOT = 'I:/user/Desktop/work/outsource/outsource_agency/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]

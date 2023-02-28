@@ -2,7 +2,6 @@
 {% load tags %}
 {% load static %}
 {% block content %}
-<body>
     <div class="post-info">
         <p class="p date">{{ post.created_at|date:'F d, Y' }}{% if post.time_to_read %} - {{ post.time_to_read }}{% endif %}</p>
         <h1 class="h1 heading">{{ post.heading }}</h1>
@@ -21,111 +20,6 @@
     <div class="primary-container">
         <div class="primary">
             {{ post.content|safe }}
-{#            <p class="p">In recent years, we are witnessing that security is becoming an increasingly hot topic within#}
-{#                the#}
-{#                IT community. This is also logical because, with the growth of the complete online world, there are#}
-{#                increasing challenges in the direction of user protection.</p>#}
-{#            <h2 class="h2">Have I Been Pwned</h2>#}
-{#            <p class="p">As things currently stand, losing data seems inevitable to some extent, and no matter how many#}
-{#                service providers assure us of the security of their systems, we practically constantly bear some risk#}
-{#                through the trust we give them through our usage. Fortunately for us, or unfortunately, there is a quick#}
-{#                way to ensure that our account has remained secure at a site.</p>#}
-{#            <p class="p">Have i been pwned is a public free website that provides insight into whether your email#}
-{#                address appeared in some stolen database or any other data leaks.</p>#}
-{#            <p class="p">When a leak happens, Have I Been Pwned (HIBP) quickly detects it and copies the data into its#}
-{#                server. No worries, only the account’s email address and the website on which the data associated with#}
-{#                the address has been stolen are saved on their server. HIBP doesn’t back up any other available#}
-{#                information.</p>#}
-{#            <h2 class="h2">How is data collected?</h2>#}
-{#            <p class="p">A major source of information are public websites intended for sharing content. These sites are#}
-{#                ideal for hackers due to their ability to share information anonymously and may be the first location#}
-{#                where stolen data is published. One of the popular places where black hat guys (hackers) post stolen#}
-{#                data is the site Pastebin.</p>#}
-{#            <p class="p">With the help of special Twitter accounts that monitor websites with the same purpose as#}
-{#                Pastebin and then post potentially stolen data, HIBP has developed an early detection system and it#}
-{#                takes approximately 40 seconds for newly acquired data to be detected and saved. Speed like that is#}
-{#                necessary because files with such content disappear quickly or are removed by the usage policy.</p>#}
-{#            <p class="p">Needless to say, HIBP collects and obtains data from various other sources as well. In#}
-{#                addition, a subsequent verification of legitimacy is carried out through several possible actions</p>#}
-{#            <ul class="list">#}
-{#                <li class="list-element">The attacked organization confirmed that it was a victim of the attack</li>#}
-{#                <li class="list-element">Attackers publicly boast or expose system security flaws</li>#}
-{#                <li class="list-element">Data is structured as expected</li>#}
-{#            </ul>#}
-{#            <p class="p">If HIBP still hasn’t won your trust, perhaps the following information can be helpful. HIBP#}
-{#                cooperates and provides its services completely free, with, currently 34 governments worldwide. I’ll#}
-{#                just mention a couple: Canada, Norway, the U.K., New Zealand, Australia, Israel, etc.</p>#}
-{#            <h2 class="h2">Pwned Passwords</h2>#}
-{#            <p class="p">In addition to the email search function, Have I Been Pwned offers, as part of this blog, one#}
-{#                important service. The creator of HIBP decided to launch Pwned passwords which are the world’s largest#}
-{#                freely available and publicly accessible database of cracked passwords. Namely, whenever a new password#}
-{#                is obtained from a breach or data leak. That password is saved in a special database containing only#}
-{#                passwords.</p>#}
-{#            <p class="p">Passwords are not backed up in the plain text, as this would make things easier for potential#}
-{#                hacker usage. Instead, they are passed through the SHA-1 algorithm and the result is what is saved in#}
-{#                the database.</p>#}
-{#            <p class="p">The SHA-1 algorithm was used due to the fact that the original text cannot be retrieved from#}
-{#                it. When verifying the safety of a particular password (through a web search or making an API call), the#}
-{#                system works in such a way that the submitted password is hashed and then the obtained hash is searched#}
-{#                through the database.</p>#}
-{#            <div class="cover-wrapper">#}
-{#                <img src="img/post/markus-spiske-FXFz-sW0uwo-unsplash-1440x960.jpg" alt="" class="cover">#}
-{#            </div>#}
-{#            <p class="p">When, at the end of 2021 two leading agencies, the FBI and NCA, decided to cooperate. 225#}
-{#                million of new cracked passwords were injected into the system and that pushed the overall number over#}
-{#                847 million.</p>#}
-{#            <h2 class="h2">Symfony integration</h2>#}
-{#            <p class="p">After all the things that have been presented so far, I hope you feel the same way as me. How#}
-{#                awesome it would be if we could use HIBP services in our Symfony app.</p>#}
-{#            <p class="p">Since we need to purchase an API key for other interesting services, and the only free one is#}
-{#                searching by range, I will show how to search through the pwned passwords database and check whether the#}
-{#                password is compromised or not.</p>#}
-{#            <p class="p">The API works in such a way that the first 5 digits of the hashed password are submitted.#}
-{#                Response returns a suffix list of all passwords whose hashes starts with the same first 5 characters as#}
-{#                the submitted hash.</p>#}
-{#            <h2 class="h2">The implementation process</h2>#}
-{#            <p class="p">Here is the implementation of the service method which receives the password parameter in plain#}
-{#                text. First, we create a hash out of the password and divide it into two parts, the first five#}
-{#                characters we use in sending the request. The rest (suffix) will later be compared to all the suffixes#}
-{#                which have been returned in the response. If we find our suffix in the list of all returned, this means#}
-{#                that such a password is unsafe to use.</p>#}
-{#            <p class="p"><a href="#">Implementation</a></p>#}
-{#            <p class="p">You can now use this service to protect the user password before saving data in the database.#}
-{#                But, there is no need to reinvent the wheel because Symfony has integrated it as simply as possible. All#}
-{#                we have to do is include the Symfony validation component in our project. We do that with:</p>#}
-{#            <p class="p"><a href="#">Validation</a></p>#}
-{#            <p class="p">After that, add the NotCompromisedPassword constraint to an entity property and the Symfony#}
-{#                validation component will make sure that this password is not compromised.</p>#}
-{#            <p class="p"><a href="#">Implementation</a></p>#}
-{#            <p class="p">Our assertion can be customized, with the “threshold” option, you can set a value that defines#}
-{#                how many times the password had to be leaked so that the validator characterizes it as compromised. By#}
-{#                default, the threshold is set to 1. Default error message can also be customized with the “message”#}
-{#                option.</p>#}
-{#            <p class="p"><a href="#">Implementation</a></p>#}
-{#            <p class="p">When developing and playing locally, if the assert is giving you too much bather. Simply turn#}
-{#                it off by adding this to your framework configuration.</p>#}
-{#            <p class="p"><a href="#">Configuration</a></p>#}
-{#            <h2 class="h2">Conclusion: How to create a safe password</h2>#}
-{#            <p class="p">We have shown that there are free tools available to help you know if your account has been#}
-{#                compromised and on which page that happened.</p>#}
-{#            <p class="p">We’ve shown ways of how you can protect your app users from the use of unsafe passwords and how#}
-{#                to implement these checks to perform in both PHP and Symfony projects. It is also commendable to see the#}
-{#                involvement of state institutions in taking part in data protection.</p>#}
-{#            <p class="p">The question remains how to create a secure password. To break the myth a good example is the#}
-{#                frequently used “password”, by adding special characters and numbers we get “pa$$w0Rd” which at first,#}
-{#                looks much more secure and harder to crack, but a quick check reveals that this password has already#}
-{#                been used somewhere and should never be used.</p>#}
-{#            <div class="cover-wrapper">#}
-{#                <img src="img/post/towfiqu-barbhuiya-em5w9_xj3uU-unsplash-1440x960.jpg" alt="" class="cover">#}
-{#            </div>#}
-{#            <p class="p">This is just one example, of when a password seems safe to us, but is actually ubiquitous among#}
-{#                other users and what’s worse, is found in various password databases.</p>#}
-{#            <p class="p">One example of how to make a hard code password yourself is to take a song you love and make it#}
-{#                a password. For example, take the first letters of the song name and add some special characters to it.#}
-{#                Then add the artist’s abbreviations and sugarcoat it all with the length of the song or date of#}
-{#                issue.</p>#}
-{#            <p class="p">For instance, make a password such as this “sya@wk2015-03-10” from the song Wiz Khalifa – See#}
-{#                You Again.</p>#}
         </div>
     </div>
     <div class="content_container">
@@ -162,6 +56,7 @@
                 <p class="p-tag">{{ post.category }}</p>
             </div>
         </div>
+    {% if tags %}
         <div class="tags">
             <h6 class="h6">TAGS</h6>
             <div class="tags-list">
@@ -170,6 +65,7 @@
                 {% endfor %}
             </div>
         </div>
+    {% endif %}
         <div class="suggestions">
             {% for post in related_posts %}
                 <a href="{% url 'post' post.id %}" class="post-link">
@@ -193,4 +89,3 @@
         </div>
     </div>
 {% endblock %}
-</body>
