@@ -71,9 +71,8 @@
   top: 0
   transition: .3s
   position: fixed
-  box-sizing: border-box
-  z-index: 10
   background-color: transparent
+  z-index: 1100
 
 .header
   display: flex
@@ -240,8 +239,7 @@
   height: 614px
   -webkit-mask-repeat: no-repeat
   -webkit-mask-image: url('../img/image-mask.svg')
-  z-index: 9000
-
+  z-index: 1000
 .divider-desktop
   padding-bottom: 160px
 
@@ -266,25 +264,46 @@
           font-size: 16px
           font-weight: 500
           word-break: break-word
-  .search-bar
-    display: flex
-    .form
-      #id_heading
-        position: relative
-        height: 40px
-        min-height: 40px
-        width: 100%
-        margin: 0
-        background: none
-        border-width: 2px
-        border-style: solid
-        box-shadow: none
-        line-height: 24px
-        font-size: 16px
-        padding: 26px 50px!important
-        border-radius: 0!important
-        border-color: #1A1A1A
-        font-weight: 500!important
+    .search-bar
+      display: flex
+      align-items: center
+      .form
+        display: flex
+        .img-wrapper
+          border: 2px solid #1A1A1A
+          border-right: none
+          background-color: transparent
+          border-radius: 0
+          width: 10px
+          padding: 16px
+          box-sizing: content-box
+          cursor: pointer
+          display: flex
+          align-items: center
+          &:last-child
+            border-right: 2px solid #1A1A1A
+            border-left: none
+            img
+              display: none
+          img
+            height: 16px
+        #id_heading
+          border: 2px solid #1A1A1A
+          border-left: none
+          border-right: none
+          position: relative
+          height: 40px
+          min-height: 40px
+          width: 100%
+          margin: 0
+          background: none
+          box-shadow: none
+          line-height: 24px
+          font-size: 16px
+          padding: 26px 0
+          font-weight: 500
+          &:focus
+            outline: none
 
 .post-link
   text-decoration: none
@@ -846,9 +865,19 @@ footer
             display: block
             margin: 0 auto
             width: 100%
+            .img-wrapper
+              padding: 16px
+              border: 2px solid #1A1A1A
+              border-right: none
+              img
+                height: 16px
             .form
               .nav-search
                 width: 100%
+                border-left: none
+                &:focus
+                  outline: none
+                  border-radius: 0
         .page-1
           .post-link
             .headliner

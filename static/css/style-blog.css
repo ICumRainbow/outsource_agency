@@ -83,9 +83,8 @@
   top: 0;
   transition: 0.3s;
   position: fixed;
-  box-sizing: border-box;
-  z-index: 10;
   background-color: transparent;
+  z-index: 1100;
 }
 
 .header {
@@ -276,7 +275,7 @@
   height: 614px;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-image: url("../img/image-mask.svg");
-  z-index: 9000;
+  z-index: 1000;
 }
 
 .divider-desktop {
@@ -308,25 +307,53 @@
   font-weight: 500;
   word-break: break-word;
 }
-.primary-container .search-bar {
+.primary-container .navbar .search-bar {
+  display: flex;
+  align-items: center;
+}
+.primary-container .navbar .search-bar .form {
   display: flex;
 }
-.primary-container .search-bar .form #id_heading {
+.primary-container .navbar .search-bar .form .img-wrapper {
+  border: 2px solid #1A1A1A;
+  border-right: none;
+  background-color: transparent;
+  border-radius: 0;
+  width: 10px;
+  padding: 16px;
+  box-sizing: content-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.primary-container .navbar .search-bar .form .img-wrapper:last-child {
+  border-right: 2px solid #1A1A1A;
+  border-left: none;
+}
+.primary-container .navbar .search-bar .form .img-wrapper:last-child img {
+  display: none;
+}
+.primary-container .navbar .search-bar .form .img-wrapper img {
+  height: 16px;
+}
+.primary-container .navbar .search-bar .form #id_heading {
+  border: 2px solid #1A1A1A;
+  border-left: none;
+  border-right: none;
   position: relative;
   height: 40px;
   min-height: 40px;
   width: 100%;
   margin: 0;
   background: none;
-  border-width: 2px;
-  border-style: solid;
   box-shadow: none;
   line-height: 24px;
   font-size: 16px;
-  padding: 26px 50px !important;
-  border-radius: 0 !important;
-  border-color: #1A1A1A;
-  font-weight: 500 !important;
+  padding: 26px 0;
+  font-weight: 500;
+}
+.primary-container .navbar .search-bar .form #id_heading:focus {
+  outline: none;
 }
 
 .post-link {
@@ -1024,8 +1051,21 @@ footer .footer_container .footer-wrapper .site-name p {
     margin: 0 auto;
     width: 100%;
   }
+  body .wrapper .primary-container .navbar .search-bar .img-wrapper {
+    padding: 16px;
+    border: 2px solid #1A1A1A;
+    border-right: none;
+  }
+  body .wrapper .primary-container .navbar .search-bar .img-wrapper img {
+    height: 16px;
+  }
   body .wrapper .primary-container .navbar .search-bar .form .nav-search {
     width: 100%;
+    border-left: none;
+  }
+  body .wrapper .primary-container .navbar .search-bar .form .nav-search:focus {
+    outline: none;
+    border-radius: 0;
   }
   body .wrapper .primary-container .page-1 .post-link .headliner {
     display: block;

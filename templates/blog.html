@@ -28,7 +28,13 @@
             </div>
             <div class="search-bar">
                 <form action="" class="form">
+                    <button type="submit" class="img-wrapper">
+                        <img src="{% static 'img/blog/magnifying-glass-solid.svg' %}" alt="">
+                    </button>
                     {{ posts.form.heading_and_tag }}
+                    <button class="img-wrapper">
+                        <img src="{% static 'img/blog/xmark-solid.svg' %}" class="search-clear" alt="">
+                    </button>
                 </form>
             </div>
         </div>

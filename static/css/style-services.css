@@ -88,7 +88,7 @@
   transition: 0.3s;
   position: fixed;
   box-sizing: border-box;
-  z-index: 10;
+  z-index: 1100;
   background-color: transparent;
 }
 
@@ -163,8 +163,13 @@
 }
 
 .contact-button_wrapper {
-  display: inline-block;
-  z-index: 5000;
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  right: 0;
+  padding-right: 25px;
+  z-index: 9999;
 }
 
 .contact-button {
@@ -306,7 +311,7 @@
   height: 614px;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-image: url("../img/image-mask.svg");
-  z-index: 9000;
+  z-index: 1000;
 }
 
 .divider-desktop {

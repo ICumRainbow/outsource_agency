@@ -3,9 +3,6 @@
 const accordionToggle = document.querySelectorAll('.accordion-toggle'),
     textAreaList = document.querySelectorAll('.accordion-text');
 
-document.addEventListener('click',(e) => {
-    console.log(e.target)
-})
 
 accordionToggle.forEach(item => {
     item.addEventListener('click', (e) => {
@@ -475,3 +472,41 @@ if (modalSubstrate) {
         }
     })
 }
+
+const searchClearButton = document.querySelector('.search-clear'),
+      searchField = document.querySelector('.nav-search'),
+      searchClearWrapper = searchClearButton.parentElement;
+
+searchField.addEventListener('input',() => {
+    if (searchField.value !== '') {
+        searchClearButton.style.display = 'inline';
+    }
+})
+
+searchField.addEventListener('click',() => {
+    if (searchField.value !== '') {
+        searchClearButton.style.display = 'inline';
+    }
+})
+
+console.log(searchClearButton.parentElement);
+
+searchClearButton.addEventListener('click',(e) => {
+    if (e.target.tagName === 'IMG') {
+        searchField.value = '';
+        searchClearButton.style.display = 'none';
+    }
+})
+
+searchClearWrapper.addEventListener('click',(e) => {
+    if (e.target.firstElementChild === searchClearButton) {
+        searchField.value = '';
+        searchClearButton.style.display = 'none';
+    }
+})
+
+document.addEventListener('click',(e) => {
+    if (e.target !== searchField) {
+        searchClearButton.style.display = 'none';
+    }
+})
