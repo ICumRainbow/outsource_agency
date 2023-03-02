@@ -30,6 +30,6 @@ if __name__ == '__main__':
         listen="127.0.0.1",
         port=PORT,
         url_path=TOKEN,
-        webhook_url='44b6-213-230-114-202.eu.ngrok.io/contact_outsource_bot/' + TOKEN,
+        webhook_url='koodrick.com/contact_outsource_bot/' + TOKEN,
     )
     # application.run_polling()  # we use polling in case we want to test it by running it on our PC
