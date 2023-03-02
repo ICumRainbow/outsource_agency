@@ -51,6 +51,8 @@ def for_ctos_view(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect(for_ctos_view)
+        else:
+            messages.error(request, 'Something went wrong, please try again!')
     form = SecondaryContactForm()
     context = {
         'works': works,
@@ -64,6 +66,7 @@ def product_innovation_view(request):
     View for Product Innovation page.
     """
     latest_work = Work.objects.last()
+
     context = {
         'latest_work': latest_work,
     }
@@ -81,4 +84,4 @@ def culture_view(request):
     """
     View for Culture page.
     """
-    return render(request, 'сulture.html')
+    return render(request, 'culture.html')

@@ -18,7 +18,6 @@ def contact_view(request):
         form = MainContactForm(request.POST)
         if form.errors:
             print(form.errors.as_text)
-            messages.success(request, 'Something went wrong, please try again!')
         if form.is_valid():
             form.save()
 
@@ -43,6 +42,8 @@ def contact_view(request):
             except BadHeaderError:
                 return HttpResponse('Something went wrong. Please try again.')
             return redirect(home_view)
+        else:
+            messages.error(request, 'Something went wrong, please try again!')
     form = MainContactForm()
     context = {
         'form': form,

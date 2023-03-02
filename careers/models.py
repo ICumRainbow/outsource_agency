@@ -3,6 +3,8 @@ from django.db import models
 
 from utils.models import BaseModel
 
+from .validators import file_size
+
 
 class VacancyCategory(BaseModel):
     """
@@ -63,7 +65,7 @@ class VacancyApplication(models.Model):
     full_name = models.CharField(verbose_name='Full Name', max_length=255, blank=False)
     email = models.EmailField(verbose_name='E-mail', blank=False)
     vacancy = models.ForeignKey(verbose_name='Vacancy', to=Vacancy, on_delete=models.DO_NOTHING)
-    resume = models.FileField(verbose_name='Resume', upload_to='uploads/vacancy_resume')
+    resume = models.FileField(verbose_name='Resume', upload_to='uploads/vacancy_resume', validators=[file_size])
 
     class Meta:
         verbose_name = 'Vacancy application'
@@ -79,7 +81,7 @@ class VacancyApplication(models.Model):
 class FreelanceApplication(models.Model):
     full_name = models.CharField(verbose_name='Full Name', max_length=255, blank=False)
     email = models.EmailField(verbose_name='E-mail', blank=False)
-    resume = models.FileField(verbose_name='Resume', upload_to='uploads/freelance_resume')
+    resume = models.FileField(verbose_name='Resume', upload_to='uploads/freelance_resume', validators=[file_size])
 
     class Meta:
         verbose_name = 'Freelance application'

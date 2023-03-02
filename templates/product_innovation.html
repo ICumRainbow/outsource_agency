@@ -510,27 +510,29 @@
         <h3 class="h3">Let's spark innovation together!</h3>
         <a href="{% url 'contact' %}" class="btn">Get in touch</a>
     </div>
-    <section class="divider-desktop"></section>
-    <h2 class="h2 content_container example-heading">Check Out How We Do It</h2>
-    <div class="example-element" style="background-color: {{ latest_work.color }}">
-        <a href="{% url 'works_details' latest_work.id %}" class="cover-link">
-            <div class="element">
-                <div class="text-logo">
-                    <img src="{{ latest_work.logo_light.url }}" alt="" class="logo">
-                    <h3 class="h3">{{ latest_work.heading }}</h3>
-                    <p class="p">{{ latest_work.brief }}</p>
-                    <div class="button">
-                        <div class="button-wrapper">
-                            <p class="p">View case study</p>
-                            <img src="{% static 'img/arrow.svg' %}" alt="" class="arrow">
+    {% if latest_work %}
+        <section class="divider-desktop"></section>
+        <h2 class="h2 content_container example-heading">Check Out How We Do It</h2>
+        <div class="example-element" style="background-color: {{ latest_work.color }}">
+            <a href="{% url 'works_details' latest_work.id %}" class="cover-link">
+                <div class="element">
+                    <div class="text-logo">
+                        <img src="{{ latest_work.logo_light.url }}" alt="" class="logo">
+                        <h3 class="h3">{{ latest_work.heading }}</h3>
+                        <p class="p">{{ latest_work.brief }}</p>
+                        <div class="button">
+                            <div class="button-wrapper">
+                                <p class="p">View case study</p>
+                                <img src="{% static 'img/arrow.svg' %}" alt="" class="arrow">
+                            </div>
                         </div>
                     </div>
+                    <div class="image">
+                        <img src="{{ latest_work.preview_picture.url }}" alt="" class="img">
+                    </div>
                 </div>
-                <div class="image">
-                    <img src="{{ latest_work.preview_picture.url }}" alt="" class="img">
-                </div>
-            </div>
-        </a>
-    </div>
+            </a>
+        </div>
+    {% endif %}
     <section class="divider-desktop"></section>
 {% endblock %}
