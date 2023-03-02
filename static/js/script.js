@@ -3,6 +3,9 @@
 const accordionToggle = document.querySelectorAll('.accordion-toggle'),
     textAreaList = document.querySelectorAll('.accordion-text');
 
+document.addEventListener('click',(e) => {
+    console.log(e.target)
+})
 
 accordionToggle.forEach(item => {
     item.addEventListener('click', (e) => {
@@ -247,7 +250,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 const navButtonsList = document.querySelectorAll('.nav-button'),
-    pageLinkList = document.querySelectorAll('.page-link'),
+    pageLinkList = document.querySelectorAll('.page-switch'),
     buttonsWrapper = document.querySelector('.buttons'),
     paginationWrapper = document.querySelector('.pagination');
 
@@ -299,9 +302,7 @@ let prevPageButton = pageLinkList[0];
 
 if (paginationWrapper) {
     paginationWrapper.addEventListener('click', (e) => {
-        const isButton = e.target.nodeName === 'A';
-
-        e.preventDefault();
+        const isButton = e.target.nodeName === 'LI';
 
         if (!isButton || prevPageButton === e.target) {
             return
@@ -477,25 +478,32 @@ const searchClearButton = document.querySelector('.search-clear'),
       searchField = document.querySelector('.nav-search'),
       searchClearWrapper = searchClearButton.parentElement;
 
-searchField.addEventListener('input',() => {
-    if (searchField.value !== '') {
-        searchClearButton.style.display = 'inline';
-    }
-})
+if (searchField) {
+    searchField.addEventListener('input', () => {
+        if (searchField.value !== '') {
+            searchClearButton.style.display = 'inline';
+        }
+    })
+}
 
-searchField.addEventListener('click',() => {
-    if (searchField.value !== '') {
-        searchClearButton.style.display = 'inline';
-    }
-})
+if (searchField) {
+    searchField.addEventListener('click', () => {
+        if (searchField.value !== '') {
+            searchClearButton.style.display = 'inline';
+        }
+    })
+}
 
+console.log(searchClearButton.parentElement);
 
-searchClearButton.addEventListener('click',(e) => {
-    if (e.target.tagName === 'IMG') {
-        searchField.value = '';
-        searchClearButton.style.display = 'none';
-    }
-})
+if (searchClearButton) {
+    searchClearButton.addEventListener('click', (e) => {
+        if (e.target.tagName === 'IMG') {
+            searchField.value = '';
+            searchClearButton.style.display = 'none';
+        }
+    })
+}
 
 searchClearWrapper.addEventListener('click',(e) => {
     if (e.target.firstElementChild === searchClearButton) {

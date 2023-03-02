@@ -302,6 +302,7 @@
           font-size: 16px
           padding: 26px 0
           font-weight: 500
+          -webkit-border-radius: 0
           &:focus
             outline: none
 
@@ -489,9 +490,7 @@ footer
     justify-content: center
     .page-switch
       position: relative
-      min-width: 32px
       margin: 4px
-      padding: 0
       font-size: 16px
       font-weight: bold
       line-height: 32px
@@ -499,16 +498,19 @@ footer
       text-align: center
       vertical-align: middle
       color: #1A1A1A
+      padding: 18px 21px
       .page-link
         font-weight: 400
         line-height: 1
-        padding: 18px 21px!important
-        outline: none!important
+        outline: none
+        -webkit-box-sizing: border-box
         font-style: unset
         text-decoration: none
         color: #1A1A1A
-      .page-active
-        border: 2px solid #1A1A1A
+
+
+.page-active
+  border: 2px solid #1A1A1A
 
 .nav-link-active
   text-decoration: underline #00ff15
@@ -525,10 +527,6 @@ footer
 @media screen and (max-width: 1500px)
   .wrapper
     padding: 0 118px
-
-@media screen and (max-width: 1030px)
-  footer
-    .footer_container
 
 @media screen and (max-width: 1450px)
   footer
@@ -978,3 +976,12 @@ footer
 .accordion-active
   transform: rotate(0deg)!important
   transition: .2s!important
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration
+  -webkit-appearance: none
+
+a.page-link
+  width: 100%
