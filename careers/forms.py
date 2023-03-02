@@ -17,7 +17,7 @@ class VacancyApplicationForm(forms.ModelForm):
 
     full_name = forms.CharField(widget=forms.TextInput(attrs={'type': 'text', 'id': 'name', 'placeholder': 'Full name'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'id': 'email', 'placeholder': 'E-mail'}))
-    resume = forms.FileInput(attrs={'type': 'file', 'id': 'CV'})
+    resume = forms.FileField(widget=forms.FileInput(attrs={'type': 'file', 'id': 'CV'}))
     captcha = ReCaptchaField(
         public_key=settings.RECAPTCHA_PUBLIC_KEY,
         private_key=settings.RECAPTCHA_PRIVATE_KEY,
@@ -36,7 +36,7 @@ class FreelanceApplicationForm(forms.ModelForm):
 
     full_name = forms.CharField(widget=forms.TextInput(attrs={'type': 'text', 'id': 'name', 'placeholder': 'Full name'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'id': 'email', 'placeholder': 'E-mail'}))
-    resume = forms.FileInput(attrs={'type': 'file', 'id': 'CV'})
+    resume = forms.FileField(widget=forms.FileInput(attrs={'type': 'file', 'id': 'CV'}))
     captcha = ReCaptchaField(
         public_key=settings.RECAPTCHA_PUBLIC_KEY,
         private_key=settings.RECAPTCHA_PRIVATE_KEY,

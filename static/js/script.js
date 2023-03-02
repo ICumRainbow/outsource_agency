@@ -3,6 +3,10 @@
 const accordionToggle = document.querySelectorAll('.accordion-toggle'),
     textAreaList = document.querySelectorAll('.accordion-text');
 
+document.addEventListener('click',(e) => {
+    console.log(e.target)
+})
+
 accordionToggle.forEach(item => {
     item.addEventListener('click', (e) => {
         /*const textAreaParent = item.parentElement;
@@ -355,13 +359,13 @@ $(document).ready(function () {
     $('select').niceSelect();
 });
 
-// const filterButton = document.querySelector('.filter-button');
+const filterButton = document.querySelector('.filter-button');
 
-// if (filterButton) {
-//     filterButton.addEventListener('click', (e) => {
-//         e.preventDefault();
-//     });
-// }
+if (filterButton) {
+    filterButton.addEventListener('click', (e) => {
+        e.preventDefault();
+    });
+}
 
 const navLinksList = document.querySelectorAll('.navigation_link');
 
@@ -436,7 +440,21 @@ if (modalWindow) {
             document.body.style.overflowY = 'auto';
         }
     })
+    const fileInput = document.querySelector('input[type="file"]');
+    fileInput.addEventListener('change',() => {
+        const selectedFile = fileInput.files[0],
+              fileSize = selectedFile.size,
+              maxFileSize = 1024 * 1024 * 5;
+        if (fileSize > maxFileSize) {
+            document.getElementById('size').innerHTML = 'File size exceeds the limit of 5MB';
+            fileInput.value = '';
+        } else {
+            document.getElementById('size').innerHTML = '';
+        }
+    })
 }
+
+
 
 if (modalCloseButton) {
     modalCloseButton.addEventListener('click', () => {
