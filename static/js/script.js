@@ -489,7 +489,6 @@ searchField.addEventListener('click',() => {
     }
 })
 
-console.log(searchClearButton.parentElement);
 
 searchClearButton.addEventListener('click',(e) => {
     if (e.target.tagName === 'IMG') {
