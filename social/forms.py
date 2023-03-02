@@ -53,7 +53,7 @@ class SecondaryContactForm(forms.ModelForm):
 
     business_email = forms.EmailField(
         widget=forms.TextInput(attrs={'class': 'input', 'id': 'email', 'placeholder': 'Email Address'}))
-    project_details = forms.CharField(widget=forms.Textarea, max_length=2000, required=False)
+    project_details = forms.CharField(widget=forms.Textarea(attrs={'id': 'text'}), max_length=2000, required=False)
     captcha = ReCaptchaField(
         public_key=settings.RECAPTCHA_PUBLIC_KEY,
         private_key=settings.RECAPTCHA_PRIVATE_KEY,
