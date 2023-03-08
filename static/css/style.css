@@ -1639,6 +1639,11 @@ footer .footer_container .footer-wrapper .site-name p {
   body .wrapper {
     padding: 0 16px;
   }
+  body .wrapper .plug-img_wrapper .plug_img {
+    object-position: 50% 50%;
+    object-fit: cover;
+    height: 160px;
+  }
 
   .landing_container {
     padding: 0 16px;

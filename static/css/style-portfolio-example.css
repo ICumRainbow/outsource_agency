@@ -569,6 +569,7 @@ footer .footer_container .footer-wrapper .locations {
   color: #868686;
   padding-top: 2px;
   padding-bottom: 40px;
+  flex-wrap: wrap;
 }
 footer .footer_container .footer-wrapper .locations .location {
   font-size: 16px;
@@ -1427,6 +1428,22 @@ footer .footer_container .footer-wrapper .site-name p {
 
   body .wrapper {
     padding: 0 16px;
+  }
+  body .wrapper .description h1 {
+    font-size: 42px;
+  }
+  body .wrapper .description h2 {
+    font-size: 36px;
+  }
+  body .wrapper .description p {
+    font-size: 16px;
+  }
+  body .wrapper .example-heading {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  body .wrapper .example-heading h1 {
+    font-size: 42px;
   }
   body .wrapper .list-wrapper .list-primary_wrapper .element .description {
     display: block;

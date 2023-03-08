@@ -1405,23 +1405,5 @@ footer .footer_container .footer-wrapper .site-name p {
     padding-bottom: 8px;
   }
 }
-@supports (-webkit-touch-callout: none) {
-  .idea-maturity {
-    display: block;
-  }
-  .idea-maturity .text {
-    width: 100%;
-  }
-  .idea-maturity .image {
-    width: 100%;
-    padding: 0;
-    margin: 50px 0 0 0;
-  }
-  .idea-maturity .image img {
-    height: 289px;
-    object-fit: cover;
-    object-position: 50% 50%;
-  }
-}
 
 /*# sourceMappingURL=style-PI.css.map */

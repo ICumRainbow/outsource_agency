@@ -75,6 +75,9 @@
   mask-image: url(../img/logomask.svg);
   background-color: white;
 }
+.logo-motto__aside .motto-wrapper .motto_text-vertical {
+  font-size: 16px;
+}
 
 .img-logo {
   width: 54px;
@@ -227,6 +230,8 @@
   color: black;
   width: 100%;
   line-height: 1.5;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .contact-button_wrapper {
@@ -508,6 +513,7 @@ footer .footer_container .footer-wrapper .locations {
   color: #868686;
   padding-top: 2px;
   padding-bottom: 40px;
+  flex-wrap: wrap;
 }
 footer .footer_container .footer-wrapper .locations .location {
   font-size: 16px;
@@ -1204,6 +1210,18 @@ h3 {
 
   body .wrapper {
     padding: 0 16px;
+  }
+  body .wrapper .post-info .h1 {
+    font-size: 48px;
+  }
+  body .wrapper .primary-container {
+    padding: 0 16px;
+  }
+  body .wrapper .primary-container .primary h2 {
+    font-size: 28px;
+  }
+  body .wrapper .primary-container .primary p {
+    font-size: 16px;
   }
   body .wrapper .list-wrapper .list-primary_wrapper .element .description {
     display: block;

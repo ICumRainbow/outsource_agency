@@ -5,7 +5,7 @@
     <ul class="pagination">
         {% for i in page_range|default_if_none:page.paginator.get_elided_page_range %}
             {% if page.number == i %}
-                <li class="page-switch page-active"><a href="" class="page-link">{{ i }} <span
+                <li class="page-switch"><a href="" class="page-link page-active">{{ i }} <span
                         class="sr-only">(current)</span></a>
                 </li>
             {% else %}

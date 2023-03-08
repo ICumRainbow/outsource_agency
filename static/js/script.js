@@ -170,7 +170,7 @@ if (membersSlides.length > 0) {
 
 
 const accordionToggle2 = document.querySelectorAll('.accordion-toggle_2'),
-    textAreaList2 = document.querySelectorAll('.accordion-text_2');
+      textAreaList2 = document.querySelectorAll('.accordion-text_2');
 
 accordionToggle2.forEach(item => {
     item.addEventListener('click', (e) => {
@@ -220,10 +220,10 @@ accordionToggle2.forEach(item => {
     })
 });
 
-let prevScrollPos = window.pageYOffset;
+let prevScrollPos = window.scrollY;
 
 window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
+    let currentScrollPos = window.scrollY;
 
     if (prevScrollPos > currentScrollPos) {
         document.querySelector(".header-wrapper").style.top = "0";
@@ -231,8 +231,8 @@ window.onscroll = function () {
         document.querySelector(".header-wrapper").style.top = "-120px";
     }
 
-    if (currentScrollPos <= 20) {
-        document.querySelector(".header-wrapper").style.zIndex = "9999";
+    if (currentScrollPos <= 20 || currentScrollPos <= 0) {
+        document.querySelector(".header-wrapper").style.zIndex = "2000";
         document.querySelector(".header-wrapper").style.backgroundColor = "transparent";
     } else {
         document.querySelector(".header-wrapper").style.backgroundColor = "white";
@@ -250,7 +250,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 const navButtonsList = document.querySelectorAll('.nav-button'),
-    pageLinkList = document.querySelectorAll('.page-switch'),
+    pageLinkList = document.querySelectorAll('.page-link'),
     buttonsWrapper = document.querySelector('.buttons'),
     paginationWrapper = document.querySelector('.pagination');
 
@@ -302,7 +302,7 @@ let prevPageButton = pageLinkList[0];
 
 if (paginationWrapper) {
     paginationWrapper.addEventListener('click', (e) => {
-        const isButton = e.target.nodeName === 'LI';
+        const isButton = e.target.nodeName === 'A';
 
         if (!isButton || prevPageButton === e.target) {
             return

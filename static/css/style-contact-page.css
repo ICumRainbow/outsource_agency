@@ -719,6 +719,7 @@
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
+  text-align: center;
 }
 .collaborate-button .h3 {
   padding-bottom: 40px;
@@ -777,6 +778,7 @@ footer .footer_container .footer-wrapper .locations {
   color: #868686;
   padding-top: 2px;
   padding-bottom: 40px;
+  flex-wrap: wrap;
 }
 footer .footer_container .footer-wrapper .locations .location {
   font-size: 16px;
@@ -1428,8 +1430,9 @@ footer .footer_container .footer-wrapper .site-name p {
     padding-top: 50px;
     width: 100%;
   }
-  body .wrapper .headquarters .text-column h2 {
+  body .wrapper .headquarters .text-column .h2 {
     padding: 32px 0;
+    font-size: 30px;
   }
   body .wrapper .headquarters .headquarters-images {
     width: 100%;

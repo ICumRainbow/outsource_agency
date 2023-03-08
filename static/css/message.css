@@ -1,7 +1,7 @@
 #toast {
     visibility: hidden;
     width: fit-content;
-    height: 50px;
+    height: fit-content;
     /*margin-left: -125px;*/
     margin: auto;
     background-color: #333;
@@ -11,14 +11,15 @@
 
     position: fixed;
     z-index: 1;
-    left: 0;right:0;
+    left: 0;
+    right:0;
     bottom: 30px;
     font-size: 17px;
-    white-space: nowrap;
+    display: flex;
 }
 #toast #img{
 	width: auto;
-	height: 50px;
+	height: auto;
 
     float: left;
     padding: 16px 16px 16px 16px;
@@ -28,16 +29,16 @@
 
     background-color: #111;
     color: #fff;
+    display: flex;
+    align-items: center;
 }
 #toast #desc{
     padding: 16px;
     width: 100%;
-	white-space: nowrap;
     box-sizing: border-box;
 }
 
 #toast #desc p{
-    padding-left: 50px;
     color: #fff;
 }
 

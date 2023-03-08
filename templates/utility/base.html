@@ -151,9 +151,9 @@
     {% if messages %}
         {% for message in messages %}
             <div id="toast">
-            <div id="img"><span
-                    class="fa {% if message.level == 40 %} fa-exclamation-circle {% else %}fa-check-circle{% endif %}"></span>
-            </div>
+                <div id="img"><span
+                        class="fa {% if message.level == 40 %} fa-exclamation-circle {% else %}fa-check-circle{% endif %}"></span>
+                </div>
                 <div id="desc"><p>{{ message }}</p></div>
             </div>
             <script>
