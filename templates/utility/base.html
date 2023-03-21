@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0;">
-    <title>QAgency</title>
+    <title>Koodrick</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
 
     <link rel="stylesheet" href="{% static 'css/message.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     {% if request.path == '/' %}
         <link rel="stylesheet" href="{% static 'css/style-main.css' %}">
@@ -58,6 +60,11 @@
         <link rel="stylesheet" href="{% static 'css/style-post.css' %}">
     {% endif %}
 
+    {% if request.path == '/privacy-policy/' %}
+        <link rel="stylesheet" href="{% static 'css/privacy.sass' %}">
+    {% endif %}
+
+
     <script src="https://kit.fontawesome.com/c8e9354b59.js" crossorigin="anonymous"></script>
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/jquery.nice-select.js' %}"></script>
@@ -96,20 +103,17 @@
         </div>
     </div>
 </div>
-<div class="logo-motto__aside">
-    <div class="logo_wrapper">
-        <a href="{% url 'home' %}">
-            <img src="{% static 'img/img-logo.svg' %}" alt="qAgency logo" class="img-logo">
-        </a>
-    </div>
-    <div class="motto-wrapper">
-        <p class="motto_text-vertical">Whatever the Q, We got the A</p>
-    </div>
-</div>
-<div class="wrapper">
-    <div class="header-wrapper">
-        <header class="header">
-            <div class="header_nav-menu">
+
+<div class="header-wrapper">
+    <header class="header">
+        <div class="logo-motto__aside">
+            <div class="text-bg">
+                <div class="logo_wrapper">
+                    <a href="{% url 'home' %}" class="logo-text">KOODRICK</a>
+                </div>
+            </div>
+        </div>
+            <div class="header_nav-menu wrapper">
                 <ul class="navigation_list">
                     <li class="navigation_item">
                         <a class="navigation_link" href="{% url 'for_CTOs' %}">For CTOs</a>
@@ -137,7 +141,6 @@
             <div class="contact-button_wrapper">
                 <a href="{% url 'contact' %}" class="landing-button_link contact-button">Contact Us</a>
             </div>
-
             <nav class="mobile">
                 <div class="burger-menu-wrapper">
                     <div class="burger-menu">
@@ -146,8 +149,9 @@
                     </div>
                 </div>
             </nav>
-        </header>
-    </div>
+    </header>
+</div>
+<div class="wrapper">
     {% if messages %}
         {% for message in messages %}
             <div id="toast">
@@ -166,7 +170,7 @@
 <footer>
     <div class="footer_container">
         <div class="footer-wrapper">
-            <img src="{% static 'img/img-logo.svg' %}" alt="">
+            <p class="name">KOODRICK</p>
             <p class="motto">Whatever the Q, We got the A</p>
             <div class="locations">
                 <p class="location">London</p>
@@ -188,6 +192,7 @@
                     <a href="{% url 'culture' %}" class="link">Culture</a>
                     <a href="{% url 'blog' %}" class="link">Blog</a>
                     <a href="{% url 'contact' %}" class="link">Contact Us</a>
+                    <a href="{% url 'privacy' %}" class="link">Privacy Policy</a>
                 </div>
             </div>
             <div class="site-name">

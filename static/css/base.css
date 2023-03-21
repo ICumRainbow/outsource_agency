@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700&display=swap");
+::selection {
+  background: #848BD8;
+  color: white;
+}
+
+body .header-wrapper .header .logo-motto__aside {
+  left: 0;
+  width: fit-content;
+}
+body .header-wrapper .header .header_nav-menu .navigation_list .navigation_item .navigation_link {
+  position: relative;
+}
+body .header-wrapper .header .header_nav-menu .navigation_list .navigation_item .navigation_link:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #2e64d5;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+body .header-wrapper .header .header_nav-menu .navigation_list .navigation_item .navigation_link:hover:after {
+  width: 100%;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 1600px) {
+  .wrapper .header-wrapper {
+    padding-left: 70px;
+  }
+}
+.mobile-nav-active {
+  z-index: 2;
+}
+
+/*# sourceMappingURL=base.css.map */

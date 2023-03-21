@@ -3,9 +3,9 @@
 const accordionToggle = document.querySelectorAll('.accordion-toggle'),
     textAreaList = document.querySelectorAll('.accordion-text');
 
-document.addEventListener('click',(e) => {
-    console.log(e.target)
-})
+// document.addEventListener('click',(e) => {
+//     console.log(e.target)
+// })
 
 accordionToggle.forEach(item => {
     item.addEventListener('click', (e) => {
@@ -63,7 +63,7 @@ const slides = document.querySelectorAll('.reviews-container'),
     slideNext = document.querySelectorAll('.button-next'),
     slidePrev = document.querySelectorAll('.button-prev'),
     slider = document.querySelectorAll('.pagination'),
-    indicators = document.createElement('ol');
+    paginationList = document.querySelectorAll('.pagination-element');
 
 /*slider.forEach(item => item.style.position = 'relative');*/
 /*indicators.classList.add('carousel-indicators');
@@ -82,18 +82,25 @@ if (slides.length > 0) {
 
     showSlides(slideIndex);
 
-    function showSlides(n) {
-        if (n > slides.length) {
+    function showSlides(index) {
+        slideIndex = index;
+        if (index > slides.length) {
             slideIndex = 1;
         }
 
-        if (n < 1) {
+        if (index < 1) {
             slideIndex = slides.length;
         }
 
         slides.forEach(item => item.classList.remove('reviews-element-active'));
+        paginationList.forEach(item => item.classList.remove('pagination-element-active'));
 
         slides[slideIndex - 1].classList.add('reviews-element-active');
+        const paginationElementsList = slides[slideIndex - 1].querySelectorAll('.pagination-element');
+
+        if (paginationElementsList) {
+            paginationElementsList[slideIndex - 1].classList.add('pagination-element-active');
+        }
     }
 
     function plusSlides(n) {
@@ -111,66 +118,83 @@ if (slides.length > 0) {
             plusSlides(1);
         })
     })
+
+
+    for (let slide of slides) {
+        const paginationElementsList = slide.querySelectorAll('.pagination-element');
+
+        for (let i = 1; i <= paginationElementsList.length; i++) {
+            const item = paginationElementsList[i - 1];
+
+            item.addEventListener('click', () => {
+                showSlides(i)
+            })
+        }
+    }
 }
 
-
 const membersSlides = document.querySelectorAll('.members-container');
-/*slideNext = document.querySelectorAll('.button-next'),
-slidePrev = document.querySelectorAll('.button-prev'),
-slider = document.querySelectorAll('.pagination'),
-indicators = document.createElement('ol');*/
 
-/*slider.forEach(item => item.style.position = 'relative');*/
-/*indicators.classList.add('carousel-indicators');
+if (membersSlides) {
+    if (membersSlides.length > 0) {
 
-slider.forEach(item => item.append(indicators));
+        let slideIndex = 1;
 
-for(let i = 0; i < slides.length; i++) {
-    const dot = document.createElement('li');
-    dot.setAttribute('data-slide-to', i + 1);
-    indicators.append(dot);
-}*/
+        membersShowSlides(slideIndex);
 
-if (membersSlides.length > 0) {
+        function membersShowSlides(index) {
+            slideIndex = index;
+            if (index > membersSlides.length) {
+                slideIndex = 1;
+            }
 
-    let slideIndex = 1;
+            if (index < 1) {
+                slideIndex = membersSlides.length;
+            }
 
-    membersShowSlides(slideIndex);
+            membersSlides.forEach(item => item.classList.remove('element-active'));
+            paginationList.forEach(item => item.classList.remove('pagination-element-active'));
 
-    function membersShowSlides(n) {
-        if (n > membersSlides.length) {
-            slideIndex = 1;
+            membersSlides[slideIndex - 1].classList.add('element-active');
+            const paginationElementsList = membersSlides[slideIndex - 1].querySelectorAll('.pagination-element');
+            if (paginationElementsList) {
+                paginationElementsList[slideIndex - 1].classList.add('pagination-element-active');
+            }
         }
 
-        if (n < 1) {
-            slideIndex = membersSlides.length;
+        function membersPlusSlides(n) {
+            membersShowSlides(slideIndex += n);
         }
 
-        membersSlides.forEach(item => item.classList.remove('element-active'));
-
-        membersSlides[slideIndex - 1].classList.add('element-active');
-    }
-
-    function membersPlusSlides(n) {
-        membersShowSlides(slideIndex += n);
-    }
-
-    slidePrev.forEach(item => {
-        item.addEventListener('click', () => {
-            membersPlusSlides(-1);
+        slidePrev.forEach(item => {
+            item.addEventListener('click', () => {
+                membersPlusSlides(-1);
+            })
         })
-    })
 
-    slideNext.forEach(item => {
-        item.addEventListener('click', () => {
-            membersPlusSlides(1);
+        slideNext.forEach(item => {
+            item.addEventListener('click', () => {
+                membersPlusSlides(1);
+            })
         })
-    })
+
+        for (let slide of membersSlides) {
+            const paginationElementsList = slide.querySelectorAll('.pagination-element');
+
+            for (let i = 1; i <= paginationElementsList.length; i++) {
+                const item = paginationElementsList[i - 1];
+
+                item.addEventListener('click', () => {
+                    membersShowSlides(i)
+                })
+            }
+        }
+    }
 }
 
 
 const accordionToggle2 = document.querySelectorAll('.accordion-toggle_2'),
-      textAreaList2 = document.querySelectorAll('.accordion-text_2');
+    textAreaList2 = document.querySelectorAll('.accordion-text_2');
 
 accordionToggle2.forEach(item => {
     item.addEventListener('click', (e) => {
@@ -365,17 +389,6 @@ if (filterButton) {
     });
 }
 
-const navLinksList = document.querySelectorAll('.navigation_link');
-
-navLinksList.forEach(item => {
-    item.addEventListener('click', () => {
-        navLinksList.forEach(item => {
-            item.classList.remove('nav-link-active')
-        })
-        item.classList.add('nav-link-active')
-    })
-})
-
 const checkboxElementList = document.querySelectorAll('.checkbox-element');
 
 checkboxElementList.forEach(item => {
@@ -397,8 +410,8 @@ $(document).ready(function () {
 });
 
 const burgerElementsList = document.querySelectorAll('.burger-element'),
-      burgerWrapper = document.querySelector('.burger-menu-wrapper'),
-      mobileNav = document.querySelector('.mobile-nav');
+    burgerWrapper = document.querySelector('.burger-menu-wrapper'),
+    mobileNav = document.querySelector('.mobile-nav');
 
 if (burgerWrapper) {
     burgerWrapper.addEventListener('click', () => {
@@ -418,9 +431,9 @@ if (burgerWrapper) {
 }
 
 const modalWindow = document.querySelector('[data-modal]'),
-      modalTrigger = document.querySelector('.apply-button_link'),
-      modalCloseButton = document.querySelector('.modal-close'),
-      modalSubstrate = document.querySelector('.form-wrapper');
+    modalTrigger = document.querySelector('.apply-button_link'),
+    modalCloseButton = document.querySelector('.modal-close'),
+    modalSubstrate = document.querySelector('.form-wrapper');
 
 if (modalWindow) {
     modalTrigger.addEventListener('click', (e) => {
@@ -439,10 +452,10 @@ if (modalWindow) {
         }
     })
     const fileInput = document.querySelector('input[type="file"]');
-    fileInput.addEventListener('change',() => {
+    fileInput.addEventListener('change', () => {
         const selectedFile = fileInput.files[0],
-              fileSize = selectedFile.size,
-              maxFileSize = 1024 * 1024 * 5;
+            fileSize = selectedFile.size,
+            maxFileSize = 1024 * 1024 * 5;
         if (fileSize > maxFileSize) {
             document.getElementById('size').innerHTML = 'File size exceeds the limit of 5MB';
             fileInput.value = '';
@@ -451,7 +464,6 @@ if (modalWindow) {
         }
     })
 }
-
 
 
 if (modalCloseButton) {
@@ -475,8 +487,7 @@ if (modalSubstrate) {
 }
 
 const searchClearButton = document.querySelector('.search-clear'),
-      searchField = document.querySelector('.nav-search'),
-      searchClearWrapper = searchClearButton.parentElement;
+    searchField = document.querySelector('.nav-search');
 
 if (searchField) {
     searchField.addEventListener('input', () => {
@@ -494,8 +505,6 @@ if (searchField) {
     })
 }
 
-console.log(searchClearButton.parentElement);
-
 if (searchClearButton) {
     searchClearButton.addEventListener('click', (e) => {
         if (e.target.tagName === 'IMG') {
@@ -505,15 +514,19 @@ if (searchClearButton) {
     })
 }
 
-searchClearWrapper.addEventListener('click',(e) => {
-    if (e.target.firstElementChild === searchClearButton) {
-        searchField.value = '';
-        searchClearButton.style.display = 'none';
-    }
-})
+if (searchClearButton) {
+    const searchClearWrapper = searchClearButton.parentElement;
 
-document.addEventListener('click',(e) => {
-    if (e.target !== searchField) {
-        searchClearButton.style.display = 'none';
-    }
-})
+    searchClearWrapper.addEventListener('click', (e) => {
+        if (e.target.firstElementChild === searchClearButton) {
+            searchField.value = '';
+            searchClearButton.style.display = 'none';
+        }
+    })
+
+    document.addEventListener('click', (e) => {
+        if (e.target !== searchField) {
+            searchClearButton.style.display = 'none';
+        }
+    })
+}

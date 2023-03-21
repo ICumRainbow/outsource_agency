@@ -85,3 +85,10 @@ def culture_view(request):
     View for Culture page.
     """
     return render(request, 'culture.html')
+
+
+def privacy_view(request):
+    """
+    View for Privacy policy page.
+    """
+    return render(request, 'privacy_policy.html')

@@ -14,16 +14,29 @@
 
 .logo-motto__aside
   top: 0
-  position: fixed
+  position: absolute
   display: flex
   flex-direction: column
   align-items: center
-  height: 412px
-  width: 6%
-  -webkit-mask-image: url(../img/logomask.svg)
-  mask-image: url(../img/logomask.svg)
-  background-color: white
-  z-index: 15
+  -webkit-mask-repeat: no-repeat
+  height: fit-content
+  padding-left: 30px
+  .text-bg
+    display: flex
+    flex-direction: column
+    align-items: center
+    background-size: cover
+    background-repeat: no-repeat
+    .logo_wrapper
+      padding-top: 32px
+      .logo-text
+        font-family: 'Ubuntu', sans-serif
+        text-decoration: none
+        background: linear-gradient(to right, #395ECA, #848BD8)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        font-weight: 700
+        font-size: 26px
 
 .img-logo
   width: 54px
@@ -54,30 +67,41 @@
   box-sizing: border-box
   z-index: 1100
   background-color: transparent
+  .header
+    display: flex
+    font-weight: 200
+    width: 100%
+    align-items: center
+    justify-content: space-between
+    .header_nav-menu
+      .navigation_list
+        display: flex
+        flex-direction: row
+        margin: 0
+        padding: 0
+        list-style: none
+        min-height: 60px
+        align-items: center
+        .navigation_item
+          .navigation_link
+            margin-right: 25px
+            padding: 16px 0
+            text-decoration: none
+            color: black
+            width: 100%
+            line-height: 1.5
 
-.header
-  display: flex
-  font-weight: 200
-  width: 100%
-  align-items: center
-  justify-content: space-between
-
-.navigation_list
-  display: flex
-  flex-direction: row
-  margin: 0
-  padding: 0
-  list-style: none
-  min-height: 60px
-  align-items: center
-
-.navigation_link
-  margin-right: 25px
-  padding: 16px 0
-  text-decoration: none
-  color: black
-  width: 100%
-  line-height: 1.5
+.navigation_item
+  &:first-child
+    .navigation_item > .navigation_link
+      &::after
+        content: ""
+        width: 100%
+        height: 2px
+        background-color: #2e64d5
+        position: absolute
+        left: 0
+        bottom: 0
 
 .landing_message
   padding-top: 150px
@@ -98,22 +122,54 @@
       padding-top: 48px
       padding-bottom: 62px
     .landing-button_link
-      border: 2px solid #1a1a1a
-      padding: 16px 20px
-      color: #1a1a1a
-      background-color: #fff
-      border-radius: 0
-      min-width: 140px
-      box-shadow: 6px 6px 0 #00ff15, inset 0 0 0 2px #00ff15
-      font-weight: 500
-      font-size: 16px
-      line-height: 1.5
-      transition: .3s
+      display: inline-block
+      padding: 12px 24px
+      border: 2px solid #4f4f4f
+      border-radius: 4px
+      transition: all 0.2s ease-in
+      position: relative
+      overflow: hidden
       text-decoration: none
-      text-align: center
-      &:hover
-        box-shadow: 2px 2px 2px #00FFFF, inset 0 0 0 3px #00FFFF
-        transition: .3s
+      font-size: 16px
+      color: black
+      z-index: 1
+    .landing-button_link:before
+      content: ""
+      position: absolute
+      left: 50%
+      transform: translateX(-50%) scaleY(1) scaleX(1.25)
+      top: 100%
+      width: 140%
+      height: 180%
+      background-color: rgba(0, 0, 0, 0.05)
+      border-radius: 50%
+      display: block
+      transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+      z-index: -1
+    .landing-button_link:after
+      content: ""
+      position: absolute
+      left: 55%
+      transform: translateX(-50%) scaleY(1) scaleX(1.45)
+      top: 180%
+      width: 160%
+      height: 190%
+      background-color: #395ECA
+      border-radius: 50%
+      display: block
+      transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+      z-index: -1
+    .landing-button_link:hover
+      color: #ffffff
+      border: 2px solid #395ECA
+    .landing-button_link:hover:before
+      top: -35%
+      background-color: #395ECA
+      transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
+    .landing-button_link:hover:after
+      top: -45%
+      background-color: #395ECA
+      transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
 
 .contact-button_wrapper
   width: 140px
@@ -128,14 +184,17 @@
   display: none
 
 .burger-menu-wrapper
+  border: 2px solid #4f4f4f
+  border-radius: 4px
+  transition: all 0.2s ease-in
   display: flex
   position: absolute
   right: 32px
   z-index: 99
   width: 64px
+  overflow: hidden
   height: 56px
-  border: 2px solid #1A1A1A
-  box-shadow: 4px 4px 0 #1A1A1A
+  box-sizing: border-box
   margin: 30px 0 30px auto
   cursor: pointer
   justify-content: center
@@ -154,6 +213,49 @@
         top: 0
       &:last-child
         bottom: 0
+
+.mobile
+  .burger-menu-wrapper:before
+    content: ""
+    position: absolute
+    left: 50%
+    transform: translateX(-50%) scaleY(1) scaleX(1.25)
+    top: 100%
+    width: 140%
+    height: 180%
+    background-color: rgba(0, 0, 0, 0.05)
+    border-radius: 50%
+    display: block
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+    z-index: -1
+  .burger-menu-wrapper:after
+    content: ""
+    position: absolute
+    left: 55%
+    transform: translateX(-50%) scaleY(1) scaleX(1.45)
+    top: 180%
+    width: 160%
+    height: 190%
+    background-color: #395ECA
+    border-radius: 50%
+    display: block
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+    z-index: -1
+  .burger-menu-wrapper:hover
+    color: #ffffff
+    border: 2px solid #395ECA
+    .burger-menu
+      .burger-element
+        background-color: white
+        transition: .3s
+  .burger-menu-wrapper:hover:before
+    top: -35%
+    background-color: #395ECA
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
+  .burger-menu-wrapper:hover:after
+    top: -45%
+    background-color: #395ECA
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
 
 .burger-element-top-active
   transform: rotate(45deg)!important
@@ -182,6 +284,8 @@
     flex-direction: column
     margin-top: 30px
     transition: .3s
+    list-style: none
+    text-align: center
     .navigation_item
       font-size: 20px
       line-height: 1.5
@@ -191,49 +295,116 @@
         font-size: 28px
         padding: 8px 0
         position: relative
+        font-weight: 300
+        text-decoration: none
+        color: black
+        width: 100%
+        line-height: 1.5
   .contact-button
-    text-align: center
-    width: 140px
-    border: 2px solid #1a1a1a
-    padding: 16px 20px
-    color: #1a1a1a
-    background-color: #fff
-    border-radius: 0
-    box-shadow: 4px 4px 0 #1a1a1a
-    font-weight: 400
-    font-size: 16px
-    line-height: 1.5
-    transition: .3s
+    display: inline-block
+    padding: 12px 20px
+    border: 2px solid #4f4f4f
+    border-radius: 4px
+    transition: all 0.2s ease-in
+    position: relative
+    overflow: hidden
     text-decoration: none
-    z-index: 9999
-    &:hover
-      box-shadow: 2px 2px 0 #1a1a1a
-      transition: .3s
+    font-size: 16px
+    color: black
+    z-index: 1
+  .contact-button:before
+    content: ""
+    position: absolute
+    left: 50%
+    transform: translateX(-50%) scaleY(1) scaleX(1.25)
+    top: 100%
+    width: 140%
+    height: 180%
+    background-color: rgba(0, 0, 0, 0.05)
+    border-radius: 50%
+    display: block
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+    z-index: -1
+  .contact-button:after
+    content: ""
+    position: absolute
+    left: 55%
+    transform: translateX(-50%) scaleY(1) scaleX(1.45)
+    top: 180%
+    width: 160%
+    height: 190%
+    background-color: #395ECA
+    border-radius: 50%
+    display: block
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+    z-index: -1
+  .contact-button:hover
+    color: #ffffff
+    border: 2px solid #395ECA
+  .contact-button:hover:before
+    top: -35%
+    background-color: #395ECA
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
+  .contact-button:hover:after
+    top: -45%
+    background-color: #395ECA
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
 
 .mobile-nav-active
   display: block
-  z-index: 1
+  z-index: 2
   height: 100%
   transition: .3s
 
 .contact-button
-  text-align: center
-  width: 140px
-  border: 2px solid #1a1a1a
-  padding: 16px 20px
-  color: #1a1a1a
-  background-color: #fff
-  border-radius: 0
-  box-shadow: 4px 4px 0 #1a1a1a
-  font-weight: 400
-  font-size: 16px
-  line-height: 1.5
-  transition: .3s
+  display: inline-block
+  padding: 12px 20px
+  border: 2px solid #4f4f4f
+  border-radius: 4px
+  transition: all 0.2s ease-in
+  position: relative
+  overflow: hidden
   text-decoration: none
-  z-index: 9999
-  &:hover
-    box-shadow: 2px 2px 0 #1a1a1a
-    transition: .3s
+  font-size: 16px
+  color: black
+  z-index: 1
+.contact-button:before
+  content: ""
+  position: absolute
+  left: 50%
+  transform: translateX(-50%) scaleY(1) scaleX(1.25)
+  top: 100%
+  width: 140%
+  height: 180%
+  background-color: rgba(0, 0, 0, 0.05)
+  border-radius: 50%
+  display: block
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+  z-index: -1
+.contact-button:after
+  content: ""
+  position: absolute
+  left: 55%
+  transform: translateX(-50%) scaleY(1) scaleX(1.45)
+  top: 180%
+  width: 160%
+  height: 190%
+  background-color: #395ECA
+  border-radius: 50%
+  display: block
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+  z-index: -1
+.contact-button:hover
+  color: #ffffff
+  border: 2px solid #395ECA
+.contact-button:hover:before
+  top: -35%
+  background-color: #395ECA
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
+.contact-button:hover:after
+  top: -45%
+  background-color: #395ECA
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
 
 .top-right_image
   background-image: url('../img/image.jfif')
@@ -414,25 +585,57 @@
       font-weight: 300
 
 .details-button_wrapper
-  margin-top: 60px
+  margin-top: 40px
 
 .details-button
-  text-align: center
-  border: 2px solid #1a1a1a
-  padding: 16px 20px
-  color: #1a1a1a
-  background-color: #fff
-  border-radius: 0
-  box-shadow: 4px 4px 0 #1a1a1a
-  font-size: 16px
-  line-height: 1.5
-  transition: .3s
+  display: inline-block
+  padding: 12px 24px
+  border: 2px solid #4f4f4f
+  border-radius: 4px
+  transition: all 0.2s ease-in
+  position: relative
+  overflow: hidden
   text-decoration: none
-  z-index: 9999
-  font-weight: 500
-  &:hover
-    box-shadow: 2px 2px #1a1a1a
-    transition: .3s
+  font-size: 19px
+  color: black
+  z-index: 1
+.details-button:before
+  content: ""
+  position: absolute
+  left: 50%
+  transform: translateX(-50%) scaleY(1) scaleX(1.25)
+  top: 100%
+  width: 140%
+  height: 180%
+  background-color: rgba(0, 0, 0, 0.05)
+  border-radius: 50%
+  display: block
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+  z-index: -1
+.details-button:after
+  content: ""
+  position: absolute
+  left: 55%
+  transform: translateX(-50%) scaleY(1) scaleX(1.45)
+  top: 180%
+  width: 160%
+  height: 190%
+  background-color: #395ECA
+  border-radius: 50%
+  display: block
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+  z-index: -1
+.details-button:hover
+  color: #ffffff
+  border: 2px solid #395ECA
+.details-button:hover:before
+  top: -35%
+  background-color: #395ECA
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
+.details-button:hover:after
+  top: -45%
+  background-color: #395ECA
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
 
 .prompt
   width: 100%
@@ -444,22 +647,54 @@
       font-weight: 400
       font-size: 40px
   .prompt-button_link
-    border: 2px solid #1a1a1a
-    padding: 16px 20px
-    color: #1a1a1a
-    background-color: #fff
-    border-radius: 0
-    min-width: 140px
-    box-shadow: 6px 6px 0 #00ff15, inset 0 0 0 2px #00ff15
-    font-weight: 500
-    font-size: 16px
-    line-height: 1.5
-    transition: .3s
+    display: inline-block
+    padding: 12px 24px
+    border: 2px solid #4f4f4f
+    border-radius: 4px
+    transition: all 0.2s ease-in
+    position: relative
+    overflow: hidden
     text-decoration: none
-    text-align: center
-    &:hover
-      box-shadow: 2px 2px 2px #00FFFF, inset 0 0 0 3px #00FFFF
-      transition: .3s
+    font-size: 19px
+    color: black
+    z-index: 1
+  .prompt-button_link:before
+    content: ""
+    position: absolute
+    left: 50%
+    transform: translateX(-50%) scaleY(1) scaleX(1.25)
+    top: 100%
+    width: 140%
+    height: 180%
+    background-color: rgba(0, 0, 0, 0.05)
+    border-radius: 50%
+    display: block
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+    z-index: -1
+  .prompt-button_link:after
+    content: ""
+    position: absolute
+    left: 55%
+    transform: translateX(-50%) scaleY(1) scaleX(1.45)
+    top: 180%
+    width: 160%
+    height: 190%
+    background-color: #395ECA
+    border-radius: 50%
+    display: block
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+    z-index: -1
+  .prompt-button_link:hover
+    color: #ffffff
+    border: 2px solid #395ECA
+  .prompt-button_link:hover:before
+    top: -35%
+    background-color: #395ECA
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
+  .prompt-button_link:hover:after
+    top: -45%
+    background-color: #395ECA
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
 
 .prompt_btn
   display: flex
@@ -654,19 +889,64 @@
           .buttons
             display: flex
             .button
-              border: 2px solid #fff
-              box-shadow: 4px 4px 0 #fff
-              transition: .3s
-              padding: 20px
+              display: inline-block
+              padding: 18px 20px
               cursor: pointer
-              &:hover
-                box-shadow: 2px 2px 0 #fff
-                transition: .3s
-            .button-prev
-              margin-right: 16px
+              border: 2px solid #4f4f4f
+              border-radius: 4px
+              transition: all 0.2s ease-in
+              position: relative
+              overflow: hidden
+              text-decoration: none
+              font-size: 16px
+              color: white
+              z-index: 1
               .arrow
                 width: 15px
                 height: 15px
+            .button:before
+              content: ""
+              position: absolute
+              left: 50%
+              transform: translateX(-50%) scaleY(1) scaleX(1.25)
+              top: 100%
+              width: 140%
+              height: 180%
+              background-color: rgba(0, 0, 0, 0.05)
+              border-radius: 50%
+              display: block
+              transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+              z-index: -1
+            .button:after
+              content: ""
+              position: absolute
+              left: 55%
+              transform: translateX(-50%) scaleY(1) scaleX(1.45)
+              top: 180%
+              width: 160%
+              height: 190%
+              background-color: #395ECA
+              border-radius: 50%
+              display: block
+              transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+              z-index: -1
+            .button:hover
+              color: #ffffff
+              border: 2px solid #395ECA
+            .button:hover:before
+              top: -35%
+              background-color: #395ECA
+              transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
+            .button:hover:after
+              top: -45%
+              background-color: #395ECA
+              transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
+            .button-prev
+              margin-right: 16px
+        .pagination
+          margin: 50px 0 40px
+          display: flex
+          justify-content: space-between
         .post-media-wrapper
           display: flex
           align-items: center
@@ -836,22 +1116,55 @@
       color: #1A1A1A
       margin-bottom: 40px
     .submit
-      cursor: pointer
-      border: 2px solid #1a1a1a
-      padding: 18px 62px
-      color: #1a1a1a
-      background-color: #fff
-      border-radius: 0
-      box-shadow: 6px 6px 0 #00ff15, inset 0 0 0 2px #00ff15
-      font-weight: 500
-      font-size: 16px
-      line-height: 1.5
-      transition: .3s
+      display: inline-block
+      background-color: transparent
+      padding: 12px 24px
+      border: 2px solid #4f4f4f
+      border-radius: 4px
+      transition: all 0.2s ease-in
+      position: relative
+      overflow: hidden
       text-decoration: none
-      text-align: center
-      &:hover
-        box-shadow: 2px 2px 2px #00FFFF, inset 0 0 0 3px #00FFFF
-        transition: .3s
+      font-size: 19px
+      color: black
+      z-index: 1
+    .submit:before
+      content: ""
+      position: absolute
+      left: 50%
+      transform: translateX(-50%) scaleY(1) scaleX(1.25)
+      top: 100%
+      width: 140%
+      height: 180%
+      background-color: rgba(0, 0, 0, 0.05)
+      border-radius: 50%
+      display: block
+      transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+      z-index: -1
+    .submit:after
+      content: ""
+      position: absolute
+      left: 55%
+      transform: translateX(-50%) scaleY(1) scaleX(1.45)
+      top: 180%
+      width: 160%
+      height: 190%
+      background-color: #395ECA
+      border-radius: 50%
+      display: block
+      transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+      z-index: -1
+    .submit:hover
+      color: #ffffff
+      border: 2px solid #395ECA
+    .submit:hover:before
+      top: -35%
+      background-color: #395ECA
+      transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
+    .submit:hover:after
+      top: -45%
+      background-color: #395ECA
+      transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
 
 .faq
   .h2
@@ -938,6 +1251,15 @@ footer
     margin: 0 auto
     .footer-wrapper
       width: 66.6%
+      .name
+        background: linear-gradient(to right, #395ECA, #848BD8)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        font-weight: 700
+        font-size: 26px
+        padding-bottom: 40px
+        font-family: 'Ubuntu', sans-serif
+        width: fit-content
       img
         width: 70px
         margin-bottom: 32px
@@ -1040,28 +1362,48 @@ footer
   object-fit: cover
   width: 100%
 
-.nav-link-active
-  text-decoration: underline #00ff15
+.pagination-element
+  background-color: #fff
+  opacity: 0.5
+  flex: 1
+  height: 3px
+  border-radius: 0
+  cursor: pointer
+  margin-right: 8px
+  &:last-child
+    margin-right: 0
+
+.pagination-element-active
+  background-color: #395ECA
+  opacity: 1
 
 .element-active
   display: block
 
 @media screen and (max-width: 1500px)
+  body
+    .header-wrapper
+      .header
+        .header_nav-menu
+          padding-left: 0
   .wrapper
     padding: 0 118px
-
-@media screen and (max-width: 1030px)
-  footer
-    .footer_container
 
 @media screen and (max-width: 1450px)
   footer
     .footer_container
       padding: 0 100px
 
+@media screen and (max-width: 1300px)
+  body
+    .header-wrapper
+      .header
+        .header_nav-menu
+          margin-left: 160px
+
 @media screen and (max-width: 960px)
   .logo-motto__aside
-    width: 8%
+    width: fit-content
   body
     .wrapper
       padding: 0 90px
@@ -1075,17 +1417,15 @@ footer
         font-size: 37px
 
 @media screen and (max-width: 1200px)
-  .logo-motto__aside
-    width: 10%
   .wrapper
     max-width: 780px
     padding: 0
-    .header-wrapper
-      .header
-        .header_nav-menu
-          display: none
-        .contact-button_wrapper
-          display: none
+  .header-wrapper
+    .header
+      .header_nav-menu
+        display: none
+      .contact-button_wrapper
+        display: none
   .top-right_image
     display: none
   .landing_message
@@ -1280,23 +1620,54 @@ footer
         position: static
         margin-top: 40px
         .contact-button
-          text-align: center
-          width: 140px
-          border: 2px solid #1a1a1a
-          padding: 16px 20px
-          color: #1a1a1a
-          background-color: #fff
-          border-radius: 0
-          box-shadow: 4px 4px 0 #1a1a1a
-          font-weight: 400
-          font-size: 16px
-          line-height: 1.5
-          transition: .3s
+          display: inline-block
+          padding: 12px 20px
+          border: 2px solid #4f4f4f
+          border-radius: 4px
+          transition: all 0.2s ease-in
+          position: relative
+          overflow: hidden
           text-decoration: none
-          z-index: 9999
-          &:hover
-            box-shadow: 2px 2px 0 #1a1a1a
-            transition: .3s
+          font-size: 16px
+          color: black
+          z-index: 1
+        .contact-button:before
+          content: ""
+          position: absolute
+          left: 50%
+          transform: translateX(-50%) scaleY(1) scaleX(1.25)
+          top: 100%
+          width: 140%
+          height: 180%
+          background-color: rgba(0, 0, 0, 0.05)
+          border-radius: 50%
+          display: block
+          transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+          z-index: -1
+        .contact-button:after
+          content: ""
+          position: absolute
+          left: 55%
+          transform: translateX(-50%) scaleY(1) scaleX(1.45)
+          top: 180%
+          width: 160%
+          height: 190%
+          background-color: #395ECA
+          border-radius: 50%
+          display: block
+          transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1)
+          z-index: -1
+        .contact-button:hover
+          color: #ffffff
+          border: 2px solid #395ECA
+        .contact-button:hover:before
+          top: -35%
+          background-color: #395ECA
+          transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
+        .contact-button:hover:after
+          top: -45%
+          background-color: #395ECA
+          transform: translateX(-50%) scaleY(1.3) scaleX(0.8)
     .navigation_list
       padding-top: 100px
       padding-bottom: 0
@@ -1347,11 +1718,14 @@ footer
 
 @media screen and (max-width: 720px)
   body
-    .logo-motto__aside
-      display: none
-  body
     .wrapper
       padding: 0 16px
+      .header-wrapper
+        .header
+          .logo-motto__aside
+            width: fit-content
+            position: absolute
+            padding-left: 30px
       .plug-img_wrapper
         .plug_img
           object-position: 50% 50%
