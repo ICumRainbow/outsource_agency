@@ -31,8 +31,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',
-
+    '*',
 ]
 
 # Application definition

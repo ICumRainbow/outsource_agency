@@ -30,9 +30,9 @@
         <link rel="stylesheet" href="{% static 'css/style-portfolio-example.css' %}">
     {% endif %}
 
-    {% if request.path == '/blog/' %}
-        <link rel="stylesheet" href="{% static 'css/style-blog.css' %}">
-    {% endif %}
+{#    {% if request.path == '/blog/' %}#}
+{#        <link rel="stylesheet" href="{% static 'css/style-blog.css' %}">#}
+{#    {% endif %}#}
 
     {% if request.path == '/careers/' %}
         <link rel="stylesheet" href="{% static 'css/style-careers.css' %}">
@@ -61,7 +61,7 @@
     {% endif %}
 
     {% if request.path == '/privacy-policy/' %}
-        <link rel="stylesheet" href="{% static 'css/privacy.sass' %}">
+        <link rel="stylesheet" href="{% static 'css/privacy.css' %}">
     {% endif %}
 
 
@@ -86,9 +86,9 @@
             <li class="navigation_item">
                 <a class="navigation_link" href="{% url 'works' %}">Our Work</a>
             </li>
-            <li class="navigation_item">
-                <a class="navigation_link" href="{% url 'blog' %}">Blog</a>
-            </li>
+{#            <li class="navigation_item">#}
+{#                <a class="navigation_link" href="{% url 'blog' %}">Blog</a>#}
+{#            </li>#}
             <li class="navigation_item">
                 <a class="navigation_link" href="{% url 'careers' %}">Careers</a>
             </li>
@@ -127,9 +127,9 @@
                     <li class="navigation_item">
                         <a class="navigation_link" href="{% url 'works' %}">Our Work</a>
                     </li>
-                    <li class="navigation_item">
-                        <a class="navigation_link" href="{% url 'blog' %}">Blog</a>
-                    </li>
+{#                    <li class="navigation_item">#}
+{#                        <a class="navigation_link" href="{% url 'blog' %}">Blog</a>#}
+{#                    </li>#}
                     <li class="navigation_item">
                         <a class="navigation_link" href="{% url 'careers' %}">Careers</a>
                     </li>
@@ -171,13 +171,6 @@
     <div class="footer_container">
         <div class="footer-wrapper">
             <p class="name">KOODRICK</p>
-            <p class="motto">Whatever the Q, We got the A</p>
-            <div class="locations">
-                <p class="location">London</p>
-                <p class="location">Zürich</p>
-                <p class="location">Belgrade</p>
-                <p class="location last">Zagreb HQ</p>
-            </div>
             <div class="logos-wrapper">
                 {% for social in socials %}
                     <a href="{{ social.link }}"><img src="{{ social.logo.url }}" alt="{{ social.name }}"
@@ -190,13 +183,12 @@
             <div class="links-wrapper">
                 <div class="links">
                     <a href="{% url 'culture' %}" class="link">Culture</a>
-                    <a href="{% url 'blog' %}" class="link">Blog</a>
                     <a href="{% url 'contact' %}" class="link">Contact Us</a>
                     <a href="{% url 'privacy' %}" class="link">Privacy Policy</a>
                 </div>
             </div>
             <div class="site-name">
-                <p>©2022 - Q Agency</p>
+                <p>©2023 - Koodrick</p>
             </div>
         </div>
     </div>

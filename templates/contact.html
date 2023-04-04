@@ -3,171 +3,171 @@
 {% load static %}
 {% block content %}
     <div class="landing_container">
-            <div class="landing_message">
-                <div class="landing_message__wrapper">
-                    <h1 class="landing-h1">Contact</h1>
-                    <p class="landing-p">Let’s get started! Please fill in the form below so we can learn more about you and
-                        your project or just schedule a call.</p>
-                </div>
-            </div>
-            <div class="top-right_image"></div>
-        </div>
-        <section class="divider-desktop"></section>
-        <div class="content_container headquarters">
-            <div class="text-column">
-                <p class="p">Stop by for coffee and snacks at</p>
-                <h2 class="h2">Our Headquarters</h2>
-                <div class="headquarters-locations">
-                    <div class="headquarters-location">
-                        <h5 class="h5">Zagreb HQ</h5>
-                        <a href="#" class="headquarters-link">Reljkoviceva 4, 10000 Zagreb, Croatia</a>
-                    </div>
-                    <div class="headquarters-location">
-                        <h5 class="h5">London</h5>
-                        <a href="#" class="headquarters-link">Borough Yards, 13 Dirty Lane, London, SE1 9PA</a>
-                    </div>
-                </div>
-            </div>
-            <div class="headquarters-images">
-                <img src="{% static 'img/zagreb.jpg' %}" alt="" class="headquarters-image">
-                <img src="{% static 'img/london.jpg' %}" alt="" class="headquarters-image">
+        <div class="landing_message">
+            <div class="landing_message__wrapper">
+                <h1 class="landing-h1">Contact Us</h1>
+                <p class="landing-p">Ready to get started? Complete the form below to tell us more about yourself and
+                    your project, or schedule a call with us.</p>
             </div>
         </div>
-        <section class="divider-desktop"></section>
-        <div class="content_container contact-form-wrapper">
-            <div class="contact-form-primary">
-                <form method="POST" class="contact-form">
-                    {% csrf_token %}
-                    <div class="form-columns">
-                        <div class="column">
-                            <div class="input-element">
-                                <div class="label-wrapper">
-                                    <label class="label" for="name">First name</label>
-                                </div>
-                                {{ form.first_name }}
+        <div class="top-right_image"></div>
+    </div>
+    <section class="divider-desktop"></section>
+    {#    <div class="content_container headquarters">#}
+    {#        <div class="text-column">#}
+    {#            <p class="p">Stop by for coffee and snacks at</p>#}
+    {#            <h2 class="h2">Our Headquarters</h2>#}
+    {#            <div class="headquarters-locations">#}
+    {#                <div class="headquarters-location">#}
+    {#                    <h5 class="h5">Zagreb HQ</h5>#}
+    {#                    <a href="#" class="headquarters-link">Reljkoviceva 4, 10000 Zagreb, Croatia</a>#}
+    {#                </div>#}
+    {#                <div class="headquarters-location">#}
+    {#                    <h5 class="h5">London</h5>#}
+    {#                    <a href="#" class="headquarters-link">Borough Yards, 13 Dirty Lane, London, SE1 9PA</a>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#        <div class="headquarters-images">#}
+    {#            <img src="{% static 'img/zagreb.jpg' %}" alt="" class="headquarters-image">#}
+    {#            <img src="{% static 'img/london.jpg' %}" alt="" class="headquarters-image">#}
+    {#        </div>#}
+    {#    </div>#}
+{#    <section class="divider-desktop"></section>#}
+    <div class="content_container contact-form-wrapper">
+        <div class="contact-form-primary">
+            <form method="POST" class="contact-form">
+                {% csrf_token %}
+                <div class="form-columns">
+                    <div class="column">
+                        <div class="input-element">
+                            <div class="label-wrapper">
+                                <label class="label" for="name">First name</label>
                             </div>
-                            <div class="input-element">
-                                <div class="label-wrapper">
-                                    <label class="label" for="last-name">Last name</label>
-                                </div>
-                                {{ form.last_name }}
-                            </div>
-                            <div class="input-element">
-                                <div class="label-wrapper">
-                                    <label class="label" for="email">Email</label>
-                                </div>
-                                {{ form.business_email }}
-                            </div>
-                            <div class="input-element">
-                                <div class="label-wrapper">
-                                    <label class="label" for="country-dropdown">Country</label>
-                                </div>
-                                <div class="dropdown-wrapper">
-                                    <select name="country" id="country-dropdown" class="dropdown">
-                                        <option value='default' hidden selected>Choose a country</option>
-                                        {% for label, value in form.fields.country.choices %}
-                                            <option value='{{ label }}'>{{ value }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="input-element">
-                                <div class="label-wrapper">
-                                    <label class="label" for="company-name">Company</label>
-                                </div>
-                                {{ form.company }}
-                            </div>
-                            <div class="input-element">
-                                <div class="label-wrapper">
-                                    <label class="label" for="title">Business title (optional)</label>
-                                </div>
-                                {{ form.business_title }}
-                            </div>
+                            {{ form.first_name }}
                         </div>
-                        <div class="column">
-                            <div class="input-element">
-                                <div class="label-wrapper">
-                                    <label class="label" for="budget-dropdown">Budget</label>
-                                </div>
-                                <div class="dropdown-wrapper">
-                                    <select name="budget" id="budget-dropdown" class="dropdown">
-                                        <option value="1" hidden selected>Select a budget</option>
-                                        <option value="2">$50,000 and under</option>
-                                        <option value="3">$50,000-$200,000</option>
-                                        <option value="3">$50,000-$200,000</option>
-                                    </select>
-                                </div>
+                        <div class="input-element">
+                            <div class="label-wrapper">
+                                <label class="label" for="last-name">Last name</label>
                             </div>
-                            <div class="input-element">
-                                <div class="label-wrapper">
-                                    <span class="label">What are you interested in?</span>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    {% for label, value in form.fields.needs.choices %}
-                                        <div class="checkbox-element">
-                                            <label for="checkbox-{{ label }}" class="checkbox-label">
-                                                <input value="{{ label }}" name="needs" type="checkbox" class="checkbox-input" id="checkbox-{{ label }}">
-                                                <span>{{ value }}</span>
-                                            </label>
-                                        </div>
+                            {{ form.last_name }}
+                        </div>
+                        <div class="input-element">
+                            <div class="label-wrapper">
+                                <label class="label" for="email">Email</label>
+                            </div>
+                            {{ form.business_email }}
+                        </div>
+                        <div class="input-element">
+                            <div class="label-wrapper">
+                                <label class="label" for="country-dropdown">Country</label>
+                            </div>
+                            <div class="dropdown-wrapper">
+                                <select name="country" id="country-dropdown" class="dropdown">
+                                    <option value='default' hidden selected>Choose a country</option>
+                                    {% for label, value in form.fields.country.choices %}
+                                        <option value='{{ label }}'>{{ value }}</option>
                                     {% endfor %}
-                                </div>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-element">
+                            <div class="label-wrapper">
+                                <label class="label" for="company-name">Company</label>
+                            </div>
+                            {{ form.company }}
+                        </div>
+                        <div class="input-element">
+                            <div class="label-wrapper">
+                                <label class="label" for="title">Business title (optional)</label>
+                            </div>
+                            {{ form.business_title }}
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="input-element">
+                            <div class="label-wrapper">
+                                <label class="label" for="budget-dropdown">Budget</label>
+                            </div>
+                            <div class="dropdown-wrapper">
+                                <select name="budget" id="budget-dropdown" class="dropdown">
+                                    <option value="1" hidden selected>Select a budget</option>
+                                    <option value="2">$50,000 and under</option>
+                                    <option value="3">$50,000-$200,000</option>
+                                    <option value="3">$50,000-$200,000</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-element">
+                            <div class="label-wrapper">
+                                <span class="label">What are you interested in?</span>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                {% for label, value in form.fields.needs.choices %}
+                                    <div class="checkbox-element">
+                                        <label for="checkbox-{{ label }}" class="checkbox-label">
+                                            <input value="{{ label }}" name="needs" type="checkbox"
+                                                   class="checkbox-input" id="checkbox-{{ label }}">
+                                            <span>{{ value }}</span>
+                                        </label>
+                                    </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
-                    <div class="additional-info">
-                        <label for="info" class="info-label">Tell us more about your project</label>
-                        {{ form.project_details }}
-                    </div>
-                    {{ form.captcha }}
-                    <p class="p">Let's get started! Please fill in the form below so we can learn more about you and your
-                        project or just schedule a call.</p>
-{#                    <p class="p">This site is protected by reCAPTCHA and the Google <a href="#" class="p-link">Privacy#}
-{#                        Policy </a> and#}
-{#                        <a href="#" class="p-link">Terms of Service</a> apply.</p>#}
-                    <button class="send-button">Send</button>
-                </form>
-            </div>
-        </div>
-        <section class="divider-desktop"></section>
-        <div class="content_container headquarters">
-            <div class="text-column">
-                <h2 class="h2">Other Offices</h2>
-                <div class="headquarters-locations">
-                    <div class="headquarters-location">
-                        <h5 class="h5">Zürich</h5>
-                        <a href="#" class="headquarters-link">Brandstrasse 33, 8952 Schlieren/Zürich, Switzerland</a>
-                    </div>
-                    <div class="headquarters-location">
-                        <h5 class="h5">London</h5>
-                        <a href="#" class="headquarters-link">Vitezova Karađorđeve zvezde 50, 11000 Belgrade, Serbia</a>
-                    </div>
                 </div>
-            </div>
-            <div class="headquarters-images">
-                <img src="{% static 'img/contact/zurich@2x.jpg' %}" alt="" class="headquarters-image">
-                <img src="{% static 'img/belgrade.jpg' %}" alt="" class="headquarters-image">
-            </div>
-        </div>
-        <section class="divider-desktop"></section>
-        <div class="assistance">
-            <div class="assistance-wrapper content_container">
-                <div class="image">
-                    <img src="{% static 'img/contact/contact-image-london-office.jpg' %}" alt="" class="img">
+                <div class="additional-info">
+                    <label for="info" class="info-label">Tell us more about your project</label>
+                    {{ form.project_details }}
                 </div>
-                <div class="text">
-                    <div class="text-wrapper">
-                        <p class="p">If you need any further assistance or have additional questions, just send us an
-                            email.</p>
-                        <a href="#" class="email-link">hello@q.agency</a>
-                    </div>
-                </div>
-            </div>
+                {{ form.captcha }}
+                <p class="p">Ready to get started? Complete the form above to tell us more about yourself and
+                    your project, or schedule a call with us.</p>
+                <p class="p">This site is protected by reCAPTCHA and the Google Privacy Policy </a> and
+                    <a href="https://policies.google.com/terms" class="p-link">Terms of Service</a> apply.</p>
+                <button class="send-button">Send</button>
+            </form>
         </div>
-        <section class="divider-desktop"></section>
-        <div class="content_container collaborate-button">
-            <h3 class="h3">Still not persuaded? Check us out on Clutch!</h3>
-            <a href="#" class="button">Go to Clutch</a>
-        </div>
-        <section class="divider-desktop"></section>
-    {% endblock %}
+    </div>
+    <section class="divider-desktop"></section>
+    {#    <div class="content_container headquarters">#}
+    {#        <div class="text-column">#}
+    {#            <h2 class="h2">Other Offices</h2>#}
+    {#            <div class="headquarters-locations">#}
+    {#                <div class="headquarters-location">#}
+    {#                    <h5 class="h5">Zürich</h5>#}
+    {#                    <a href="#" class="headquarters-link">Brandstrasse 33, 8952 Schlieren/Zürich, Switzerland</a>#}
+    {#                </div>#}
+    {#                <div class="headquarters-location">#}
+    {#                    <h5 class="h5">London</h5>#}
+    {#                    <a href="#" class="headquarters-link">Vitezova Karađorđeve zvezde 50, 11000 Belgrade, Serbia</a>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#        <div class="headquarters-images">#}
+    {#            <img src="{% static 'img/contact/zurich@2x.jpg' %}" alt="" class="headquarters-image">#}
+    {#            <img src="{% static 'img/belgrade.jpg' %}" alt="" class="headquarters-image">#}
+    {#        </div>#}
+    {#    </div>#}
+    {#    <section class="divider-desktop"></section>#}
+    {#    <div class="assistance">#}
+    {#        <div class="assistance-wrapper content_container">#}
+    {#            <div class="image">#}
+    {#                <img src="{% static 'img/contact/contact-image-london-office.jpg' %}" alt="" class="img">#}
+    {#            </div>#}
+    {#            <div class="text">#}
+    {#                <div class="text-wrapper">#}
+    {#                    <p class="p">If you need any further assistance or have additional questions, just send us an#}
+    {#                        email.</p>#}
+    {#                    <a href="#" class="email-link">hello@q.agency</a>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+    {#    <section class="divider-desktop"></section>#}
+    {#    <div class="content_container collaborate-button">#}
+    {#        <h3 class="h3">Still not persuaded? Check us out on Clutch!</h3>#}
+    {#        <a href="#" class="button">Go to Clutch</a>#}
+    {#    </div>#}
+    {#    <section class="divider-desktop"></section>#}
+{% endblock %}
