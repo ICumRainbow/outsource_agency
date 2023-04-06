@@ -452,6 +452,7 @@
 .works-container .example-element .cover-link .element .text-logo .logo {
   height: 100%;
   max-width: 100%;
+  width: inherit;
 }
 .works-container .example-element .cover-link .element .text-logo .text {
   width: 98%;

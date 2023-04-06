@@ -428,6 +428,7 @@
   margin-bottom: 48px;
   max-width: 100%;
   height: auto;
+  width: inherit
 }
 .example-heading .h1 {
   font-size: 62px;

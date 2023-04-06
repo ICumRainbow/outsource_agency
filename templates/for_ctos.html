@@ -159,9 +159,15 @@
                             <img src="{{ work.logo_dark.url }}" alt="streamways-logo" class="logo">
                         </div>
                         <div class="example_tags">
-                            <p class="example_tag">{{ work.team }}</p>
-                            <p class="example_tag">{{ work.industry }}</p>
-                            <p class="example_tag">{{ work.location }}</p>
+                            {% if work.team %}
+                                <p class="example_tag">{{ work.team }}</p>
+                            {% endif %}
+                            {% if work.industry %}
+                                <p class="example_tag">{{ work.industry }}</p>
+                            {% endif %}
+                            {% if work.location %}
+                                <p class="example_tag">{{ work.location }}</p>
+                            {% endif %}
                         </div>
                         <div class="example_text">
                             <p class="example_p">{{ work.brief|truncatewords:30|safe }}</p>
@@ -317,7 +323,7 @@
                         </div>
                     </div>
                     <div class="post-media-wrapper">
-{#                        <img src="{% static 'img/linkedin_custom.svg' %}" alt="linkedin" class="likedin">#}
+                        {#                        <img src="{% static 'img/linkedin_custom.svg' %}" alt="linkedin" class="likedin">#}
                         <p class="post">Team Lead</p>
                     </div>
                     <div class="pagination">
@@ -358,7 +364,7 @@
                         </div>
                     </div>
                     <div class="post-media-wrapper">
-{#                        <img src="{% static 'img/linkedin_custom.svg' %}" alt="linkedin" class="likedin">#}
+                        {#                        <img src="{% static 'img/linkedin_custom.svg' %}" alt="linkedin" class="likedin">#}
                         <p class="post">Back-end Developer & Program Manager</p>
                     </div>
                     <div class="pagination">
@@ -401,7 +407,7 @@
                         </div>
                     </div>
                     <div class="post-media-wrapper">
-{#                        <img src="{% static 'img/linkedin_custom.svg' %}" alt="linkedin" class="likedin">#}
+                        {#                        <img src="{% static 'img/linkedin_custom.svg' %}" alt="linkedin" class="likedin">#}
                         <p class="post">Android Developer</p>
                     </div>
                     <div class="pagination">
@@ -444,7 +450,7 @@
                         </div>
                     </div>
                     <div class="post-media-wrapper">
-{#                        <img src="{% static 'img/linkedin_custom.svg' %}" alt="linkedin" class="likedin">#}
+                        {#                        <img src="{% static 'img/linkedin_custom.svg' %}" alt="linkedin" class="likedin">#}
                         <p class="post">Front-end Developer</p>
                     </div>
                     <div class="pagination">

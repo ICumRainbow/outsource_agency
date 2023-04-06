@@ -11,7 +11,29 @@
     </div>
     <div class="content_container details-wrapper">
         <h2 class="h2">What We Did</h2>
-        {{ work.what_we_did|safe }}
+        <div class="primary">
+            {{ work.what_we_did|safe }}
+            <div class="text-wrapper">
+                {% if work.industry %}
+                    <div class="text-column">
+                        <h6 class="h6">INDUSTRY</h6>
+                        <p class="p">{{ work.industry }}</p>
+                    </div>
+                {% endif %}
+                {% if work.team_size %}
+                    <div class="text-column">
+                        <h6 class="h6">TEAM SIZE</h6>
+                        <p class="p">{{ work.team_size }} People</p>
+                    </div>
+                {% endif %}
+                {% if work.location %}
+                    <div class="text-column">
+                        <h6 class="h6">LOCATION</h6>
+                        <p class="p">{{ work.location }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
     </div>
     <section class="divider-desktop"></section>
     <div class="content_container text-variations">
