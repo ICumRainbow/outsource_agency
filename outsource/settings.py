@@ -31,8 +31,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "localhost",
     'koodrick.com',
+    'www.koodrick.com',
 ]
 
 # Application definition
