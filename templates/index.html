@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="image">
-                                <img src="{% static 'img/the-times.png' %}" alt="" class="img">
+                                <img src="{{ work.preview_picture.url }}" alt="" class="img">
                             </div>
                         </div>
                     </a>
@@ -93,7 +93,7 @@
     <section class="divider-desktop"></section>
     <div class="content_container collaborate-button">
         <h3 class="h3">Let's connect and build something amazing together!</h3>
-        <a href="{% url 'services' %}" class="button">Let's work together</a>
+        <a href="{% url 'contact' %}" class="button">Let's work together</a>
     </div>
     <section class="divider-desktop"></section>
 {% endblock %}
